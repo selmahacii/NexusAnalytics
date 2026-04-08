@@ -93,15 +93,15 @@ function SkeletonGrid() {
 // ── Helpers ──────────────────────────────────────────────────────────────────
 
 function fmtCurrency(val: number): string {
-  if (val >= 1_000_000) return `${(val / 1_000_000).toFixed(1)}M DZD`;
-  if (val >= 1_000) return `${(val / 1_000).toFixed(0)}K DZD`;
-  return `${val.toLocaleString()} DZD`;
+  if (val >= 1_000_000) return `€${(val / 1_000_000).toFixed(1)}M`;
+  if (val >= 1_000) return `€${(val / 1_000).toFixed(0)}K`;
+  return `€${val.toLocaleString()}`;
 }
 
 function getStockStatus(stock: number, reorderPoint: number) {
-  if (stock <= 0) return { label: "Rupture", color: "bg-red-500/15 text-red-700 dark:text-red-400 border-red-500/30" };
-  if (stock <= reorderPoint) return { label: "Critique", color: "bg-amber-500/15 text-amber-700 dark:text-amber-400 border-amber-500/30" };
-  return { label: "En Stock", color: "bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 border-emerald-500/30" };
+  if (stock <= 0) return { label: "Stock-out", color: "bg-rose-500/10 text-rose-600 border-rose-200 dark:border-rose-800" };
+  if (stock <= reorderPoint) return { label: "Critical", color: "bg-amber-500/10 text-amber-600 border-amber-200 dark:border-amber-800" };
+  return { label: "Healthy", color: "bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800" };
 }
 
 // ── Main Component ───────────────────────────────────────────────────────────
@@ -159,64 +159,64 @@ export default function InventoryView() {
     <div className="space-y-6 animate-fade-in">
       {/* ── Summary Stats ───────────────────────────────────────────── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="glass-card shadow-sm border-t-2 border-t-primary/40 stagger-1 animate-slide-up">
+        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
-              <div className="bg-primary/10 p-2 rounded-xl">
-                <Boxes className="w-5 h-5 text-primary" />
+              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
+                <Boxes className="w-5 h-5 text-slate-500" />
               </div>
             </div>
             <div className="mt-3">
-              <p className="text-3xl font-bold tracking-tight">{data.stats.total}</p>
-              <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mt-0.5">Referenced Products</p>
+              <p className="text-3xl font-bold tracking-tight text-foreground">{data.stats.total}</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mt-0.5 opacity-60">Referenced Products</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="glass-card shadow-sm border-t-2 border-t-emerald-500/40 stagger-2 animate-slide-up">
+        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
-              <div className="bg-emerald-500/10 p-2 rounded-xl">
-                <Warehouse className="w-5 h-5 text-emerald-600" />
+              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
+                <Warehouse className="w-5 h-5 text-slate-500" />
               </div>
             </div>
             <div className="mt-3">
-              <p className="text-3xl font-bold tracking-tight">{fmtCurrency(data.stats.stockValue)}</p>
-              <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mt-0.5">Stock Value</p>
+              <p className="text-3xl font-bold tracking-tight text-foreground">{fmtCurrency(data.stats.stockValue)}</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mt-0.5 opacity-60">Total Asset Value</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="glass-card shadow-sm border-t-2 border-t-amber-500/40 stagger-3 animate-slide-up">
+        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
-              <div className="bg-amber-500/10 p-2 rounded-xl">
-                <AlertTriangle className="w-5 h-5 text-amber-600" />
+              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
+                <AlertTriangle className="w-5 h-5 text-amber-500" />
               </div>
-              <Badge variant="outline" className="bg-amber-500/10 text-amber-600 border-none">
+              <Badge variant="outline" className="bg-amber-500/5 text-amber-600 border-amber-500/20 text-[10px] font-bold">
                 {((data.stats.lowStock / data.stats.total) * 100).toFixed(1)}%
               </Badge>
             </div>
             <div className="mt-3">
-              <p className="text-3xl font-bold tracking-tight text-amber-600 dark:text-amber-500">{data.stats.lowStock}</p>
-              <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mt-0.5">Critical Stock</p>
+              <p className="text-3xl font-bold tracking-tight text-foreground">{data.stats.lowStock}</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mt-0.5 opacity-60">Near Threshold</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="glass-card shadow-sm border-t-2 border-t-rose-500/40 stagger-4 animate-slide-up">
+        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
           <CardContent className="pt-6">
             <div className="flex items-center justify-between">
-              <div className="bg-rose-500/10 p-2 rounded-xl">
-                <AlertCircle className="w-5 h-5 text-rose-600" />
+              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
+                <AlertCircle className="w-5 h-5 text-rose-500" />
               </div>
-              <Badge variant="outline" className="bg-rose-500/10 text-rose-600 border-none">
+              <Badge variant="outline" className="bg-rose-500/5 text-rose-600 border-rose-500/20 text-[10px] font-bold">
                 {((data.stats.outOfStock / data.stats.total) * 100).toFixed(1)}%
               </Badge>
             </div>
             <div className="mt-3">
-              <p className="text-3xl font-bold tracking-tight text-rose-600 dark:text-rose-500">{data.stats.outOfStock}</p>
-              <p className="text-xs text-muted-foreground font-medium uppercase tracking-wider mt-0.5">Out of Stock</p>
+              <p className="text-3xl font-bold tracking-tight text-foreground">{data.stats.outOfStock}</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-widest mt-0.5 opacity-60">Zero Inventory</p>
             </div>
           </CardContent>
         </Card>
@@ -255,19 +255,19 @@ export default function InventoryView() {
             <Filter className="w-4 h-4" />
           </Button>
           
-          <Button className="rounded-xl h-10 gap-2 ml-auto sm:ml-0">
-             <Plus className="w-4 h-4" /> Nouveau Produit
+          <Button className="rounded-xl h-10 gap-2 ml-auto sm:ml-0 bg-slate-900 dark:bg-slate-100 dark:text-slate-900 font-bold">
+             <Plus className="w-4 h-4" /> New Product
           </Button>
         </div>
       </div>
 
       {/* ── Inventory Table ─────────────────────────────────────────── */}
-      <Card className="glass-card shadow-lg border-none animate-slide-up stagger-5">
-        <CardHeader className="flex flex-row items-center justify-between pb-4">
+      <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm animate-slide-up stagger-5">
+        <CardHeader className="flex flex-row items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-900 px-8 py-6">
           <div>
-            <CardTitle className="text-lg font-bold text-premium-gradient">Current Stock</CardTitle>
-            <CardDescription className="text-xs">
-              Detailed list of {filteredProducts.length} products found
+            <CardTitle className="text-lg font-bold tracking-tight text-foreground">Operational Catalog</CardTitle>
+            <CardDescription className="text-xs font-medium opacity-60">
+              Detailed list of {filteredProducts.length} verified stock records
             </CardDescription>
           </div>
           <div className="flex items-center gap-2">

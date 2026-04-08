@@ -240,7 +240,7 @@ function KpiCard({
 
   return (
     <Card className={cn(
-      "glass-card card-hover transition-all duration-300 shadow-sm relative overflow-hidden",
+      "bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 transition-all duration-300 shadow-sm relative overflow-hidden group",
       "animate-slide-up h-full flex flex-col",
       `stagger-${index + 1}`
     )}>
@@ -323,14 +323,14 @@ function ChartCard({
     <Card
       ref={ref}
       className={cn(
-        "glass-card card-hover transition-all duration-300 shadow-md animate-slide-up h-full flex flex-col",
+        "bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 transition-all duration-300 shadow-sm animate-slide-up h-full flex flex-col",
         `stagger-${delay + 7}`,
         className
       )}
     >
       {title && (
-        <CardHeader className="flex flex-row items-center justify-between pb-3 px-6 pt-6">
-          <CardTitle className="text-base font-bold tracking-tight text-premium-gradient">
+        <CardHeader className="flex flex-row items-center justify-between pb-3 px-6 pt-6 border-b border-slate-50 dark:border-slate-900 mb-4">
+          <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70">
             {title}
           </CardTitle>
           <div className="flex items-center gap-1.5 translate-x-2">
@@ -403,7 +403,7 @@ function DashboardSkeleton() {
 // ── Formatters ──────────────────────────────────────────────────────────────
 
 function fmtCurrency(value: number): string {
-  return `${(value / 1e6).toFixed(1)}M DZD`;
+  return `€${(value / 1e6).toFixed(1)}M`;
 }
 
 function fmtNumber(value: number): string {
@@ -411,11 +411,11 @@ function fmtNumber(value: number): string {
 }
 
 function fmtK(value: number): string {
-  return `${(value / 1000).toFixed(0)}K DZD`;
+  return `€${(value / 1000).toFixed(0)}K`;
 }
 
 function fmtPct(value: number, decimals = 1): string {
-  return `${value.toFixed(decimals)}%`;
+  return `${Math.abs(value).toFixed(decimals)}%`;
 }
 
 // ── Main Component ──────────────────────────────────────────────────────────
@@ -498,14 +498,14 @@ export default function DashboardView() {
       {/* ── Header ──────────────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 animate-fade-in">
         <div>
-          <h1 className="text-2xl font-bold tracking-tight text-premium-gradient">Executive Dashboard</h1>
-          <p className="text-sm text-muted-foreground mt-1">Real-time business intelligence and KPI monitoring for enterprise operations.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">Executive Insights</h1>
+          <p className="text-sm text-muted-foreground mt-1">Operational business intelligence and performance monitoring for enterprise logistics.</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          <Button variant="outline" size="sm" className="rounded-xl h-9 gap-1.5 bg-card/50 text-xs shadow-sm">
+          <Button variant="outline" size="sm" className="rounded-xl h-9 gap-1.5 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shadow-sm font-bold">
             <Calendar className="w-4 h-4" /> Last 30 Days
           </Button>
-          <Button variant="outline" size="sm" className="rounded-xl h-9 gap-1.5 bg-card/50 text-xs shadow-sm">
+          <Button variant="outline" size="sm" className="rounded-xl h-9 gap-1.5 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shadow-sm font-bold">
             <FileDown className="w-4 h-4" /> Export Report
           </Button>
           <Button

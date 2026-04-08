@@ -236,12 +236,11 @@ export default function AnomaliesView() {
         <div className="space-y-1">
           <div className="flex items-center gap-2 mb-2">
             <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full rounded-full bg-slate-400 opacity-20"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-400"></span>
             </span>
             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Continuous Monitoring Active</span>
           </div>
-          <h1 className="text-2xl font-semibold tracking-tight text-foreground">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
             Integrity Journal
           </h1>
           <p className="text-muted-foreground text-sm font-medium">
@@ -290,7 +289,7 @@ export default function AnomaliesView() {
           <CardHeader className="p-8 border-b border-slate-100 dark:border-slate-900">
             <div className="flex items-center justify-between">
               <div>
-                <CardTitle className="text-lg font-semibold tracking-tight">Observation Intensity</CardTitle>
+                <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70">Observation Intensity</CardTitle>
                 <CardDescription className="text-xs font-medium opacity-60">Anomaly volume identified by automated collectors over 15 days</CardDescription>
               </div>
               <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-none font-bold">Standard Sampling</Badge>
@@ -357,9 +356,9 @@ export default function AnomaliesView() {
         </Card>
 
         {/* Severity Radial (Small) */}
-        <Card className="lg:col-span-4 rounded-[2.5rem] bg-card/30 backdrop-blur-2xl border-white/5 overflow-hidden ring-1 ring-white/10 shadow-2xl flex flex-col">
-          <CardHeader className="p-8 decoration-white/5">
-            <CardTitle className="text-lg font-bold tracking-tight text-center">Threat Split</CardTitle>
+        <Card className="lg:col-span-4 rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col">
+          <CardHeader className="p-8 border-b border-slate-50 dark:border-slate-900">
+            <CardTitle className="text-sm font-bold tracking-tight text-center uppercase opacity-70">Threat Split</CardTitle>
             <CardDescription className="text-center text-xs font-medium opacity-60">Categorized by potential impact</CardDescription>
           </CardHeader>
           <CardContent className="flex flex-col items-center justify-center flex-1">
@@ -384,8 +383,8 @@ export default function AnomaliesView() {
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-5xl font-black tracking-tighter tabular-nums">{data?.summary.total}</span>
-                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.3em] font-black mt-1">Total Risk</span>
+                <span className="text-5xl font-bold tracking-tighter tabular-nums text-foreground">{data?.summary.total}</span>
+                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.3em] font-bold mt-1">Total Risk</span>
               </div>
             </div>
             
@@ -424,11 +423,11 @@ export default function AnomaliesView() {
                 </div>
                 <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-1">{stat.name}</div>
                 <div className="text-4xl font-black tracking-tighter tabular-nums">{stat.detected}</div>
-                <div className="mt-6 h-1.5 w-full bg-white/5 rounded-full overflow-hidden">
+                <div className="mt-6 h-1 w-full bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${stat.accuracy}%` }}
-                    className="h-full bg-primary shadow-[0_0_12px_rgba(59,130,246,0.8)]"
+                    className="h-full bg-slate-400 dark:bg-slate-600"
                     transition={{ duration: 1, delay: i * 0.1 + 0.5 }}
                   />
                 </div>

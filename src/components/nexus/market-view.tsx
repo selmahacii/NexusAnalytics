@@ -240,9 +240,9 @@ export default function MarketView() {
           </p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
-          <div className="hidden sm:flex items-center gap-1.5 bg-emerald-500/5 px-2.5 py-1.5 rounded-lg border border-emerald-500/10">
-            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-            <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-tight">
+          <div className="hidden sm:flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-2.5 py-1.5 rounded-lg border border-slate-200 dark:border-slate-800">
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
+            <span className="text-[10px] font-bold text-slate-600 dark:text-slate-400 uppercase tracking-tight">
               4 Live Feeds Active
             </span>
           </div>
@@ -262,8 +262,8 @@ export default function MarketView() {
       </div>
 
       {/* ── Data Sources Panel ──────────────────────────────────── */}
-      <div className="bg-primary/5 border border-primary/10 rounded-2xl p-5 animate-fade-in shadow-sm">
-        <h4 className="text-sm font-bold text-primary mb-3 flex items-center gap-2">
+      <div className="bg-slate-50 dark:bg-slate-900/50 border border-slate-100 dark:border-slate-800 rounded-2xl p-5 animate-fade-in shadow-sm">
+        <h4 className="text-sm font-bold text-slate-600 dark:text-slate-400 mb-3 flex items-center gap-2">
           <Globe className="w-4 h-4" />
           External Data Sources
         </h4>
@@ -326,10 +326,10 @@ export default function MarketView() {
         <TabsContent value="overview" className="outline-none space-y-4">
           {data.macro.length > 0 ? (
             <>
-              <Card className="glass-card shadow-md">
-                <CardHeader className="pb-3">
-                  <CardTitle className="text-base font-bold text-premium-gradient flex items-center gap-2">
-                    <Landmark className="h-4 w-4 text-primary" />
+              <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+                <CardHeader className="pb-3 px-8 pt-6 border-b border-slate-50 dark:border-slate-900 mb-4">
+                  <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70 flex items-center gap-2">
+                    <Landmark className="h-4 w-4 text-slate-400" />
                     Macroeconomic Indicators — World Bank
                   </CardTitle>
                   <CardDescription className="text-xs">
@@ -355,7 +355,7 @@ export default function MarketView() {
               {/* Macro Cards */}
               <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
                 {data.macro.slice(0, 6).map((m, i) => (
-                  <Card key={i} className="glass-card shadow-sm card-hover">
+                  <Card key={i} className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
                     <CardContent className="pt-5 pb-4">
                       <div className="flex items-center justify-between mb-2">
                         <div className="flex items-center gap-2">
@@ -399,10 +399,10 @@ export default function MarketView() {
 
         {/* ── FX Rates ─────────────────────────────────────────── */}
         <TabsContent value="forex" className="outline-none space-y-4">
-          <Card className="glass-card shadow-md">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-bold text-premium-gradient flex items-center gap-2">
-                <Banknote className="h-4 w-4 text-primary" />
+          <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+            <CardHeader className="pb-3 px-8 pt-6 border-b border-slate-50 dark:border-slate-900 mb-4">
+              <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70 flex items-center gap-2">
+                <Banknote className="h-4 w-4 text-slate-400" />
                 Foreign Exchange Rates
               </CardTitle>
               <CardDescription className="text-xs">
@@ -447,10 +447,10 @@ export default function MarketView() {
 
         {/* ── Weather ──────────────────────────────────────────── */}
         <TabsContent value="weather" className="outline-none space-y-4">
-          <Card className="glass-card shadow-md">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-bold text-premium-gradient flex items-center gap-2">
-                <Cloud className="h-4 w-4 text-primary" />
+          <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+            <CardHeader className="pb-3 px-8 pt-6 border-b border-slate-50 dark:border-slate-900 mb-4">
+              <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70 flex items-center gap-2">
+                <Cloud className="h-4 w-4 text-slate-400" />
                 Weather Forecast — Logistics Planning
               </CardTitle>
               <CardDescription className="text-xs">
@@ -515,10 +515,10 @@ export default function MarketView() {
 
         {/* ── Country Risk ─────────────────────────────────────── */}
         <TabsContent value="geopolitical" className="outline-none space-y-4">
-          <Card className="glass-card shadow-md">
-            <CardHeader className="pb-3">
-              <CardTitle className="text-base font-bold text-premium-gradient flex items-center gap-2">
-                <Shield className="h-4 w-4 text-primary" />
+          <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+            <CardHeader className="pb-3 px-8 pt-6 border-b border-slate-50 dark:border-slate-900 mb-4">
+              <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70 flex items-center gap-2">
+                <Shield className="h-4 w-4 text-slate-400" />
                 Country Risk Profiles — REST Countries
               </CardTitle>
               <CardDescription className="text-xs">
