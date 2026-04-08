@@ -1,0 +1,602 @@
+[
+  {
+    "id": 51,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2024,
+    "value": 0.455370730483787,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 52,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2023,
+    "value": 0.489819143410423,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 53,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2022,
+    "value": 0.107187812155079,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 54,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2021,
+    "value": 0.466728479682941,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 55,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2020,
+    "value": 0.693816014772836,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 56,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2019,
+    "value": 0.713947308015691,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 57,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2018,
+    "value": 0.753576088552125,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 58,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2017,
+    "value": 0.647902696344894,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 59,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2016,
+    "value": 0.906300705997455,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 60,
+    "country": "DZ",
+    "indicator": "BX.KLT.DINV.WD.GD.ZS",
+    "indicatorName": "Foreign direct investment, net inflows (% of GDP)",
+    "year": 2015,
+    "value": -0.286832290676438,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.884Z"
+  },
+  {
+    "id": 31,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2024,
+    "value": 40.1345741170703,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 32,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2023,
+    "value": 43.7397984507007,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 33,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2022,
+    "value": 51.1900893683897,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 34,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2021,
+    "value": 46.8370592599607,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 35,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2020,
+    "value": 40.3897565625388,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 36,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2019,
+    "value": 46.5068426081672,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 37,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2018,
+    "value": 52.4361676779223,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 38,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2017,
+    "value": 49.8208161712587,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 39,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2016,
+    "value": 49.7609327925216,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 40,
+    "country": "DZ",
+    "indicator": "NE.TRD.GNFS.ZS",
+    "indicatorName": "Trade (% of GDP)",
+    "year": 2015,
+    "value": 53.2046225904145,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 41,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2024,
+    "value": 11.655,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 42,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2023,
+    "value": 11.645,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 43,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2022,
+    "value": 12.382,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 44,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2021,
+    "value": 13.656,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 45,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2020,
+    "value": 14.08,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 46,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2019,
+    "value": 12.302,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 47,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2018,
+    "value": 12.112,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 48,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2017,
+    "value": 12,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 49,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2016,
+    "value": 10.202,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 50,
+    "country": "DZ",
+    "indicator": "SL.UEM.TOTL.ZS",
+    "indicatorName": "Unemployment, total (% of total labor force) (modeled ILO estimate)",
+    "year": 2015,
+    "value": 11.206,
+    "source": "world_bank",
+    "fetchedAt": "2026-04-01T11:38:34.860Z"
+  },
+  {
+    "id": 30,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2015,
+    "value": 4.78444700693889,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.556Z"
+  },
+  {
+    "id": 29,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2016,
+    "value": 6.39769480268757,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.555Z"
+  },
+  {
+    "id": 28,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2017,
+    "value": 5.59111590961664,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.554Z"
+  },
+  {
+    "id": 27,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2018,
+    "value": 4.26999020467084,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.553Z"
+  },
+  {
+    "id": 26,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2019,
+    "value": 1.95176821052892,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.552Z"
+  },
+  {
+    "id": 25,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2020,
+    "value": 2.41513094083414,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.551Z"
+  },
+  {
+    "id": 24,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2021,
+    "value": 7.22606307415477,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.550Z"
+  },
+  {
+    "id": 23,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2022,
+    "value": 9.26551551551553,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.548Z"
+  },
+  {
+    "id": 21,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2024,
+    "value": 4.04611455313434,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.547Z"
+  },
+  {
+    "id": 22,
+    "country": "DZ",
+    "indicator": "FP.CPI.TOTL.ZG",
+    "indicatorName": "Inflation, consumer prices (annual %)",
+    "year": 2023,
+    "value": 9.32217375928322,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.547Z"
+  },
+  {
+    "id": 20,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2015,
+    "value": 3.20000000089023,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.546Z"
+  },
+  {
+    "id": 19,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2016,
+    "value": 3.90000000017621,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.545Z"
+  },
+  {
+    "id": 18,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2017,
+    "value": 1.49999999895587,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.544Z"
+  },
+  {
+    "id": 17,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2018,
+    "value": 1.40000000088281,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.543Z"
+  },
+  {
+    "id": 16,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2019,
+    "value": 0.899999999219148,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.542Z"
+  },
+  {
+    "id": 15,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2020,
+    "value": -4.99999999908597,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.541Z"
+  },
+  {
+    "id": 14,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2021,
+    "value": 3.79999999900707,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.540Z"
+  },
+  {
+    "id": 13,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2022,
+    "value": 3.60000000094915,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.539Z"
+  },
+  {
+    "id": 12,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2023,
+    "value": 4.10000000005964,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.538Z"
+  },
+  {
+    "id": 10,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2015,
+    "value": 187493855609.345,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.537Z"
+  },
+  {
+    "id": 11,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.KD.ZG",
+    "indicatorName": "GDP growth (annual %)",
+    "year": 2024,
+    "value": 3.69999999907979,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.537Z"
+  },
+  {
+    "id": 9,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2016,
+    "value": 180763839522.151,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.536Z"
+  },
+  {
+    "id": 8,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2017,
+    "value": 189880896903.073,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.535Z"
+  },
+  {
+    "id": 7,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2018,
+    "value": 194554483655.528,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.534Z"
+  },
+  {
+    "id": 6,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2019,
+    "value": 193459662090.677,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.533Z"
+  },
+  {
+    "id": 5,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2020,
+    "value": 164873415325.201,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.532Z"
+  },
+  {
+    "id": 4,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2021,
+    "value": 186231205262.082,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.524Z"
+  },
+  {
+    "id": 3,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2022,
+    "value": 225581644702.568,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.523Z"
+  },
+  {
+    "id": 2,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2023,
+    "value": 247923887214.655,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.522Z"
+  },
+  {
+    "id": 1,
+    "country": "DZ",
+    "indicator": "NY.GDP.MKTP.CD",
+    "indicatorName": "GDP (current US$)",
+    "year": 2024,
+    "value": 269322281664.773,
+    "source": "world_bank",
+    "fetchedAt": "2026-03-31T23:32:29.520Z"
+  }
+]

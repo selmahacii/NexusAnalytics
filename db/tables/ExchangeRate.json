@@ -1,0 +1,722 @@
+[
+  {
+    "id": 61,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.63,
+    "timestamp": "2026-04-01T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 31,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.64,
+    "timestamp": "2026-03-31T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 1,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.59,
+    "timestamp": "2026-03-31T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 62,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.66,
+    "timestamp": "2026-03-31T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 32,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.88,
+    "timestamp": "2026-03-30T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 2,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.87,
+    "timestamp": "2026-03-30T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 63,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.86,
+    "timestamp": "2026-03-30T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 33,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.93,
+    "timestamp": "2026-03-29T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 3,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.99,
+    "timestamp": "2026-03-29T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 71,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.1,
+    "timestamp": "2026-03-29T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 34,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.93,
+    "timestamp": "2026-03-28T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 4,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.02,
+    "timestamp": "2026-03-28T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 64,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.09,
+    "timestamp": "2026-03-28T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 35,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.03,
+    "timestamp": "2026-03-27T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 5,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.81,
+    "timestamp": "2026-03-27T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 65,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.67,
+    "timestamp": "2026-03-27T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 36,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.69,
+    "timestamp": "2026-03-26T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 6,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.82,
+    "timestamp": "2026-03-26T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 69,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.63,
+    "timestamp": "2026-03-26T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 37,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.58,
+    "timestamp": "2026-03-25T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 7,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.67,
+    "timestamp": "2026-03-25T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 66,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.21,
+    "timestamp": "2026-03-25T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 38,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.24,
+    "timestamp": "2026-03-24T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 8,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.2,
+    "timestamp": "2026-03-24T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 74,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.19,
+    "timestamp": "2026-03-24T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 39,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.15,
+    "timestamp": "2026-03-23T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 9,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.13,
+    "timestamp": "2026-03-23T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 78,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.97,
+    "timestamp": "2026-03-23T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 40,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.88,
+    "timestamp": "2026-03-22T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 10,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.06,
+    "timestamp": "2026-03-22T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 79,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.12,
+    "timestamp": "2026-03-22T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 41,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.97,
+    "timestamp": "2026-03-21T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 11,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.06,
+    "timestamp": "2026-03-21T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 67,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.2,
+    "timestamp": "2026-03-21T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 42,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.02,
+    "timestamp": "2026-03-20T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 12,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.3,
+    "timestamp": "2026-03-20T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 68,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.27,
+    "timestamp": "2026-03-20T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 43,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.48,
+    "timestamp": "2026-03-19T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 13,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.45,
+    "timestamp": "2026-03-19T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 70,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.74,
+    "timestamp": "2026-03-19T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 44,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.48,
+    "timestamp": "2026-03-18T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 14,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.53,
+    "timestamp": "2026-03-18T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 72,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.77,
+    "timestamp": "2026-03-18T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 45,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.89,
+    "timestamp": "2026-03-17T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 15,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.93,
+    "timestamp": "2026-03-17T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 77,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.89,
+    "timestamp": "2026-03-17T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 46,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.94,
+    "timestamp": "2026-03-16T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 16,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.9,
+    "timestamp": "2026-03-16T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 73,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.92,
+    "timestamp": "2026-03-16T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 47,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.97,
+    "timestamp": "2026-03-15T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 17,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.97,
+    "timestamp": "2026-03-15T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 80,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.85,
+    "timestamp": "2026-03-15T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 48,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.81,
+    "timestamp": "2026-03-14T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 18,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.77,
+    "timestamp": "2026-03-14T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 75,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.75,
+    "timestamp": "2026-03-14T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 49,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.81,
+    "timestamp": "2026-03-13T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 19,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.66,
+    "timestamp": "2026-03-13T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 76,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.53,
+    "timestamp": "2026-03-13T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 50,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.6,
+    "timestamp": "2026-03-12T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 20,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.37,
+    "timestamp": "2026-03-12T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 81,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.22,
+    "timestamp": "2026-03-12T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 51,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.09,
+    "timestamp": "2026-03-11T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 21,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.19,
+    "timestamp": "2026-03-11T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 82,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.19,
+    "timestamp": "2026-03-11T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 52,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.98,
+    "timestamp": "2026-03-10T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 22,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.06,
+    "timestamp": "2026-03-10T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 89,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.96,
+    "timestamp": "2026-03-10T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 53,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.87,
+    "timestamp": "2026-03-09T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 23,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 133.95,
+    "timestamp": "2026-03-09T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 83,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.17,
+    "timestamp": "2026-03-09T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 54,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.03,
+    "timestamp": "2026-03-08T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 24,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.08,
+    "timestamp": "2026-03-08T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 90,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.28,
+    "timestamp": "2026-03-08T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 55,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.13,
+    "timestamp": "2026-03-07T23:32:31.316Z",
+    "source": "simulated"
+  },
+  {
+    "id": 25,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.19,
+    "timestamp": "2026-03-07T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 84,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.49,
+    "timestamp": "2026-03-07T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 56,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.57,
+    "timestamp": "2026-03-06T23:32:31.317Z",
+    "source": "simulated"
+  },
+  {
+    "id": 26,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.57,
+    "timestamp": "2026-03-06T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 88,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.66,
+    "timestamp": "2026-03-06T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 57,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.59,
+    "timestamp": "2026-03-05T23:32:31.317Z",
+    "source": "simulated"
+  },
+  {
+    "id": 27,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.84,
+    "timestamp": "2026-03-05T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 85,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.77,
+    "timestamp": "2026-03-05T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 58,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.81,
+    "timestamp": "2026-03-04T23:32:31.317Z",
+    "source": "simulated"
+  },
+  {
+    "id": 28,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.88,
+    "timestamp": "2026-03-04T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 86,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.13,
+    "timestamp": "2026-03-04T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 59,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.08,
+    "timestamp": "2026-03-03T23:32:31.317Z",
+    "source": "simulated"
+  },
+  {
+    "id": 29,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.86,
+    "timestamp": "2026-03-03T21:46:19.909Z",
+    "source": "simulated"
+  },
+  {
+    "id": 87,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.88,
+    "timestamp": "2026-03-03T11:38:37.238Z",
+    "source": "simulated"
+  },
+  {
+    "id": 60,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 134.89,
+    "timestamp": "2026-03-02T23:32:31.317Z",
+    "source": "simulated"
+  },
+  {
+    "id": 30,
+    "baseCurrency": "USD",
+    "quoteCurrency": "DZD",
+    "rate": 135.07,
+    "timestamp": "2026-03-02T21:46:19.909Z",
+    "source": "simulated"
+  }
+]

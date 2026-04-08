@@ -1,0 +1,133 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id              String            @id @default(cuid())
+  name            String
+  sector          String?
+  region          String?
+  country         String            @default("DZ")
+  size            String?
+  creditScore     Int?
+  daysToPayAvg    Float             @default(30)
+  churnRisk       Float             @default(0.1)
+  lifetimeValue   Float?
+  acquisitionDate DateTime?
+  lastOrderDate   DateTime?
+  totalOrders     Int               @default(0)
+  totalRevenue    Float             @default(0)
+  isActive        Boolean           @default(true)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+  transactions    SaleTransaction[]
+
+  @@index([churnRisk])
+  @@index([region])
+  @@index([country])
+}
+
+model Product {
+  id           String   @id @default(cuid())
+  sku          String   @unique
+  name         String
+  category     String?
+  costPrice    Float?
+  listPrice    Float?
+  marginPct    Float?
+  leadTimeDays Int      @default(14)
+  reorderPoint Int      @default(50)
+  currentStock Int      @default(0)
+  supplierId   String?
+  weightKg     Float?
+  isActive     Boolean  @default(true)
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  @@index([category])
+}
+
+model SaleTransaction {
+  id           String    @id @default(cuid())
+  date         DateTime
+  customerId   String?
+  productId    String?
+  region       String?
+  quantity     Int
+  unitPrice    Float
+  discountPct  Float     @default(0)
+  channel      String?
+  paymentTerms Int       @default(30)
+  wasLate      Boolean   @default(false)
+  revenue      Float?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+  customer     Customer? @relation(fields: [customerId], references: [id])
+
+  @@index([date])
+  @@index([customerId])
+  @@index([productId])
+  @@index([region])
+}
+
+model ForecastOutput {
+  id               Int      @id @default(autoincrement())
+  modelName        String
+  forecastDate     DateTime @default(now())
+  targetDate       DateTime
+  predictedValue   Float
+  lowerBound       Float?
+  upperBound       Float?
+  confidence       Float?
+  featuresSnapshot String?  @default("{}")
+  generatedAt      DateTime @default(now())
+
+  @@index([modelName, targetDate])
+}
+
+model DataIngestionLog {
+  id           Int       @id @default(autoincrement())
+  sourceName   String
+  startedAt    DateTime  @default(now())
+  completedAt  DateTime?
+  status       String    @default("running")
+  rowsFetched  Int       @default(0)
+  rowsStored   Int       @default(0)
+  errorMessage String?
+  durationMs   Int?
+  metadata     String    @default("{}")
+
+  @@index([sourceName])
+  @@index([startedAt])
+}
+
+model ModelVersion {
+  id             String    @id @default(cuid())
+  modelName      String
+  version        String
+  status         String
+  metrics        String    @default("{}")
+  featureColumns String    @default("[]")
+  trainingRows   Int       @default(0)
+  trainedAt      DateTime?
+  isActive       Boolean   @default(true)
+  notes          String?
+
+  @@index([modelName])
+}
+
+model AnomalyEvent {
+  id          String   @id @default(cuid())
+  severity    String
+  metricName  String
+  metricValue Float
+  detectedAt  DateTime @default(now())
+
+  @@index([metricName])
+  @@index([detectedAt])
+}

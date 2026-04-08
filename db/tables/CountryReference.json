@@ -1,0 +1,2502 @@
+[
+  {
+    "countryCode": "AF",
+    "name": "Afghanistan",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 43844000,
+    "currencies": "{\"AFN\":{\"name\":\"Afghan afghani\",\"symbol\":\"؋\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "AL",
+    "name": "Albania",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 2363314,
+    "currencies": "{\"ALL\":{\"name\":\"Albanian lek\",\"symbol\":\"L\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "DZ",
+    "name": "Algeria",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 47400000,
+    "currencies": "{\"DZD\":{\"name\":\"Algerian dinar\",\"symbol\":\"د.ج\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "AS",
+    "name": "American Samoa",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 49710,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "AD",
+    "name": "Andorra",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 88406,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "AO",
+    "name": "Angola",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 36170961,
+    "currencies": "{\"AOA\":{\"name\":\"Angolan kwanza\",\"symbol\":\"Kz\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "AI",
+    "name": "Anguilla",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 16010,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "AQ",
+    "name": "Antarctica",
+    "region": "Antarctic",
+    "subregion": null,
+    "population": 1300,
+    "currencies": "{}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "AG",
+    "name": "Antigua and Barbuda",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 103603,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "AR",
+    "name": "Argentina",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 46735004,
+    "currencies": "{\"ARS\":{\"name\":\"Argentine peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "AM",
+    "name": "Armenia",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 3076200,
+    "currencies": "{\"AMD\":{\"name\":\"Armenian dram\",\"symbol\":\"֏\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "AW",
+    "name": "Aruba",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 107566,
+    "currencies": "{\"AWG\":{\"name\":\"Aruban florin\",\"symbol\":\"ƒ\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "AU",
+    "name": "Australia",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "population": 27536874,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "AT",
+    "name": "Austria",
+    "region": "Europe",
+    "subregion": "Central Europe",
+    "population": 9200931,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "AZ",
+    "name": "Azerbaijan",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 10241722,
+    "currencies": "{\"AZN\":{\"name\":\"Azerbaijani manat\",\"symbol\":\"₼\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "BS",
+    "name": "Bahamas",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 398165,
+    "currencies": "{\"BSD\":{\"name\":\"Bahamian dollar\",\"symbol\":\"$\"},\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.204Z"
+  },
+  {
+    "countryCode": "BH",
+    "name": "Bahrain",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 1594654,
+    "currencies": "{\"BHD\":{\"name\":\"Bahraini dinar\",\"symbol\":\".د.ب\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "BD",
+    "name": "Bangladesh",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 169828911,
+    "currencies": "{\"BDT\":{\"name\":\"Bangladeshi taka\",\"symbol\":\"৳\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.193Z"
+  },
+  {
+    "countryCode": "BB",
+    "name": "Barbados",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 267800,
+    "currencies": "{\"BBD\":{\"name\":\"Barbadian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "BY",
+    "name": "Belarus",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "population": 9109280,
+    "currencies": "{\"BYN\":{\"name\":\"Belarusian ruble\",\"symbol\":\"Br\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "BE",
+    "name": "Belgium",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 11825551,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "BZ",
+    "name": "Belize",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 417634,
+    "currencies": "{\"BZD\":{\"name\":\"Belize dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "BJ",
+    "name": "Benin",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 13224860,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "BM",
+    "name": "Bermuda",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": 64055,
+    "currencies": "{\"BMD\":{\"name\":\"Bermudian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "BT",
+    "name": "Bhutan",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 784043,
+    "currencies": "{\"BTN\":{\"name\":\"Bhutanese ngultrum\",\"symbol\":\"Nu.\"},\"INR\":{\"name\":\"Indian rupee\",\"symbol\":\"₹\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "BO",
+    "name": "Bolivia",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 11365333,
+    "currencies": "{\"BOB\":{\"name\":\"Bolivian boliviano\",\"symbol\":\"Bs.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "BA",
+    "name": "Bosnia and Herzegovina",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 3422000,
+    "currencies": "{\"BAM\":{\"name\":\"Bosnia and Herzegovina convertible mark\",\"symbol\":\"KM\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "BW",
+    "name": "Botswana",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "population": 2359609,
+    "currencies": "{\"BWP\":{\"name\":\"Botswana pula\",\"symbol\":\"P\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "BV",
+    "name": "Bouvet Island",
+    "region": "Antarctic",
+    "subregion": null,
+    "population": null,
+    "currencies": "{}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "BR",
+    "name": "Brazil",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 213421037,
+    "currencies": "{\"BRL\":{\"name\":\"Brazilian real\",\"symbol\":\"R$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "IO",
+    "name": "British Indian Ocean Territory",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": null,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "VG",
+    "name": "British Virgin Islands",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 39471,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "BN",
+    "name": "Brunei",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 455500,
+    "currencies": "{\"BND\":{\"name\":\"Brunei dollar\",\"symbol\":\"$\"},\"SGD\":{\"name\":\"Singapore dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "BG",
+    "name": "Bulgaria",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 6437360,
+    "currencies": "{\"BGN\":{\"name\":\"Bulgarian lev\",\"symbol\":\"лв\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "BF",
+    "name": "Burkina Faso",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 24070553,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "BI",
+    "name": "Burundi",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 12332788,
+    "currencies": "{\"BIF\":{\"name\":\"Burundian franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "KH",
+    "name": "Cambodia",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 17577760,
+    "currencies": "{\"KHR\":{\"name\":\"Cambodian riel\",\"symbol\":\"៛\"},\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "CM",
+    "name": "Cameroon",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 29442327,
+    "currencies": "{\"XAF\":{\"name\":\"Central African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "CA",
+    "name": "Canada",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": 41651653,
+    "currencies": "{\"CAD\":{\"name\":\"Canadian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "CV",
+    "name": "Cape Verde",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 491233,
+    "currencies": "{\"CVE\":{\"name\":\"Cape Verdean escudo\",\"symbol\":\"Esc\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "BQ",
+    "name": "Caribbean Netherlands",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 31980,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "KY",
+    "name": "Cayman Islands",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 84738,
+    "currencies": "{\"KYD\":{\"name\":\"Cayman Islands dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "CF",
+    "name": "Central African Republic",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 6470307,
+    "currencies": "{\"XAF\":{\"name\":\"Central African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "TD",
+    "name": "Chad",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 19340757,
+    "currencies": "{\"XAF\":{\"name\":\"Central African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "CL",
+    "name": "Chile",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 20206953,
+    "currencies": "{\"CLP\":{\"name\":\"Chilean peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "CN",
+    "name": "China",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 1408280000,
+    "currencies": "{\"CNY\":{\"name\":\"Chinese yuan\",\"symbol\":\"¥\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "CX",
+    "name": "Christmas Island",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "population": 1692,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "CC",
+    "name": "Cocos (Keeling) Islands",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "population": 593,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "CO",
+    "name": "Colombia",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 53057212,
+    "currencies": "{\"COP\":{\"name\":\"Colombian peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "KM",
+    "name": "Comoros",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 919901,
+    "currencies": "{\"KMF\":{\"name\":\"Comorian franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "CK",
+    "name": "Cook Islands",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 15040,
+    "currencies": "{\"CKD\":{\"name\":\"Cook Islands dollar\",\"symbol\":\"$\"},\"NZD\":{\"name\":\"New Zealand dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "CR",
+    "name": "Costa Rica",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 5309625,
+    "currencies": "{\"CRC\":{\"name\":\"Costa Rican colón\",\"symbol\":\"₡\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "HR",
+    "name": "Croatia",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 3866233,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "CU",
+    "name": "Cuba",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 9748007,
+    "currencies": "{\"CUC\":{\"name\":\"Cuban convertible peso\",\"symbol\":\"$\"},\"CUP\":{\"name\":\"Cuban peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "CW",
+    "name": "Curaçao",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 156115,
+    "currencies": "{\"ANG\":{\"name\":\"Netherlands Antillean guilder\",\"symbol\":\"ƒ\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "CY",
+    "name": "Cyprus",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 1442614,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "CZ",
+    "name": "Czechia",
+    "region": "Europe",
+    "subregion": "Central Europe",
+    "population": 10882341,
+    "currencies": "{\"CZK\":{\"name\":\"Czech koruna\",\"symbol\":\"Kč\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "CD",
+    "name": "DR Congo",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 112832000,
+    "currencies": "{\"CDF\":{\"name\":\"Congolese franc\",\"symbol\":\"FC\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "DK",
+    "name": "Denmark",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 6011488,
+    "currencies": "{\"DKK\":{\"name\":\"Danish krone\",\"symbol\":\"kr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "DJ",
+    "name": "Djibouti",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 1066809,
+    "currencies": "{\"DJF\":{\"name\":\"Djiboutian franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "DM",
+    "name": "Dominica",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 67408,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "DO",
+    "name": "Dominican Republic",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 10771504,
+    "currencies": "{\"DOP\":{\"name\":\"Dominican peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "EC",
+    "name": "Ecuador",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 18103660,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "EG",
+    "name": "Egypt",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 107271260,
+    "currencies": "{\"EGP\":{\"name\":\"Egyptian pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "SV",
+    "name": "El Salvador",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 6029976,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "GQ",
+    "name": "Equatorial Guinea",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 1668768,
+    "currencies": "{\"XAF\":{\"name\":\"Central African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "ER",
+    "name": "Eritrea",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 3607000,
+    "currencies": "{\"ERN\":{\"name\":\"Eritrean nakfa\",\"symbol\":\"Nfk\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.091Z"
+  },
+  {
+    "countryCode": "EE",
+    "name": "Estonia",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 1369995,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "SZ",
+    "name": "Eswatini",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "population": 1235549,
+    "currencies": "{\"SZL\":{\"name\":\"Swazi lilangeni\",\"symbol\":\"L\"},\"ZAR\":{\"name\":\"South African rand\",\"symbol\":\"R\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "ET",
+    "name": "Ethiopia",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 111652998,
+    "currencies": "{\"ETB\":{\"name\":\"Ethiopian birr\",\"symbol\":\"Br\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "FK",
+    "name": "Falkland Islands",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 3662,
+    "currencies": "{\"FKP\":{\"name\":\"Falkland Islands pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "FO",
+    "name": "Faroe Islands",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 54885,
+    "currencies": "{\"DKK\":{\"name\":\"Danish krone\",\"symbol\":\"kr\"},\"FOK\":{\"name\":\"Faroese króna\",\"symbol\":\"kr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "FJ",
+    "name": "Fiji",
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "population": 900869,
+    "currencies": "{\"FJD\":{\"name\":\"Fijian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "FI",
+    "name": "Finland",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 5650325,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "FR",
+    "name": "France",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 66351959,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "GF",
+    "name": "French Guiana",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 292354,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "PF",
+    "name": "French Polynesia",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 279500,
+    "currencies": "{\"XPF\":{\"name\":\"CFP franc\",\"symbol\":\"₣\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "TF",
+    "name": "French Southern and Antarctic Lands",
+    "region": "Antarctic",
+    "subregion": null,
+    "population": 400,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "GA",
+    "name": "Gabon",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 2469296,
+    "currencies": "{\"XAF\":{\"name\":\"Central African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "GM",
+    "name": "Gambia",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 2422712,
+    "currencies": "{\"GMD\":{\"name\":\"dalasi\",\"symbol\":\"D\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "GE",
+    "name": "Georgia",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 4000921,
+    "currencies": "{\"GEL\":{\"name\":\"lari\",\"symbol\":\"₾\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "DE",
+    "name": "Germany",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 83491249,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "GH",
+    "name": "Ghana",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 33742380,
+    "currencies": "{\"GHS\":{\"name\":\"Ghanaian cedi\",\"symbol\":\"₵\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.193Z"
+  },
+  {
+    "countryCode": "GI",
+    "name": "Gibraltar",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 38000,
+    "currencies": "{\"GIP\":{\"name\":\"Gibraltar pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "GR",
+    "name": "Greece",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 10400720,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "GL",
+    "name": "Greenland",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": 56542,
+    "currencies": "{\"DKK\":{\"name\":\"krone\",\"symbol\":\"kr.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.091Z"
+  },
+  {
+    "countryCode": "GD",
+    "name": "Grenada",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 109021,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "GP",
+    "name": "Guadeloupe",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 378561,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "GU",
+    "name": "Guam",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 153836,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "GT",
+    "name": "Guatemala",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 18079810,
+    "currencies": "{\"GTQ\":{\"name\":\"Guatemalan quetzal\",\"symbol\":\"Q\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "GG",
+    "name": "Guernsey",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 64781,
+    "currencies": "{\"GBP\":{\"name\":\"British pound\",\"symbol\":\"£\"},\"GGP\":{\"name\":\"Guernsey pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "GN",
+    "name": "Guinea",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 14363931,
+    "currencies": "{\"GNF\":{\"name\":\"Guinean franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "GW",
+    "name": "Guinea-Bissau",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 1781308,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "GY",
+    "name": "Guyana",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 772975,
+    "currencies": "{\"GYD\":{\"name\":\"Guyanese dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "HT",
+    "name": "Haiti",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 11867032,
+    "currencies": "{\"HTG\":{\"name\":\"Haitian gourde\",\"symbol\":\"G\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "HM",
+    "name": "Heard Island and McDonald Islands",
+    "region": "Antarctic",
+    "subregion": null,
+    "population": null,
+    "currencies": "{}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "HN",
+    "name": "Honduras",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 9892632,
+    "currencies": "{\"HNL\":{\"name\":\"Honduran lempira\",\"symbol\":\"L\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "HK",
+    "name": "Hong Kong",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 7527500,
+    "currencies": "{\"HKD\":{\"name\":\"Hong Kong dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "HU",
+    "name": "Hungary",
+    "region": "Europe",
+    "subregion": "Central Europe",
+    "population": 9539502,
+    "currencies": "{\"HUF\":{\"name\":\"Hungarian forint\",\"symbol\":\"Ft\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.107Z"
+  },
+  {
+    "countryCode": "IS",
+    "name": "Iceland",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 391810,
+    "currencies": "{\"ISK\":{\"name\":\"Icelandic króna\",\"symbol\":\"kr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "IN",
+    "name": "India",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 1417492000,
+    "currencies": "{\"INR\":{\"name\":\"Indian rupee\",\"symbol\":\"₹\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "ID",
+    "name": "Indonesia",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 284438782,
+    "currencies": "{\"IDR\":{\"name\":\"Indonesian rupiah\",\"symbol\":\"Rp\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "IR",
+    "name": "Iran",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 85961000,
+    "currencies": "{\"IRR\":{\"name\":\"Iranian rial\",\"symbol\":\"﷼\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "IQ",
+    "name": "Iraq",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 46118793,
+    "currencies": "{\"IQD\":{\"name\":\"Iraqi dinar\",\"symbol\":\"ع.د\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "IE",
+    "name": "Ireland",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 5458600,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "IM",
+    "name": "Isle of Man",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 84530,
+    "currencies": "{\"GBP\":{\"name\":\"British pound\",\"symbol\":\"£\"},\"IMP\":{\"name\":\"Manx pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "IL",
+    "name": "Israel",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 10134800,
+    "currencies": "{\"ILS\":{\"name\":\"Israeli new shekel\",\"symbol\":\"₪\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "IT",
+    "name": "Italy",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 58927633,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "CI",
+    "name": "Ivory Coast",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 31719275,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "JM",
+    "name": "Jamaica",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 2825544,
+    "currencies": "{\"JMD\":{\"name\":\"Jamaican dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "JP",
+    "name": "Japan",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 123210000,
+    "currencies": "{\"JPY\":{\"name\":\"Japanese yen\",\"symbol\":\"¥\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "JE",
+    "name": "Jersey",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 103267,
+    "currencies": "{\"GBP\":{\"name\":\"British pound\",\"symbol\":\"£\"},\"JEP\":{\"name\":\"Jersey pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "JO",
+    "name": "Jordan",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 11734000,
+    "currencies": "{\"JOD\":{\"name\":\"Jordanian dinar\",\"symbol\":\"د.ا\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "KZ",
+    "name": "Kazakhstan",
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "population": 20426568,
+    "currencies": "{\"KZT\":{\"name\":\"Kazakhstani tenge\",\"symbol\":\"₸\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "KE",
+    "name": "Kenya",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 53330978,
+    "currencies": "{\"KES\":{\"name\":\"Kenyan shilling\",\"symbol\":\"Sh\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "KI",
+    "name": "Kiribati",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 120740,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"},\"KID\":{\"name\":\"Kiribati dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "XK",
+    "name": "Kosovo",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 1585566,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "KW",
+    "name": "Kuwait",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 4881254,
+    "currencies": "{\"KWD\":{\"name\":\"Kuwaiti dinar\",\"symbol\":\"د.ك\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "KG",
+    "name": "Kyrgyzstan",
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "population": 7281800,
+    "currencies": "{\"KGS\":{\"name\":\"Kyrgyzstani som\",\"symbol\":\"с\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "LA",
+    "name": "Laos",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 7647000,
+    "currencies": "{\"LAK\":{\"name\":\"Lao kip\",\"symbol\":\"₭\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "LV",
+    "name": "Latvia",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 1829000,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "LB",
+    "name": "Lebanon",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 5490000,
+    "currencies": "{\"LBP\":{\"name\":\"Lebanese pound\",\"symbol\":\"ل.ل\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "LS",
+    "name": "Lesotho",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "population": 2116427,
+    "currencies": "{\"LSL\":{\"name\":\"Lesotho loti\",\"symbol\":\"L\"},\"ZAR\":{\"name\":\"South African rand\",\"symbol\":\"R\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "LR",
+    "name": "Liberia",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 5248621,
+    "currencies": "{\"LRD\":{\"name\":\"Liberian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "LY",
+    "name": "Libya",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 7459000,
+    "currencies": "{\"LYD\":{\"name\":\"Libyan dinar\",\"symbol\":\"ل.د\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.107Z"
+  },
+  {
+    "countryCode": "LI",
+    "name": "Liechtenstein",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 40900,
+    "currencies": "{\"CHF\":{\"name\":\"Swiss franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "LT",
+    "name": "Lithuania",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 2894886,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "LU",
+    "name": "Luxembourg",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 681973,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.204Z"
+  },
+  {
+    "countryCode": "MO",
+    "name": "Macau",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 685900,
+    "currencies": "{\"MOP\":{\"name\":\"Macanese pataca\",\"symbol\":\"P\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "MG",
+    "name": "Madagascar",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 31727042,
+    "currencies": "{\"MGA\":{\"name\":\"Malagasy ariary\",\"symbol\":\"Ar\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "MW",
+    "name": "Malawi",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 20734262,
+    "currencies": "{\"MWK\":{\"name\":\"Malawian kwacha\",\"symbol\":\"MK\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "MY",
+    "name": "Malaysia",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 34231700,
+    "currencies": "{\"MYR\":{\"name\":\"Malaysian ringgit\",\"symbol\":\"RM\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "MV",
+    "name": "Maldives",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 515132,
+    "currencies": "{\"MVR\":{\"name\":\"Maldivian rufiyaa\",\"symbol\":\".ރ\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "ML",
+    "name": "Mali",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 22395489,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "MT",
+    "name": "Malta",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 574250,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "MH",
+    "name": "Marshall Islands",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 42418,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "MQ",
+    "name": "Martinique",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 349925,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "MR",
+    "name": "Mauritania",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 4927532,
+    "currencies": "{\"MRU\":{\"name\":\"Mauritanian ouguiya\",\"symbol\":\"UM\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "MU",
+    "name": "Mauritius",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 1243741,
+    "currencies": "{\"MUR\":{\"name\":\"Mauritian rupee\",\"symbol\":\"₨\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "YT",
+    "name": "Mayotte",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 320901,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "MX",
+    "name": "Mexico",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": 130575786,
+    "currencies": "{\"MXN\":{\"name\":\"Mexican peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "FM",
+    "name": "Micronesia",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 105564,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "MD",
+    "name": "Moldova",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "population": 2749076,
+    "currencies": "{\"MDL\":{\"name\":\"Moldovan leu\",\"symbol\":\"L\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "MC",
+    "name": "Monaco",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 38423,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "MN",
+    "name": "Mongolia",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 3544835,
+    "currencies": "{\"MNT\":{\"name\":\"Mongolian tögrög\",\"symbol\":\"₮\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "ME",
+    "name": "Montenegro",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 623327,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "MS",
+    "name": "Montserrat",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 4386,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "MA",
+    "name": "Morocco",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 36828330,
+    "currencies": "{\"MAD\":{\"name\":\"Moroccan dirham\",\"symbol\":\"د.م.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "MZ",
+    "name": "Mozambique",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 34090466,
+    "currencies": "{\"MZN\":{\"name\":\"Mozambican metical\",\"symbol\":\"MT\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "MM",
+    "name": "Myanmar",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 51316756,
+    "currencies": "{\"MMK\":{\"name\":\"Burmese kyat\",\"symbol\":\"Ks\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "NA",
+    "name": "Namibia",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "population": 3022401,
+    "currencies": "{\"NAD\":{\"name\":\"Namibian dollar\",\"symbol\":\"$\"},\"ZAR\":{\"name\":\"South African rand\",\"symbol\":\"R\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "NR",
+    "name": "Nauru",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 11680,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "NP",
+    "name": "Nepal",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 29911840,
+    "currencies": "{\"NPR\":{\"name\":\"Nepalese rupee\",\"symbol\":\"₨\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "NL",
+    "name": "Netherlands",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 18100436,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "NC",
+    "name": "New Caledonia",
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "population": 264596,
+    "currencies": "{\"XPF\":{\"name\":\"CFP franc\",\"symbol\":\"₣\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "NZ",
+    "name": "New Zealand",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "population": 5324700,
+    "currencies": "{\"NZD\":{\"name\":\"New Zealand dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "NI",
+    "name": "Nicaragua",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 6803886,
+    "currencies": "{\"NIO\":{\"name\":\"Nicaraguan córdoba\",\"symbol\":\"C$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "NE",
+    "name": "Niger",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 26312034,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "NG",
+    "name": "Nigeria",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 223800000,
+    "currencies": "{\"NGN\":{\"name\":\"Nigerian naira\",\"symbol\":\"₦\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "NU",
+    "name": "Niue",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 1681,
+    "currencies": "{\"NZD\":{\"name\":\"New Zealand dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "NF",
+    "name": "Norfolk Island",
+    "region": "Oceania",
+    "subregion": "Australia and New Zealand",
+    "population": 2188,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "KP",
+    "name": "North Korea",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 25950000,
+    "currencies": "{\"KPW\":{\"name\":\"North Korean won\",\"symbol\":\"₩\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "MK",
+    "name": "North Macedonia",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 1822612,
+    "currencies": "{\"MKD\":{\"name\":\"denar\",\"symbol\":\"den\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "MP",
+    "name": "Northern Mariana Islands",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 47329,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "NO",
+    "name": "Norway",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 5606944,
+    "currencies": "{\"NOK\":{\"name\":\"Norwegian krone\",\"symbol\":\"kr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.193Z"
+  },
+  {
+    "countryCode": "OM",
+    "name": "Oman",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 5343630,
+    "currencies": "{\"OMR\":{\"name\":\"Omani rial\",\"symbol\":\"ر.ع.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.204Z"
+  },
+  {
+    "countryCode": "PK",
+    "name": "Pakistan",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 241499431,
+    "currencies": "{\"PKR\":{\"name\":\"Pakistani rupee\",\"symbol\":\"₨\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "PW",
+    "name": "Palau",
+    "region": "Oceania",
+    "subregion": "Micronesia",
+    "population": 16733,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "PS",
+    "name": "Palestine",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 5483450,
+    "currencies": "{\"EGP\":{\"name\":\"Egyptian pound\",\"symbol\":\"E£\"},\"ILS\":{\"name\":\"Israeli new shekel\",\"symbol\":\"₪\"},\"JOD\":{\"name\":\"Jordanian dinar\",\"symbol\":\"JD\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "PA",
+    "name": "Panama",
+    "region": "Americas",
+    "subregion": "Central America",
+    "population": 4064780,
+    "currencies": "{\"PAB\":{\"name\":\"Panamanian balboa\",\"symbol\":\"B/.\"},\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "PG",
+    "name": "Papua New Guinea",
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "population": 11781559,
+    "currencies": "{\"PGK\":{\"name\":\"Papua New Guinean kina\",\"symbol\":\"K\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "PY",
+    "name": "Paraguay",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 6109644,
+    "currencies": "{\"PYG\":{\"name\":\"Paraguayan guaraní\",\"symbol\":\"₲\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "PE",
+    "name": "Peru",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 34350244,
+    "currencies": "{\"PEN\":{\"name\":\"Peruvian sol\",\"symbol\":\"S/ \"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "PH",
+    "name": "Philippines",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 114123600,
+    "currencies": "{\"PHP\":{\"name\":\"Philippine peso\",\"symbol\":\"₱\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "PN",
+    "name": "Pitcairn Islands",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 35,
+    "currencies": "{\"NZD\":{\"name\":\"New Zealand dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "PL",
+    "name": "Poland",
+    "region": "Europe",
+    "subregion": "Central Europe",
+    "population": 37392000,
+    "currencies": "{\"PLN\":{\"name\":\"Polish złoty\",\"symbol\":\"zł\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "PT",
+    "name": "Portugal",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 10749635,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "PR",
+    "name": "Puerto Rico",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 3203295,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "QA",
+    "name": "Qatar",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 3173024,
+    "currencies": "{\"QAR\":{\"name\":\"Qatari riyal\",\"symbol\":\"ر.ق\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "CG",
+    "name": "Republic of the Congo",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 6142180,
+    "currencies": "{\"XAF\":{\"name\":\"Central African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "RO",
+    "name": "Romania",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 19036031,
+    "currencies": "{\"RON\":{\"name\":\"Romanian leu\",\"symbol\":\"lei\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "RU",
+    "name": "Russia",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "population": 146028325,
+    "currencies": "{\"RUB\":{\"name\":\"Russian ruble\",\"symbol\":\"₽\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "RW",
+    "name": "Rwanda",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 14104969,
+    "currencies": "{\"RWF\":{\"name\":\"Rwandan franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "RE",
+    "name": "Réunion",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 896175,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.214Z"
+  },
+  {
+    "countryCode": "BL",
+    "name": "Saint Barthélemy",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 10562,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "SH",
+    "name": "Saint Helena, Ascension and Tristan da Cunha",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 5651,
+    "currencies": "{\"GBP\":{\"name\":\"Pound sterling\",\"symbol\":\"£\"},\"SHP\":{\"name\":\"Saint Helena pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "KN",
+    "name": "Saint Kitts and Nevis",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 51320,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "LC",
+    "name": "Saint Lucia",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 184100,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.107Z"
+  },
+  {
+    "countryCode": "MF",
+    "name": "Saint Martin",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 31496,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "PM",
+    "name": "Saint Pierre and Miquelon",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": 5819,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "VC",
+    "name": "Saint Vincent and the Grenadines",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 110872,
+    "currencies": "{\"XCD\":{\"name\":\"Eastern Caribbean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "WS",
+    "name": "Samoa",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 205557,
+    "currencies": "{\"WST\":{\"name\":\"Samoan tālā\",\"symbol\":\"T\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "SM",
+    "name": "San Marino",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 34132,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "SA",
+    "name": "Saudi Arabia",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 35300280,
+    "currencies": "{\"SAR\":{\"name\":\"Saudi riyal\",\"symbol\":\"ر.س\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "SN",
+    "name": "Senegal",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 18593258,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "RS",
+    "name": "Serbia",
+    "region": "Europe",
+    "subregion": "Southeast Europe",
+    "population": 6567783,
+    "currencies": "{\"RSD\":{\"name\":\"Serbian dinar\",\"symbol\":\"дин.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.215Z"
+  },
+  {
+    "countryCode": "SC",
+    "name": "Seychelles",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 122729,
+    "currencies": "{\"SCR\":{\"name\":\"Seychellois rupee\",\"symbol\":\"₨\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "SL",
+    "name": "Sierra Leone",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 9077691,
+    "currencies": "{\"SLE\":{\"name\":\"Leone\",\"symbol\":\"Le\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "SG",
+    "name": "Singapore",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 6110200,
+    "currencies": "{\"SGD\":{\"name\":\"Singapore dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "SX",
+    "name": "Sint Maarten",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 41349,
+    "currencies": "{\"ANG\":{\"name\":\"Netherlands Antillean guilder\",\"symbol\":\"ƒ\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "SK",
+    "name": "Slovakia",
+    "region": "Europe",
+    "subregion": "Central Europe",
+    "population": 5413813,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "SI",
+    "name": "Slovenia",
+    "region": "Europe",
+    "subregion": "Central Europe",
+    "population": 2130638,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "SB",
+    "name": "Solomon Islands",
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "population": 750325,
+    "currencies": "{\"SBD\":{\"name\":\"Solomon Islands dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "SO",
+    "name": "Somalia",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 19655000,
+    "currencies": "{\"SOS\":{\"name\":\"Somali shilling\",\"symbol\":\"Sh\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.193Z"
+  },
+  {
+    "countryCode": "ZA",
+    "name": "South Africa",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "population": 63100945,
+    "currencies": "{\"ZAR\":{\"name\":\"South African rand\",\"symbol\":\"R\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "GS",
+    "name": "South Georgia",
+    "region": "Antarctic",
+    "subregion": null,
+    "population": null,
+    "currencies": "{\"GBP\":{\"name\":\"British pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "KR",
+    "name": "South Korea",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 51159889,
+    "currencies": "{\"KRW\":{\"name\":\"South Korean won\",\"symbol\":\"₩\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "SS",
+    "name": "South Sudan",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 15786898,
+    "currencies": "{\"SSP\":{\"name\":\"South Sudanese pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "ES",
+    "name": "Spain",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 49315949,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "LK",
+    "name": "Sri Lanka",
+    "region": "Asia",
+    "subregion": "Southern Asia",
+    "population": 21763170,
+    "currencies": "{\"LKR\":{\"name\":\"Sri Lankan rupee\",\"symbol\":\"Rs  රු\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "SD",
+    "name": "Sudan",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 51662000,
+    "currencies": "{\"SDG\":{\"name\":\"Sudanese pound\",\"symbol\":\"ج.س\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "SR",
+    "name": "Suriname",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 616500,
+    "currencies": "{\"SRD\":{\"name\":\"Surinamese dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "SJ",
+    "name": "Svalbard and Jan Mayen",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 2530,
+    "currencies": "{\"NOK\":{\"name\":\"krone\",\"symbol\":\"kr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  },
+  {
+    "countryCode": "SE",
+    "name": "Sweden",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 10605098,
+    "currencies": "{\"SEK\":{\"name\":\"Swedish krona\",\"symbol\":\"kr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "CH",
+    "name": "Switzerland",
+    "region": "Europe",
+    "subregion": "Western Europe",
+    "population": 9082848,
+    "currencies": "{\"CHF\":{\"name\":\"Swiss franc\",\"symbol\":\"Fr.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.107Z"
+  },
+  {
+    "countryCode": "SY",
+    "name": "Syria",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 25620000,
+    "currencies": "{\"SYP\":{\"name\":\"Syrian pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "ST",
+    "name": "São Tomé and Príncipe",
+    "region": "Africa",
+    "subregion": "Middle Africa",
+    "population": 209607,
+    "currencies": "{\"STN\":{\"name\":\"São Tomé and Príncipe dobra\",\"symbol\":\"Db\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "TW",
+    "name": "Taiwan",
+    "region": "Asia",
+    "subregion": "Eastern Asia",
+    "population": 23317031,
+    "currencies": "{\"TWD\":{\"name\":\"New Taiwan dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "TJ",
+    "name": "Tajikistan",
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "population": 10499000,
+    "currencies": "{\"TJS\":{\"name\":\"Tajikistani somoni\",\"symbol\":\"ЅМ\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "TZ",
+    "name": "Tanzania",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 68153004,
+    "currencies": "{\"TZS\":{\"name\":\"Tanzanian shilling\",\"symbol\":\"Sh\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.091Z"
+  },
+  {
+    "countryCode": "TH",
+    "name": "Thailand",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 65859640,
+    "currencies": "{\"THB\":{\"name\":\"Thai baht\",\"symbol\":\"฿\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "TL",
+    "name": "Timor-Leste",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 1391221,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "TG",
+    "name": "Togo",
+    "region": "Africa",
+    "subregion": "Western Africa",
+    "population": 8095498,
+    "currencies": "{\"XOF\":{\"name\":\"West African CFA franc\",\"symbol\":\"Fr\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "TK",
+    "name": "Tokelau",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 2608,
+    "currencies": "{\"NZD\":{\"name\":\"New Zealand dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.171Z"
+  },
+  {
+    "countryCode": "TO",
+    "name": "Tonga",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 100179,
+    "currencies": "{\"TOP\":{\"name\":\"Tongan paʻanga\",\"symbol\":\"T$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "TT",
+    "name": "Trinidad and Tobago",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 1367764,
+    "currencies": "{\"TTD\":{\"name\":\"Trinidad and Tobago dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.129Z"
+  },
+  {
+    "countryCode": "TN",
+    "name": "Tunisia",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 11972169,
+    "currencies": "{\"TND\":{\"name\":\"Tunisian dinar\",\"symbol\":\"د.ت\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "TR",
+    "name": "Turkey",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 85664944,
+    "currencies": "{\"TRY\":{\"name\":\"Turkish lira\",\"symbol\":\"₺\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "TM",
+    "name": "Turkmenistan",
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "population": 7057841,
+    "currencies": "{\"TMT\":{\"name\":\"Turkmenistan manat\",\"symbol\":\"m\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "TC",
+    "name": "Turks and Caicos Islands",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 50828,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.183Z"
+  },
+  {
+    "countryCode": "TV",
+    "name": "Tuvalu",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 10643,
+    "currencies": "{\"AUD\":{\"name\":\"Australian dollar\",\"symbol\":\"$\"},\"TVD\":{\"name\":\"Tuvaluan dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "UG",
+    "name": "Uganda",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 45905417,
+    "currencies": "{\"UGX\":{\"name\":\"Ugandan shilling\",\"symbol\":\"Sh\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "UA",
+    "name": "Ukraine",
+    "region": "Europe",
+    "subregion": "Eastern Europe",
+    "population": 32862000,
+    "currencies": "{\"UAH\":{\"name\":\"Ukrainian hryvnia\",\"symbol\":\"₴\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.069Z"
+  },
+  {
+    "countryCode": "AE",
+    "name": "United Arab Emirates",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 11294243,
+    "currencies": "{\"AED\":{\"name\":\"United Arab Emirates dirham\",\"symbol\":\"د.إ\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.106Z"
+  },
+  {
+    "countryCode": "GB",
+    "name": "United Kingdom",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 69281437,
+    "currencies": "{\"GBP\":{\"name\":\"British pound\",\"symbol\":\"£\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.136Z"
+  },
+  {
+    "countryCode": "US",
+    "name": "United States",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": 340110988,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "UM",
+    "name": "United States Minor Outlying Islands",
+    "region": "Americas",
+    "subregion": "North America",
+    "population": null,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "VI",
+    "name": "United States Virgin Islands",
+    "region": "Americas",
+    "subregion": "Caribbean",
+    "population": 87146,
+    "currencies": "{\"USD\":{\"name\":\"United States dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.205Z"
+  },
+  {
+    "countryCode": "UY",
+    "name": "Uruguay",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 3499451,
+    "currencies": "{\"UYU\":{\"name\":\"Uruguayan peso\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.081Z"
+  },
+  {
+    "countryCode": "UZ",
+    "name": "Uzbekistan",
+    "region": "Asia",
+    "subregion": "Central Asia",
+    "population": 37859698,
+    "currencies": "{\"UZS\":{\"name\":\"Uzbekistani soʻm\",\"symbol\":\"so'm\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.193Z"
+  },
+  {
+    "countryCode": "VU",
+    "name": "Vanuatu",
+    "region": "Oceania",
+    "subregion": "Melanesia",
+    "population": 321409,
+    "currencies": "{\"VUV\":{\"name\":\"Vanuatu vatu\",\"symbol\":\"Vt\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.107Z"
+  },
+  {
+    "countryCode": "VA",
+    "name": "Vatican City",
+    "region": "Europe",
+    "subregion": "Southern Europe",
+    "population": 882,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "VE",
+    "name": "Venezuela",
+    "region": "Americas",
+    "subregion": "South America",
+    "population": 28517000,
+    "currencies": "{\"VES\":{\"name\":\"Venezuelan bolívar soberano\",\"symbol\":\"Bs.S.\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.226Z"
+  },
+  {
+    "countryCode": "VN",
+    "name": "Vietnam",
+    "region": "Asia",
+    "subregion": "South-Eastern Asia",
+    "population": 101343800,
+    "currencies": "{\"VND\":{\"name\":\"Vietnamese đồng\",\"symbol\":\"₫\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.092Z"
+  },
+  {
+    "countryCode": "WF",
+    "name": "Wallis and Futuna",
+    "region": "Oceania",
+    "subregion": "Polynesia",
+    "population": 11620,
+    "currencies": "{\"XPF\":{\"name\":\"CFP franc\",\"symbol\":\"₣\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.107Z"
+  },
+  {
+    "countryCode": "EH",
+    "name": "Western Sahara",
+    "region": "Africa",
+    "subregion": "Northern Africa",
+    "population": 600904,
+    "currencies": "{\"DZD\":{\"name\":\"Algerian dinar\",\"symbol\":\"دج\"},\"MAD\":{\"name\":\"Moroccan dirham\",\"symbol\":\"DH\"},\"MRU\":{\"name\":\"Mauritanian ouguiya\",\"symbol\":\"UM\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "YE",
+    "name": "Yemen",
+    "region": "Asia",
+    "subregion": "Western Asia",
+    "population": 32684503,
+    "currencies": "{\"YER\":{\"name\":\"Yemeni rial\",\"symbol\":\"﷼\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.128Z"
+  },
+  {
+    "countryCode": "ZM",
+    "name": "Zambia",
+    "region": "Africa",
+    "subregion": "Eastern Africa",
+    "population": 19693423,
+    "currencies": "{\"ZMW\":{\"name\":\"Zambian kwacha\",\"symbol\":\"ZK\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.158Z"
+  },
+  {
+    "countryCode": "ZW",
+    "name": "Zimbabwe",
+    "region": "Africa",
+    "subregion": "Southern Africa",
+    "population": 17073087,
+    "currencies": "{\"ZWL\":{\"name\":\"Zimbabwean dollar\",\"symbol\":\"$\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.192Z"
+  },
+  {
+    "countryCode": "AX",
+    "name": "Åland Islands",
+    "region": "Europe",
+    "subregion": "Northern Europe",
+    "population": 30654,
+    "currencies": "{\"EUR\":{\"name\":\"euro\",\"symbol\":\"€\"}}",
+    "riskScore": 0.5,
+    "fetchedAt": "2026-04-01T11:38:37.184Z"
+  }
+]

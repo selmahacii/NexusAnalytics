@@ -1,0 +1,122 @@
+[
+  {
+    "id": 15,
+    "sourceName": "fx_simulated",
+    "startedAt": "2026-04-01T11:38:37.262Z",
+    "completedAt": "2026-04-01T11:38:37.261Z",
+    "status": "completed",
+    "rowsFetched": 30,
+    "rowsStored": 30,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{\"note\":\"Simulated data - no API key configured\"}"
+  },
+  {
+    "id": 14,
+    "sourceName": "rest_countries",
+    "startedAt": "2026-04-01T11:38:37.237Z",
+    "completedAt": "2026-04-01T11:38:37.236Z",
+    "status": "completed",
+    "rowsFetched": 250,
+    "rowsStored": 250,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{}"
+  },
+  {
+    "id": 13,
+    "sourceName": "open_meteo",
+    "startedAt": "2026-04-01T11:38:35.727Z",
+    "completedAt": "2026-04-01T11:38:35.726Z",
+    "status": "completed",
+    "rowsFetched": 16,
+    "rowsStored": 16,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{}"
+  },
+  {
+    "id": 12,
+    "sourceName": "world_bank",
+    "startedAt": "2026-04-01T11:38:34.891Z",
+    "completedAt": "2026-04-01T11:38:34.890Z",
+    "status": "completed",
+    "rowsFetched": 30,
+    "rowsStored": 30,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{}"
+  },
+  {
+    "id": 11,
+    "sourceName": "anomaly_detector",
+    "startedAt": "2026-03-31T23:33:03.964Z",
+    "completedAt": "2026-03-31T23:33:03.963Z",
+    "status": "completed",
+    "rowsFetched": 0,
+    "rowsStored": 292,
+    "errorMessage": null,
+    "durationMs": 89,
+    "metadata": "{\"bySeverity\":{\"critical\":22,\"high\":73,\"medium\":197,\"low\":0}}"
+  },
+  {
+    "id": 10,
+    "sourceName": "fx_simulated",
+    "startedAt": "2026-03-31T23:32:31.338Z",
+    "completedAt": "2026-03-31T23:32:31.337Z",
+    "status": "completed",
+    "rowsFetched": 30,
+    "rowsStored": 30,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{\"note\":\"Simulated data - no API key configured\"}"
+  },
+  {
+    "id": 9,
+    "sourceName": "rest_countries",
+    "startedAt": "2026-03-31T23:32:31.316Z",
+    "completedAt": "2026-03-31T23:32:31.315Z",
+    "status": "completed",
+    "rowsFetched": 250,
+    "rowsStored": 250,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{}"
+  },
+  {
+    "id": 8,
+    "sourceName": "open_meteo",
+    "startedAt": "2026-03-31T23:32:29.973Z",
+    "completedAt": "2026-03-31T23:32:29.972Z",
+    "status": "completed",
+    "rowsFetched": 0,
+    "rowsStored": 0,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{}"
+  },
+  {
+    "id": 7,
+    "sourceName": "world_bank",
+    "startedAt": "2026-03-31T23:32:29.584Z",
+    "completedAt": "2026-03-31T23:32:29.583Z",
+    "status": "completed",
+    "rowsFetched": 60,
+    "rowsStored": 60,
+    "errorMessage": null,
+    "durationMs": null,
+    "metadata": "{}"
+  },
+  {
+    "id": 6,
+    "sourceName": "seed_generator",
+    "startedAt": "2026-03-31T23:25:52.245Z",
+    "completedAt": "2026-03-31T23:25:52.244Z",
+    "status": "completed",
+    "rowsFetched": 0,
+    "rowsStored": 229404,
+    "errorMessage": null,
+    "durationMs": 12824,
+    "metadata": "{\"counts\":{\"customers\":2400,\"products\":380,\"transactions\":180000,\"employees\":847,\"supplyChainOrders\":45000,\"financialActuals\":39,\"productionLogs\":731,\"modelVersions\":7}}"
+  }
+]

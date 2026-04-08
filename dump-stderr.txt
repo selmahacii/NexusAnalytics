@@ -1,0 +1,17 @@
+
+Invalid `prisma.exchangeRate.findMany()` invocation:
+
+{
+  orderBy: {
+    date: "desc",
+    ~~~~
+?   id?: SortOrder,
+?   baseCurrency?: SortOrder,
+?   quoteCurrency?: SortOrder,
+?   rate?: SortOrder,
+?   timestamp?: SortOrder,
+?   source?: SortOrder
+  }
+}
+
+Unknown argument `date`. Did you mean `rate`? Available options are marked with ?.

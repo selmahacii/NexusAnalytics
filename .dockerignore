@@ -1,0 +1,17 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+db/
+data/
+*.log
+.env*
+!.env.example
+bun.lock
+bun.lockb
+download/
+examples/
+skills/
+.vscode/
+.idea/

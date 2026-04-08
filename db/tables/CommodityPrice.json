@@ -1,0 +1,839 @@
+[
+  {
+    "id": 181,
+    "commodity": "WTI",
+    "date": "2026-04-01T00:00:00.000Z",
+    "price": 72.55,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.267Z"
+  },
+  {
+    "id": 205,
+    "commodity": "BRENT",
+    "date": "2026-04-01T00:00:00.000Z",
+    "price": 78.96,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.283Z"
+  },
+  {
+    "id": 241,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-04-01T00:00:00.000Z",
+    "price": 4.03,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.316Z"
+  },
+  {
+    "id": 1,
+    "commodity": "WTI",
+    "date": "2026-03-31T00:00:00.000Z",
+    "price": 70.72,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 31,
+    "commodity": "BRENT",
+    "date": "2026-03-31T00:00:00.000Z",
+    "price": 78.59,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 61,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-31T00:00:00.000Z",
+    "price": 3.39,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 2,
+    "commodity": "WTI",
+    "date": "2026-03-30T00:00:00.000Z",
+    "price": 70.58,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 32,
+    "commodity": "BRENT",
+    "date": "2026-03-30T00:00:00.000Z",
+    "price": 79.2,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 62,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-30T00:00:00.000Z",
+    "price": 2.89,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 3,
+    "commodity": "WTI",
+    "date": "2026-03-29T00:00:00.000Z",
+    "price": 69.97,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 33,
+    "commodity": "BRENT",
+    "date": "2026-03-29T00:00:00.000Z",
+    "price": 77.58,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 63,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-29T00:00:00.000Z",
+    "price": 1.92,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 4,
+    "commodity": "WTI",
+    "date": "2026-03-28T00:00:00.000Z",
+    "price": 70.46,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 34,
+    "commodity": "BRENT",
+    "date": "2026-03-28T00:00:00.000Z",
+    "price": 77.88,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 64,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-28T00:00:00.000Z",
+    "price": 1.77,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 5,
+    "commodity": "WTI",
+    "date": "2026-03-27T00:00:00.000Z",
+    "price": 70.6,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 35,
+    "commodity": "BRENT",
+    "date": "2026-03-27T00:00:00.000Z",
+    "price": 77.41,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 65,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-27T00:00:00.000Z",
+    "price": 1.34,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 6,
+    "commodity": "WTI",
+    "date": "2026-03-26T00:00:00.000Z",
+    "price": 71.46,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 36,
+    "commodity": "BRENT",
+    "date": "2026-03-26T00:00:00.000Z",
+    "price": 76.29,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 66,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-26T00:00:00.000Z",
+    "price": 0.58,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 7,
+    "commodity": "WTI",
+    "date": "2026-03-25T00:00:00.000Z",
+    "price": 71.18,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 37,
+    "commodity": "BRENT",
+    "date": "2026-03-25T00:00:00.000Z",
+    "price": 76.46,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 67,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-25T00:00:00.000Z",
+    "price": 0.64,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 8,
+    "commodity": "WTI",
+    "date": "2026-03-24T00:00:00.000Z",
+    "price": 72.16,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.263Z"
+  },
+  {
+    "id": 38,
+    "commodity": "BRENT",
+    "date": "2026-03-24T00:00:00.000Z",
+    "price": 76.15,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 68,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-24T00:00:00.000Z",
+    "price": 0.93,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 9,
+    "commodity": "WTI",
+    "date": "2026-03-23T00:00:00.000Z",
+    "price": 71.92,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 39,
+    "commodity": "BRENT",
+    "date": "2026-03-23T00:00:00.000Z",
+    "price": 74.66,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.278Z"
+  },
+  {
+    "id": 69,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-23T00:00:00.000Z",
+    "price": -0.06,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 10,
+    "commodity": "WTI",
+    "date": "2026-03-22T00:00:00.000Z",
+    "price": 72.91,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 40,
+    "commodity": "BRENT",
+    "date": "2026-03-22T00:00:00.000Z",
+    "price": 75.44,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 70,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-22T00:00:00.000Z",
+    "price": 0.48,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 11,
+    "commodity": "WTI",
+    "date": "2026-03-21T00:00:00.000Z",
+    "price": 72.97,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 41,
+    "commodity": "BRENT",
+    "date": "2026-03-21T00:00:00.000Z",
+    "price": 74.19,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 71,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-21T00:00:00.000Z",
+    "price": 1.06,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 12,
+    "commodity": "WTI",
+    "date": "2026-03-20T00:00:00.000Z",
+    "price": 74.46,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 42,
+    "commodity": "BRENT",
+    "date": "2026-03-20T00:00:00.000Z",
+    "price": 75.12,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 72,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-20T00:00:00.000Z",
+    "price": 1.66,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 13,
+    "commodity": "WTI",
+    "date": "2026-03-19T00:00:00.000Z",
+    "price": 73.59,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 43,
+    "commodity": "BRENT",
+    "date": "2026-03-19T00:00:00.000Z",
+    "price": 74.64,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 73,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-19T00:00:00.000Z",
+    "price": 2.14,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 14,
+    "commodity": "WTI",
+    "date": "2026-03-18T00:00:00.000Z",
+    "price": 74.68,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 44,
+    "commodity": "BRENT",
+    "date": "2026-03-18T00:00:00.000Z",
+    "price": 76,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 74,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-18T00:00:00.000Z",
+    "price": 3.87,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 15,
+    "commodity": "WTI",
+    "date": "2026-03-17T00:00:00.000Z",
+    "price": 75.18,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 45,
+    "commodity": "BRENT",
+    "date": "2026-03-17T00:00:00.000Z",
+    "price": 75.7,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 75,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-17T00:00:00.000Z",
+    "price": 3.65,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 16,
+    "commodity": "WTI",
+    "date": "2026-03-16T00:00:00.000Z",
+    "price": 74.22,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 46,
+    "commodity": "BRENT",
+    "date": "2026-03-16T00:00:00.000Z",
+    "price": 77.03,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 76,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-16T00:00:00.000Z",
+    "price": 3.75,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 17,
+    "commodity": "WTI",
+    "date": "2026-03-15T00:00:00.000Z",
+    "price": 74.79,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 47,
+    "commodity": "BRENT",
+    "date": "2026-03-15T00:00:00.000Z",
+    "price": 77.87,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 77,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-15T00:00:00.000Z",
+    "price": 4.15,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 18,
+    "commodity": "WTI",
+    "date": "2026-03-14T00:00:00.000Z",
+    "price": 73.63,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 48,
+    "commodity": "BRENT",
+    "date": "2026-03-14T00:00:00.000Z",
+    "price": 77.23,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 78,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-14T00:00:00.000Z",
+    "price": 5.03,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 19,
+    "commodity": "WTI",
+    "date": "2026-03-13T00:00:00.000Z",
+    "price": 72.72,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.264Z"
+  },
+  {
+    "id": 49,
+    "commodity": "BRENT",
+    "date": "2026-03-13T00:00:00.000Z",
+    "price": 77.96,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 79,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-13T00:00:00.000Z",
+    "price": 4.1,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.314Z"
+  },
+  {
+    "id": 20,
+    "commodity": "WTI",
+    "date": "2026-03-12T00:00:00.000Z",
+    "price": 72.27,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 50,
+    "commodity": "BRENT",
+    "date": "2026-03-12T00:00:00.000Z",
+    "price": 79.29,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 80,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-12T00:00:00.000Z",
+    "price": 4.01,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 21,
+    "commodity": "WTI",
+    "date": "2026-03-11T00:00:00.000Z",
+    "price": 72.57,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 51,
+    "commodity": "BRENT",
+    "date": "2026-03-11T00:00:00.000Z",
+    "price": 78.8,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 81,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-11T00:00:00.000Z",
+    "price": 4.44,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 22,
+    "commodity": "WTI",
+    "date": "2026-03-10T00:00:00.000Z",
+    "price": 71.9,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 52,
+    "commodity": "BRENT",
+    "date": "2026-03-10T00:00:00.000Z",
+    "price": 79.02,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 82,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-10T00:00:00.000Z",
+    "price": 3.39,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 23,
+    "commodity": "WTI",
+    "date": "2026-03-09T00:00:00.000Z",
+    "price": 70.25,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 53,
+    "commodity": "BRENT",
+    "date": "2026-03-09T00:00:00.000Z",
+    "price": 77.89,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 83,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-09T00:00:00.000Z",
+    "price": 2.8,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 24,
+    "commodity": "WTI",
+    "date": "2026-03-08T00:00:00.000Z",
+    "price": 70.98,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 54,
+    "commodity": "BRENT",
+    "date": "2026-03-08T00:00:00.000Z",
+    "price": 77.66,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 84,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-08T00:00:00.000Z",
+    "price": 1.31,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 25,
+    "commodity": "WTI",
+    "date": "2026-03-07T00:00:00.000Z",
+    "price": 70.21,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 55,
+    "commodity": "BRENT",
+    "date": "2026-03-07T00:00:00.000Z",
+    "price": 77.51,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 85,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-07T00:00:00.000Z",
+    "price": 0.72,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 26,
+    "commodity": "WTI",
+    "date": "2026-03-06T00:00:00.000Z",
+    "price": 70.72,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 56,
+    "commodity": "BRENT",
+    "date": "2026-03-06T00:00:00.000Z",
+    "price": 76.55,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 86,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-06T00:00:00.000Z",
+    "price": 0.71,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 27,
+    "commodity": "WTI",
+    "date": "2026-03-05T00:00:00.000Z",
+    "price": 71.43,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 57,
+    "commodity": "BRENT",
+    "date": "2026-03-05T00:00:00.000Z",
+    "price": 76.27,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.289Z"
+  },
+  {
+    "id": 87,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-05T00:00:00.000Z",
+    "price": 0.98,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 28,
+    "commodity": "WTI",
+    "date": "2026-03-04T00:00:00.000Z",
+    "price": 71.2,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 58,
+    "commodity": "BRENT",
+    "date": "2026-03-04T00:00:00.000Z",
+    "price": 76.15,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.290Z"
+  },
+  {
+    "id": 88,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-04T00:00:00.000Z",
+    "price": 0.83,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 29,
+    "commodity": "WTI",
+    "date": "2026-03-03T00:00:00.000Z",
+    "price": 71.99,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.277Z"
+  },
+  {
+    "id": 59,
+    "commodity": "BRENT",
+    "date": "2026-03-03T00:00:00.000Z",
+    "price": 75.86,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.290Z"
+  },
+  {
+    "id": 89,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-03T00:00:00.000Z",
+    "price": 0.01,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-04-01T11:38:37.324Z"
+  },
+  {
+    "id": 30,
+    "commodity": "WTI",
+    "date": "2026-03-02T00:00:00.000Z",
+    "price": 71.82,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-03-31T23:32:31.365Z"
+  },
+  {
+    "id": 60,
+    "commodity": "BRENT",
+    "date": "2026-03-02T00:00:00.000Z",
+    "price": 75.96,
+    "unit": "USD/barrel",
+    "source": "simulated",
+    "fetchedAt": "2026-03-31T23:32:31.393Z"
+  },
+  {
+    "id": 90,
+    "commodity": "NATURAL_GAS",
+    "date": "2026-03-02T00:00:00.000Z",
+    "price": -0.05,
+    "unit": "MMBtu",
+    "source": "simulated",
+    "fetchedAt": "2026-03-31T23:32:31.424Z"
+  }
+]
