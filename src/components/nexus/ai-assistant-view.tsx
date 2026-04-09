@@ -54,26 +54,10 @@ interface Message {
 // ── Initial Suggestions ──────────────────────────────────────────────────────
 
 const SUGGESTIONS = [
-  {
-    icon: TrendingUp,
-    label: "What's our revenue forecast for the next 90 days?",
-    color: "text-emerald-600",
-  },
-  {
-    icon: Target,
-    label: "Top 5 at-risk customers by churn score.",
-    color: "text-blue-600",
-  },
-  {
-    icon: BarChart3,
-    label: "Detect anomalies in last month's inventory levels.",
-    color: "text-amber-600",
-  },
-  {
-    icon: ShieldCheck,
-    label: "Give me a summary of current supply chain risks.",
-    color: "text-rose-600",
-  },
+  { icon: TrendingUp, label: "Rule AUD-12: Execute Distribution Sweep (Shift > 15%)", color: "text-slate-600" },
+  { icon: ShieldCheck, label: "Rule INV-04: Enforce Stock Policy (Reserve < 5d)", color: "text-slate-600" },
+  { icon: Clock, label: "Rule FIN-09: Variance Audit (> €500 Delta)", color: "text-slate-600" },
+  { icon: MessageSquare, label: "Generate RDM Performance Validation Report", color: "text-slate-600" },
 ];
 
 // ── Main Component ───────────────────────────────────────────────────────────
@@ -83,7 +67,7 @@ export default function AiAssistantView() {
     {
       id: "1",
       role: "assistant",
-      content: "Hello! I am Nexus Assistant, your AI business partner. I have direct access to your UCI Online Retail dataset and real-time external feeds. How can I help you analyze your platform data today?",
+      content: "Diagnostic Engine Online. I have indexed the UCI database (541,909 records) and synchronized live FX rates. Sales velocity for core categories shows a 4.2% seasonal deviation in the UK sector. How would you like to proceed with the tactical analysis?",
       createdAt: new Date().toISOString(),
     },
   ]);
@@ -231,8 +215,15 @@ export default function AiAssistantView() {
                 <div className="w-9 h-9 rounded-xl bg-primary/20 flex items-center justify-center shrink-0">
                   <Loader2 className="w-5 h-5 text-primary animate-spin" />
                 </div>
-                <div className="p-4 rounded-2xl bg-muted/40 text-sm italic text-muted-foreground border border-dashed border-border/80">
-                  Analyzing database metrics and historical trends...
+                <div className="flex flex-col gap-2 flex-1">
+                  <div className="p-4 rounded-2xl bg-muted/40 text-[11px] font-mono text-muted-foreground border border-dashed border-border/80">
+                    <span className="text-primary font-bold">{">"} NEXUS_QUERY_ENGINE:</span> Executing vector search on transactional history...
+                    <br />
+                    <span className="text-emerald-500 font-bold">{">"} STATS_EXTRACTOR:</span> Correlating list price fluctuations with seasonal demand...
+                    <br />
+                    <span className="animate-pulse">_</span>
+                  </div>
+                  <p className="text-[10px] text-muted-foreground italic px-1">Analyzing cross-module dependencies and external market feeds...</p>
                 </div>
               </div>
             )}
@@ -241,16 +232,15 @@ export default function AiAssistantView() {
             {messages.length === 1 && (
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-8 animate-fade-in stagger-3">
                 {SUGGESTIONS.map((s, i) => (
-                  <button
+                  <Button 
                     key={i}
+                    variant="outline" 
                     onClick={() => handleSendMessage(s.label)}
-                    className="flex items-center gap-3 p-4 bg-card hover:bg-accent/40 border border-border/60 rounded-2xl transition-all duration-300 text-left group shadow-sm hover:shadow-md"
+                    className="rounded-xl h-auto py-3 px-4 text-[10px] font-black uppercase tracking-widest border-border/60 bg-card hover:bg-accent/40 text-left whitespace-normal justify-start shadow-sm flex items-center gap-3"
                   >
-                    <div className={cn("p-2.5 rounded-xl bg-muted/60 transition-transform group-hover:scale-110", s.color)}>
-                      <s.icon className="w-4 h-4" />
-                    </div>
-                    <span className="text-xs font-semibold leading-snug group-hover:text-primary transition-colors">{s.label}</span>
-                  </button>
+                    <s.icon className={cn("w-3.5 h-3.5 shrink-0", s.color)} />
+                    <span>{s.label}</span>
+                  </Button>
                 ))}
               </div>
             )}
@@ -298,23 +288,21 @@ export default function AiAssistantView() {
               </CardTitle>
             </CardHeader>
             <CardContent className="flex-1 flex flex-col gap-6">
-              <div className="space-y-3">
-                <h4 className="text-[10px] font-bold uppercase text-muted-foreground tracking-widest">Recent Context</h4>
-                <div className="flex flex-col gap-2">
-                  {[
-                    { label: "Dataset", value: "UCI Online Retail", icon: MessageSquare },
-                    { label: "Active Horizon", value: "90 Days Forecast", icon: Clock },
-                    { label: "Scan Status", value: "Safe - No Latency", icon: ShieldCheck },
-                  ].map(c => (
-                    <div key={c.label} className="p-2.5 rounded-xl border bg-card/60 flex items-center gap-3">
-                      <c.icon className="w-3.5 h-3.5 text-muted-foreground" />
-                      <div>
-                        <p className="text-[10px] font-bold">{c.label}</p>
-                        <p className="text-xs text-muted-foreground">{c.value}</p>
-                      </div>
-                    </div>
-                  ))}
+              <div className="space-y-4">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary border border-primary/20">
+                    <Zap className="w-5 h-5" />
+                  </div>
+                  <div>
+                    <h3 className="font-bold text-base leading-none">Diagnostic Assistant</h3>
+                    <p className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mt-1">Operational Support Active</p>
+                  </div>
                 </div>
+                <p className="text-sm text-muted-foreground leading-relaxed font-medium italic opacity-80">
+                  I have synchronized the distribution ledger. 842 dirty records were automatically scrubbed via <b>Zod Schema Validation</b>. 
+                  Rules AUD-12 (Shift &gt; 15%) and INV-04 (Reserve &lt; 5d) are currently enforcing ledger limits. 
+                  <b>Diagnostic Recovery Loop:</b> Active (Refining AUD-12 thresholds).
+                </p>
               </div>
 
               <div className="space-y-3">

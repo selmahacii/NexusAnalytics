@@ -56,6 +56,15 @@ import { Separator } from "@/components/ui/separator";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { cn } from "@/lib/utils";
 import { motion, AnimatePresence } from "framer-motion";
+import {
+  Dialog,
+  DialogContent,
+  DialogDescription,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
+import { toast } from "sonner";
 
 // ── Types ────────────────────────────────────────────────────────────────────
 
@@ -75,6 +84,17 @@ interface Report {
     riskScore: number;
     categoryData?: { name: string; value: number; fill: string }[];
     trendData?: { day: number; actual: number; trend: number }[];
+    takeaways?: {
+      growthDrivers: string[];
+      criticalFriction: string[];
+    };
+    deviations?: {
+      id: string;
+      metric: string;
+      change: string;
+      severity: "critical" | "high" | "medium";
+      summary: string;
+    }[];
   };
 }
 
@@ -82,50 +102,57 @@ interface Report {
 
 const INITIAL_REPORTS: Report[] = [
   {
-    id: "REP-2026-03-A",
-    title: "Q1 Final Revenue & Segment Performance Audit",
+    id: "REP-2026-Q1",
+    title: "Q1 Final Revenue & Segment Auditing",
     type: "monthly",
-    generatedAt: "2026-04-01T09:15:00Z",
+    generatedAt: "2026-04-01T09:00:00Z",
     author: "System",
     size: "3.2 MB",
     status: "final",
     content: {
-      summary: "An exhaustive analysis of Q1 performance reveals a strong pivot towards the European wholesale market. While the UK remains the primary revenue driver, we noticed a significant 18% variance in profit margins for the 'Giftware' category due to rising supplier costs. Logistics review recommends a 5% price adjustment on low-margin high-volume items to offset logistics inflation.",
+      summary: "Q1 performance analysis confirms a strategic pivot into the Maghreb wholesale market. While Algiers remains the primary revenue driver, we detected a 18% margin variance in the 'Giftware' category due to regional logistical inflation. Recommended: 5% price recalibration on high-volume SKUs.",
       kpis: [
         { label: "Q1 Net Revenue", value: "€3.42M", trend: 12.8 },
         { label: "Wholesale Split", value: "62%", trend: 4.5 },
-        { label: "Avg. Profit/Unit", value: "€14.20", trend: -5.2 }
+        { label: "Avg. Unit Profit", value: "€14.20", trend: -5.2 }
       ],
       observations: 8,
       recommendations: [
-        "Consolidate 'Small Furniture' shipping to reduce volumetric weight surcharges.",
-        "Launch a loyalty reactivation campaign for 1,200 dormant wholesale accounts.",
-        "Increase inventory for 'Traditional Tea Sets' before the May bank holiday surge."
+        "Consolidate 'Small Furniture' distribution to reduce volumetric surcharges.",
+        "Reactivate 1,200 dormant wholesale clusters via diagnostic targeting.",
+        "Increase safety stock for 'Traditional Tea Sets' before the seasonal surge."
       ],
-      riskScore: 18
+      riskScore: 18,
+      deviations: [
+        { id: "DEV-10C", metric: "Wholesale Margin", change: "-18%", severity: "high", summary: "Significant margin erosion in 'Giftware' sector due to regional logistical surcharges." },
+        { id: "DEV-12A", metric: "Return Rate", change: "+4.5%", severity: "medium", summary: "Increased returns for 'Glassware' artifacts traced to Algiers carrier latency." }
+      ]
     }
   },
   {
     id: "PRED-Q2-RESTOCK",
-    title: "Predictive Restocking & Demand Forecast (Spring/Summer)",
+    title: "Predictive Restocking & Demand Forecast",
     type: "prediction",
     generatedAt: "2026-03-25T11:00:00Z",
     author: "System",
     size: "5.4 MB",
     status: "final",
     content: {
-      summary: "Predictive projections for Q2 indicate a massive shift (approx. +215%) in demand for 'Outdoor & Garden' accessories, starting 2 weeks earlier than historically recorded. This is likely due to the forecasted mild April weather. We predict a potential 'out-of-stock' crisis for the 'Retro Wall Clock' range if orders aren't finalized by April 12th.",
+      summary: "Q2 projections indicate a +215% demand acceleration for 'Outdoor accessory' lines. Early mild weather patterns suggest a potential stock depletion for 'Retro Wall Clock' units by April 12th unless inventory is rebalanced across the Oran hub.",
       kpis: [
         { label: "Projected Sales", value: "€2.1M", trend: 22.0 },
         { label: "Inventory Health", value: "94.2%", trend: 0.5 }
       ],
       observations: 12,
       recommendations: [
-        "Aggressively stock the 'Vintage Home' range (Top 5 SKUs).",
-        "Negotiate a seasonal volume discount with Supplier 'Global Logistics'.",
-        "Adjust automated bid strategy on Google Ads to favor high-margin garden items."
+        "Aggressively stock the 'Vintage Home' range at the Sétif Hub.",
+        "Negotiate seasonal volume discounts with Regional Logistics partners."
       ],
-      riskScore: 28
+      riskScore: 28,
+      deviations: [
+        { id: "DEV-42X", metric: "Stock Volume", change: "+145%", severity: "critical", summary: "Unseasonal spike for 'White Hanging Heart' detected in Sétif cluster." },
+        { id: "DEV-43Y", metric: "Stock Depletion", change: "-92%", severity: "critical", summary: "Predicted depletion for clock ranges within 14 days based on current acceleration." }
+      ]
     }
   }
 ];
@@ -137,6 +164,7 @@ export default function ReportsView() {
   const [selectedReportId, setSelectedReportId] = useState<string>(INITIAL_REPORTS[0].id);
   const [searchQuery, setSearchQuery] = useState("");
   const [loadingAnalytics, setLoadingAnalytics] = useState(false);
+  const [isDeviationsOpen, setIsDeviationsOpen] = useState(false);
 
   // Fetch specialized high-fidelity analytics for the current report context
   const fetchReportAnalytics = useCallback(async () => {
@@ -251,12 +279,9 @@ export default function ReportsView() {
                   <div className="flex items-center gap-2">
                     <Clock className={cn("w-3.5 h-3.5", selectedReportId === report.id ? "text-white/40" : "text-muted-foreground/60")} />
                     <span className={cn("text-[10px] font-bold", selectedReportId === report.id ? "text-white/60" : "text-muted-foreground")}>
-                      {new Date(report.generatedAt).toLocaleDateString("en-US", { month: 'short', day: 'numeric', year: 'numeric' })}
+                      {new Date(report.generatedAt).toLocaleDateString("en-GB", { day: 'numeric', month: 'short', year: 'numeric' })}
                     </span>
                   </div>
-                  <span className={cn("text-[9px] font-black tracking-widest", selectedReportId === report.id ? "text-white/30" : "text-muted-foreground/20")}>
-                    {report.size}
-                  </span>
                 </div>
                 {selectedReportId === report.id && (
                   <motion.div layoutId="active-nav" className="absolute left-0 top-1/2 -translate-y-1/2 w-1 h-8 bg-slate-400 dark:bg-slate-500 rounded-r-full" />
@@ -278,7 +303,7 @@ export default function ReportsView() {
                 <h3 className="text-lg font-bold tracking-tight truncate leading-none">{selectedReport.title}</h3>
                 <div className="flex items-center gap-3 mt-1.5">
                   <p className="text-[10px] uppercase font-black text-muted-foreground/40 tracking-[0.2em] leading-none">
-                    Artifact Hash: {selectedReport.id.replace('REP-', '')}x71 • {selectedReport.size}
+                    Distribution Intelligence Archive
                   </p>
                   <Badge variant="outline" className="text-[9px] h-4 px-1.5 border-white/10 text-emerald-500 font-black tracking-widest uppercase">
                     Validated
@@ -335,13 +360,10 @@ export default function ReportsView() {
                     <div className="flex flex-col gap-1.5">
                       <span className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground/40">Temporal Stamp</span>
                       <p className="text-xs font-bold text-muted-foreground">
-                        {new Date(selectedReport.generatedAt).toLocaleString("en-US", { 
-                          weekday: 'long', 
-                          year: 'numeric', 
-                          month: 'long', 
+                        {new Date(selectedReport.generatedAt).toLocaleDateString("en-GB", { 
                           day: 'numeric',
-                          hour: '2-digit',
-                          minute: '2-digit'
+                          month: 'long', 
+                          year: 'numeric'
                         })}
                       </p>
                     </div>
@@ -363,8 +385,8 @@ export default function ReportsView() {
                           "inline-flex items-center gap-1.5 text-[10px] font-black rounded-lg px-2 py-1 uppercase tracking-widest",
                           kpi.trend > 0 ? "bg-emerald-500/10 text-emerald-500" : "bg-rose-500/10 text-rose-500"
                         )}>
-                          {kpi.trend > 0 ? <ArrowUpRight className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
-                          {Math.abs(kpi.trend)}% vs Prev.
+                          {kpi.trend > 0 ? <TrendingUp className="w-3 h-3" /> : <ArrowDownRight className="w-3 h-3" />}
+                          {kpi.trend > 0 ? `+${kpi.trend}` : kpi.trend}% vs Q4
                         </div>
                       )}
                     </div>
@@ -539,14 +561,15 @@ export default function ReportsView() {
                         Growth Drivers
                       </h4>
                       <ul className="space-y-5">
-                        <li className="text-sm leading-relaxed flex gap-5 text-muted-foreground/80 font-medium group">
-                          <div className="shrink-0 w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all">01</div>
-                          Repeat purchase cycle shortened by 2.3 days across all high-value segments, indicating increased client loyalty.
-                        </li>
-                        <li className="text-sm leading-relaxed flex gap-5 text-muted-foreground/80 font-medium group">
-                          <div className="shrink-0 w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all">02</div>
-                          Positive correlation discovered between market weather data and category performance in the DACH region.
-                        </li>
+                        {(selectedReport.content.takeaways?.growthDrivers || [
+                          "Repeat purchase cycle shortened by 2.3 days across all high-value segments.",
+                          "Positive correlation discovered between weather data and category performance."
+                        ]).map((item, i) => (
+                          <li key={i} className="text-sm leading-relaxed flex gap-5 text-muted-foreground/80 font-medium group">
+                            <div className="shrink-0 w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-[10px] font-black text-emerald-500 border border-emerald-500/20 group-hover:bg-emerald-500 group-hover:text-white transition-all">{i + 1 < 10 ? `0${i + 1}` : i + 1}</div>
+                            {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                     <div className="space-y-6">
@@ -557,14 +580,15 @@ export default function ReportsView() {
                         Critical Friction
                       </h4>
                       <ul className="space-y-5">
-                        <li className="text-sm leading-relaxed flex gap-5 text-muted-foreground/80 font-medium group">
-                          <div className="shrink-0 w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-[10px] font-black text-rose-500 border border-rose-500/20 group-hover:bg-rose-500 group-hover:text-white transition-all">01</div>
-                          Checkout abandonment increased by 4.2% on mobile devices during peak hours. Server response peaked at 1.2s.
-                        </li>
-                        <li className="text-sm leading-relaxed flex gap-5 text-muted-foreground/80 font-medium group">
-                          <div className="shrink-0 w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-[10px] font-black text-rose-500 border border-rose-500/20 group-hover:bg-rose-500 group-hover:text-white transition-all">02</div>
-                          Out-of-stock events for Top 10 products caused €15k in potential revenue loss over the 90-day window.
-                        </li>
+                        {(selectedReport.content.takeaways?.criticalFriction || [
+                           "Checkout abandonment increased by 4.2% on mobile devices during peak hours.",
+                           "Out-of-stock events for Top 10 products caused revenue loss."
+                        ]).map((item, i) => (
+                          <li key={i} className="text-sm leading-relaxed flex gap-5 text-muted-foreground/80 font-medium group">
+                            <div className="shrink-0 w-8 h-8 rounded-xl bg-white/5 flex items-center justify-center text-[10px] font-black text-rose-500 border border-rose-500/20 group-hover:bg-rose-500 group-hover:text-white transition-all">{i + 1 < 10 ? `0${i + 1}` : i + 1}</div>
+                            {item}
+                          </li>
+                        ))}
                       </ul>
                     </div>
                   </div>
@@ -604,9 +628,58 @@ export default function ReportsView() {
                       </p>
                     </div>
                     {selectedReport.content.observations > 0 && (
-                      <Button variant="outline" className="h-10 px-6 rounded-xl text-xs font-bold uppercase tracking-widest gap-2 border-slate-200 dark:border-slate-800">
-                        <Eye className="w-4 h-4" /> View Deviations
-                      </Button>
+                      <>
+                        <Button 
+                          variant="outline" 
+                          className="h-10 px-6 rounded-xl text-xs font-bold uppercase tracking-widest gap-2 border-slate-200 dark:border-slate-800 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all"
+                          onClick={() => setIsDeviationsOpen(true)}
+                        >
+                          <Eye className="w-4 h-4" /> View Deviations
+                        </Button>
+
+                        <Dialog open={isDeviationsOpen} onOpenChange={setIsDeviationsOpen}>
+                          <DialogContent className="max-w-2xl rounded-[2.5rem] bg-card/80 backdrop-blur-2xl border-white/5 shadow-2xl overflow-hidden p-0 ring-1 ring-white/10">
+                            <DialogHeader className="p-10 pb-6 border-b border-white/5">
+                              <DialogTitle className="text-2xl font-black tracking-tight flex items-center gap-3">
+                                <AlertTriangle className="w-6 h-6 text-amber-500" /> Statistical Deviations
+                              </DialogTitle>
+                              <DialogDescription className="text-xs font-bold text-muted-foreground/60 tracking-widest uppercase">
+                                Analysis of {selectedReport.content.observations} structural anomalies for {selectedReport.id}
+                              </DialogDescription>
+                            </DialogHeader>
+                            <div className="p-6 space-y-4 max-h-[500px] overflow-y-auto natural-scrollbar">
+                              {selectedReport.content.deviations?.map((dev, i) => (
+                                <div key={i} className="p-6 rounded-[2rem] bg-white/5 border border-white/5 flex flex-col gap-4 group transition-all hover:bg-white/10">
+                                  <div className="flex items-center justify-between">
+                                    <div className="flex items-center gap-3">
+                                      <Badge 
+                                        variant="outline" 
+                                        className={cn(
+                                          "text-[9px] font-black uppercase tracking-widest h-5 px-2 border-none",
+                                          dev.severity === 'critical' ? 'bg-rose-500/20 text-rose-500' : 
+                                          (dev.severity === 'high' ? 'bg-amber-500/20 text-amber-500' : 'bg-blue-500/20 text-blue-500')
+                                        )}
+                                      >
+                                        {dev.severity}
+                                      </Badge>
+                                      <span className="text-[10px] font-mono text-muted-foreground/40">{dev.id}</span>
+                                    </div>
+                                    <span className="text-sm font-black text-foreground tabular-nums">{dev.change} <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest ml-1">{dev.metric}</span></span>
+                                  </div>
+                                  <p className="text-sm font-medium text-muted-foreground leading-relaxed">
+                                    {dev.summary}
+                                  </p>
+                                </div>
+                              ))}
+                            </div>
+                            <div className="p-8 bg-white/5 flex justify-end">
+                               <Button variant="outline" className="rounded-xl h-10 px-8 font-bold border-white/10" onClick={() => setIsDeviationsOpen(false)}>
+                                  Acknowledge Log
+                               </Button>
+                            </div>
+                          </DialogContent>
+                        </Dialog>
+                      </>
                     )}
                   </div>
                 </TabsContent>

@@ -15,8 +15,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nexus Analytics",
-  description: "Tableau de bord analytique pour les données de vente et la performance opérationnelle",
+  title: "Retail Distribution Manager (RDM)",
+  description: "Operational telemetry and diagnostic auditing for corporate logistics.",
   icons: {
     icon: "/favicon.png",
   },

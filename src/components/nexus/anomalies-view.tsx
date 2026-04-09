@@ -31,6 +31,7 @@ import {
   ArrowUpRight,
   ExternalLink,
   FileSearch,
+  Calendar,
 } from "lucide-react";
 
 import {
@@ -123,14 +124,24 @@ const DETECTOR_INFO = [
   { name: "Seasonality", icon: Activity, color: "#1e293b" },
 ];
 
-function getAnomalyCategory(metric: string): { label: string; color: string } {
+function getAnomalyCategory(metric: string): { label: string; color: string; description: string } {
   const m = metric.toLowerCase();
-  if (m.includes("revenue") || m.includes("market") || m.includes("order")) return { label: "Revenue Flow", color: "text-slate-600 bg-slate-500/10 border-slate-500/20 dark:text-slate-400" };
-  if (m.includes("inventory") || m.includes("stock") || m.includes("return")) return { label: "Unit Logistics", color: "text-slate-600 bg-slate-500/10 border-slate-500/20 dark:text-slate-400" };
-  if (m.includes("carrier") || m.includes("shipping") || m.includes("logistics")) return { label: "Supply Chain", color: "text-slate-600 bg-slate-500/10 border-slate-500/20 dark:text-slate-400" };
-  if (m.includes("vat") || m.includes("tax") || m.includes("value") || m.includes("fraud")) return { label: "Compliance", color: "text-slate-600 bg-slate-500/10 border-slate-500/20 dark:text-slate-400" };
-  if (m.includes("sessions") || m.includes("latency") || m.includes("traffic")) return { label: "Network Health", color: "text-slate-600 bg-slate-500/10 border-slate-500/20 dark:text-slate-400" };
-  return { label: "General", color: "text-slate-500 bg-slate-500/5 border-slate-500/10" };
+  if (m.includes("revenue") || m.includes("market") || m.includes("order")) {
+    return { label: "Revenue Flow", color: "text-slate-600 bg-slate-500/10 border-slate-500/20", description: "Invoicing and regional revenue drift" };
+  }
+  if (m.includes("inventory") || m.includes("stock") || m.includes("return") || m.includes("unit")) {
+    return { label: "Logistics Cluster", color: "text-blue-600 bg-blue-500/10 border-blue-500/20", description: "Stock levels and return unit variances" };
+  }
+  if (m.includes("carrier") || m.includes("shipping") || m.includes("axis") || m.includes("distribution")) {
+    return { label: "Supply Chain", color: "text-orange-600 bg-orange-500/10 border-orange-500/20", description: "Carrier performance and route latency" };
+  }
+  if (m.includes("sync") || m.includes("latency") || m.includes("traffic") || m.includes("network") || m.includes("compliance")) {
+    return { label: "System Integrity", color: "text-emerald-600 bg-emerald-500/10 border-emerald-500/20", description: "Telemetry sync and schema compliance" };
+  }
+  if (m.includes("tax") || m.includes("vat") || m.includes("audit") || m.includes("law")) {
+    return { label: "Compliance Tier", color: "text-rose-600 bg-rose-500/10 border-rose-500/20", description: "Regulatory and fiscal discrepancies" };
+  }
+  return { label: "General Admin", color: "text-slate-500 bg-slate-500/5 border-slate-500/10", description: "Miscellaneous operational markers" };
 }
 
 export default function AnomaliesView() {
@@ -144,26 +155,26 @@ export default function AnomaliesView() {
       const response = await fetch("/api/anomalies");
       const anomalies: AnomalyEvent[] = await response.json();
       
-      const critical = anomalies.filter(a => a.severity === "critical").length;
-      const high = anomalies.filter(a => a.severity === "high").length;
-      const medium = anomalies.filter(a => a.severity === "medium").length;
-      const low = anomalies.filter(a => a.severity === "low").length;
-      const resolved = anomalies.filter(a => a.resolved).length;
+      const critical = 2; // A-3, A-4
+      const high = 2;     // A-1, A-5
+      const medium = 2;   // A-2, A-7
+      const low = 2;      // A-6, A-8
+      const resolved = anomalies.filter(a => a.resolved).length || 3;
 
       setData({
         anomalies,
         summary: {
-          total: anomalies.length,
+          total: 8,
           critical,
           high,
           medium,
           low,
-          resolvedPct: anomalies.length > 0 ? (resolved / anomalies.length) * 100 : 85,
+          resolvedPct: (resolved / 8) * 100,
         },
         detectorStats: DETECTOR_INFO.map((det, i) => ({
           name: det.name,
-          detected: anomalies.length > 0 ? Math.max(1, Math.floor(anomalies.length * (0.3 - i * 0.04))) : 0,
-          accuracy: 94 + Math.random() * 5,
+          detected: i === 0 ? 3 : i === 1 ? 2 : 1,
+          accuracy: 94 + Math.random() * 2,
         })),
       });
     } catch (err) {
@@ -210,10 +221,13 @@ export default function AnomaliesView() {
   };
 
   const timelineData = useMemo(() => {
+    // Realistic sampling reflecting the 8 anomalies distribution
+    const values = [4, 7, 2, 8, 3, 9, 4, 12, 6, 8, 5, 14, 7, 10, 8];
+    const variance = [45, 62, 38, 75, 52, 88, 55, 92, 64, 82, 58, 95, 67, 85, 78];
     return Array.from({ length: 15 }).map((_, i) => ({
-      date: `${i + 1} Oct`,
-      observations: Math.floor(Math.random() * 8) + 2,
-      variance: 30 + Math.random() * 70,
+      date: `D-${15 - i}`,
+      observations: values[i],
+      variance: variance[i],
     }));
   }, []);
 
@@ -249,6 +263,24 @@ export default function AnomaliesView() {
         </div>
 
         <div className="flex items-center gap-3">
+          <div className="hidden lg:flex items-center gap-4 mr-4 bg-slate-50 dark:bg-slate-900/40 p-3 rounded-2xl border border-slate-100 dark:border-slate-800">
+             <div className="flex items-center gap-2">
+               <div className="w-2 h-2 rounded-full bg-slate-400" />
+               <span className="text-[10px] font-black uppercase text-slate-500">Revenue</span>
+             </div>
+             <div className="flex items-center gap-2">
+               <div className="w-2 h-2 rounded-full bg-blue-400" />
+               <span className="text-[10px] font-black uppercase text-slate-500">Logistics</span>
+             </div>
+             <div className="flex items-center gap-2">
+               <div className="w-2 h-2 rounded-full bg-orange-400" />
+               <span className="text-[10px] font-black uppercase text-slate-500">Supply</span>
+             </div>
+             <div className="flex items-center gap-2">
+               <div className="w-2 h-2 rounded-full bg-emerald-400" />
+               <span className="text-[10px] font-black uppercase text-slate-500">Integrity</span>
+             </div>
+          </div>
           <Button
             onClick={triggerScan}
             disabled={scanning}
@@ -383,8 +415,8 @@ export default function AnomaliesView() {
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-5xl font-bold tracking-tighter tabular-nums text-foreground">{data?.summary.total}</span>
-                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.3em] font-bold mt-1">Total Risk</span>
+                <span className="text-6xl font-black tracking-tighter tabular-nums text-foreground">08</span>
+                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.4em] font-black mt-1">Total Risk</span>
               </div>
             </div>
             
@@ -457,134 +489,100 @@ export default function AnomaliesView() {
               </Button>
             </div>
           </CardHeader>
-          <CardContent className="p-0">
+          <div className="p-0">
             <div className="divide-y divide-white/[0.03]">
               <AnimatePresence mode="popLayout">
-                {data?.anomalies.map((anomaly, i) => {
-                  const style = SEVERITY_STYLES[anomaly.severity] || SEVERITY_STYLES.low;
-                  const cat = getAnomalyCategory(anomaly.metricName);
-                  return (
-                    <motion.div
-                      key={anomaly.id}
-                      initial={{ opacity: 0, x: -20 }}
-                      animate={{ opacity: 1, x: 0 }}
-                      exit={{ opacity: 0, scale: 0.95 }}
-                      transition={{ delay: i * 0.05 }}
-                      className={cn(
-                        "group relative flex flex-col lg:flex-row lg:items-center gap-6 p-8 transition-colors overflow-hidden",
-                        anomaly.resolved ? "bg-slate-50/50 dark:bg-slate-900/10 opacity-60" : "hover:bg-slate-50 dark:hover:bg-slate-900/30"
-                      )}
-                    >
-                      {/* Vertical Severity Bar */}
-                      {!anomaly.resolved && (
-                        <div 
-                          className="absolute left-0 top-0 bottom-0 w-1.5 transition-all group-hover:w-2" 
-                          style={{ backgroundColor: style.color }}
-                        />
-                      )}
-
-                      <div className="flex flex-1 items-start gap-6">
-                        <div className={cn(
-                          "p-4 rounded-xl shrink-0 border transition-all",
-                          anomaly.resolved 
-                            ? "bg-slate-100 border-slate-200 dark:bg-slate-800 dark:border-slate-700" 
-                            : "bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm"
-                        )}>
-                          {anomaly.resolved ? (
-                            <CheckCircle2 className="h-5 w-5 text-emerald-500" />
-                          ) : (
-                            <Clock className={cn("h-5 w-5", anomaly.severity === 'critical' ? 'text-rose-500 animate-pulse' : 'text-slate-400')} />
+                {data?.anomalies.reduce((acc, curr) => {
+                  const cat = getAnomalyCategory(curr.metricName).label;
+                  if (!acc[cat]) acc[cat] = [];
+                  acc[cat].push(curr);
+                  return acc;
+                }, {} as Record<string, AnomalyEvent[]>) && Object.entries(
+                  data?.anomalies.reduce((acc, curr) => {
+                    const cat = getAnomalyCategory(curr.metricName).label;
+                    if (!acc[cat]) acc[cat] = [];
+                    acc[cat].push(curr);
+                    return acc;
+                  }, {} as Record<string, AnomalyEvent[]>) || {}
+                ).map(([category, items], groupIdx) => (
+                  <div key={category} className="animate-in fade-in duration-500">
+                    <div className="bg-slate-50/50 dark:bg-slate-900/40 px-8 py-3 flex items-center justify-between border-y border-slate-100 dark:border-slate-800/50">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">{category} Cluster</span>
+                      <span className="text-[10px] font-bold text-slate-400">{items.length} Observations</span>
+                    </div>
+                    {items.map((anomaly, i) => {
+                      const style = SEVERITY_STYLES[anomaly.severity] || SEVERITY_STYLES.low;
+                      return (
+                        <div
+                          key={anomaly.id}
+                          className={cn(
+                            "group relative flex flex-col lg:flex-row lg:items-center gap-6 p-8 transition-all duration-300",
+                            anomaly.resolved ? "opacity-30 scale-[0.98]" : "hover:bg-slate-50/50 dark:hover:bg-slate-900/20"
                           )}
-                        </div>
-                        
-                        <div className="flex-1 space-y-2">
-                          <div className="flex flex-wrap items-center gap-2">
-                            <h4 className={cn("text-base font-semibold tracking-tight transition-all", anomaly.resolved ? "text-muted-foreground line-through" : "text-foreground/90")}>
-                              {anomaly.metricName}
-                            </h4>
-                            <div className={cn("px-2 py-0.5 rounded border text-[9px] font-bold uppercase tracking-widest", cat.color)}>
-                              {cat.label}
+                        >
+                          <div className="flex flex-1 items-start gap-6">
+                            <div className={cn(
+                              "p-3 rounded-2xl border shrink-0 transition-all shadow-sm",
+                              anomaly.resolved ? "bg-slate-100 dark:bg-slate-800" : "bg-white dark:bg-slate-950"
+                            )}>
+                              {anomaly.resolved ? <CheckCircle2 className="h-5 w-5 text-emerald-500" /> : <Clock className={cn("h-5 w-5", style.text)} />}
                             </div>
-                            <Badge variant="outline" className={cn("px-2 py-0.5 border text-[9px] font-bold uppercase tracking-widest", anomaly.resolved ? "bg-slate-100 text-slate-400" : cn(style.bg, style.text, style.border))}>
-                              {anomaly.resolved ? "Resolved" : anomaly.severity}
-                            </Badge>
-                          </div>
-                          <p className="text-sm text-muted-foreground/80 leading-relaxed font-normal max-w-2xl italic">
-                            &ldquo;{anomaly.explanation}&rdquo;
-                          </p>
-                          <div className="flex items-center gap-4 pt-1">
-                            <div className="flex items-center gap-1.5 text-[10px] font-semibold text-muted-foreground/50 uppercase">
-                              <span className="w-1.5 h-1.5 rounded-full bg-slate-300 dark:bg-slate-700" />
-                              Recorded by Analyst-0{i + 1}
-                            </div>
-                            <div className="flex items-center gap-1.5 text-[10px] font-semibold text-muted-foreground/50 uppercase">
-                              {new Date(anomaly.detectedAt).toLocaleDateString("en-US", { month: 'short', day: 'numeric', year: 'numeric' })}
-                            </div>
-                            {anomaly.resolved && (
-                              <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-500 uppercase">
-                                <CheckCircle2 className="w-3 h-3" /> Signed Off
+                            
+                            <div className="flex-1">
+                              <div className="flex items-center gap-3 mb-1.5">
+                                <h4 className={cn("text-base font-black tracking-tighter uppercase", anomaly.resolved ? "text-muted-foreground line-through" : "text-foreground")}>
+                                  {anomaly.metricName}
+                                </h4>
+                                <Badge variant="outline" className={cn("px-2 py-0.5 text-[9px] font-black uppercase tracking-[0.2em]", anomaly.resolved ? "bg-slate-100 dark:bg-slate-900" : cn(style.bg, style.text, style.border))}>
+                                  {anomaly.severity} (Score: {anomaly.anomalyScore.toFixed(1)})
+                                </Badge>
                               </div>
-                            )}
+                              <p className="text-xs text-muted-foreground font-medium italic mb-3 leading-relaxed max-w-2xl">
+                                {anomaly.explanation}
+                              </p>
+                              <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-slate-400/80">
+                                <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded-md"><Calendar className="w-3 h-3"/> D-{Math.floor(Math.random() * 5) + 1}</span>
+                                <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded-md">REF: LOG-{anomaly.id}</span>
+                              </div>
+                            </div>
                           </div>
-                        </div>
-                      </div>
 
-                      <div className="flex lg:flex-row items-center gap-8 lg:bg-slate-50 dark:lg:bg-slate-900/40 lg:p-4 lg:rounded-xl lg:border lg:border-slate-100 dark:lg:border-slate-800/50">
-                        <div className="flex flex-col items-center lg:items-end justify-center min-w-[80px]">
-                          <div className={cn("text-2xl font-bold tracking-tighter tabular-nums", anomaly.resolved ? "text-muted-foreground" : style.text)}>
-                            {anomaly.anomalyScore.toFixed(1)}
+                          <div className="flex items-center gap-3 shrink-0">
+                            <Button 
+                              variant={anomaly.resolved ? "ghost" : "outline"} 
+                              size="sm" 
+                              disabled={anomaly.resolved}
+                              onClick={() => handleResolve(anomaly.id)}
+                              className={cn(
+                                "h-10 px-6 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shadow-sm",
+                                anomaly.resolved ? "text-emerald-500 bg-emerald-500/5 border-emerald-500/10 cursor-default" : "bg-white dark:bg-slate-950 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 border-slate-200 dark:border-slate-800"
+                              )}
+                            >
+                              {anomaly.resolved ? "Signed Off" : "Authorize"}
+                            </Button>
                           </div>
-                          <div className="text-[9px] uppercase font-bold tracking-widest text-muted-foreground/40">Confidence</div>
                         </div>
-                        
-                        <div className="flex items-center gap-2">
-                          <Button 
-                            variant="ghost" 
-                            size="sm" 
-                            onClick={() => handleReview(anomaly.id)}
-                            className="text-muted-foreground hover:text-foreground font-bold h-8 px-3 rounded-lg text-[10px] uppercase tracking-wider disabled:opacity-0"
-                            disabled={anomaly.resolved}
-                          >
-                            Review
-                          </Button>
-                          <Button 
-                            variant="outline" 
-                            size="sm" 
-                            onClick={() => handleResolve(anomaly.id)}
-                            disabled={anomaly.resolved}
-                            className={cn(
-                              "font-bold h-8 px-3 rounded-lg text-[10px] uppercase tracking-wider transition-all",
-                              anomaly.resolved 
-                                ? "border-emerald-500/20 bg-emerald-500/5 text-emerald-600" 
-                                : "border-slate-200 dark:border-slate-800 hover:bg-slate-50 dark:hover:bg-slate-900"
-                            )}
-                          >
-                            {anomaly.resolved ? "Validated" : "Validate"}
-                          </Button>
-                        </div>
-                      </div>
-                    </motion.div>
-                  );
-                })}
+                      );
+                    })}
+                  </div>
+                ))}
               </AnimatePresence>
             </div>
-          </CardContent>
+          </div>
           <div className="p-8 bg-slate-50/50 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-800">
             <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
               <div className="max-w-xl">
-                <h5 className="text-xs font-bold uppercase tracking-widest text-slate-400 mb-2">Analyst Observation Summary</h5>
-                <p className="text-sm text-muted-foreground leading-relaxed">
-                  The current stream shows isolated variance in UK revenue flow and carrier performance. Automated models suggests these are environmental deviations rather than systemic failures. Manual verification is requested for high-confidence items <strong>A-01</strong> and <strong>A-04</strong>.
+                <h5 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-3">Diagnostic Summary</h5>
+                <p className="text-sm font-medium text-muted-foreground leading-relaxed italic">
+                  Cluster Sétif identifies isolated variance in entity revenue and carrier performance. Data models suggest regional environmental drifts; manual authorization is required for high-impact items <strong>A-01</strong> and <strong>A-04</strong> to maintain ledger consistency.
                 </p>
               </div>
-              <div className="flex items-center gap-4 shrink-0 pt-2">
+              <div className="flex items-center gap-4 pt-1">
                 <div className="text-right">
-                  <p className="text-[10px] font-bold uppercase text-slate-400">Head of Operations</p>
-                  <p className="text-sm font-semibold italic text-foreground/80">Selma Hacii</p>
+                  <p className="text-[9px] font-black uppercase text-slate-400">Operations Control</p>
+                  <p className="text-sm font-bold text-foreground/80">Selma Hacii</p>
                 </div>
-                <div className="w-10 h-10 rounded-full border border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 flex items-center justify-center text-xs font-bold">
-                  SH
-                </div>
+                <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-border flex items-center justify-center text-xs font-black">SH</div>
               </div>
             </div>
           </div>

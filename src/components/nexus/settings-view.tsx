@@ -92,13 +92,13 @@ export default function SettingsView() {
             <CardContent className="space-y-4">
               <div className="flex flex-col sm:flex-row gap-6">
                 <div className="w-24 h-24 rounded-full bg-primary/20 flex items-center justify-center text-primary text-2xl font-bold flex-shrink-0">
-                  DZ
+                  SH
                 </div>
                 <div className="flex-1 space-y-4">
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="space-y-2">
                       <Label htmlFor="adminName">Full Name</Label>
-                      <Input id="adminName" defaultValue="Admin Director" className="rounded-xl" />
+                      <Input id="adminName" defaultValue="Selma Haci" className="rounded-xl" />
                     </div>
                     <div className="space-y-2">
                       <Label htmlFor="adminEmail">Email Address</Label>

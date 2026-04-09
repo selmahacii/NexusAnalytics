@@ -13,21 +13,24 @@ export async function POST(request: Request) {
     let response = "";
     let metadata: any = null;
 
-    // ── Simple Intent Matching Logic ──
-    if (query.includes("revenue") || query.includes("forecast")) {
-      response = "Based on the 90-day predictive ensemble model, our projected revenue is expected to grow by 14.5% in the next quarter, primarily driven by strong performance in the Electronics and Home Decor categories.";
-      metadata = { type: "kpi", label: "Projected Revenue Growth", value: "+14.5%", gain: 14.5 };
+    // ── High-Fidelity Intent Matching Logic ──
+    if (query.includes("white hanging heart") || (query.includes("revenue") && query.includes("velocity"))) {
+      response = "Analyzing 'WHITE HANGING HEART T-LIGHT HOLDER' (SKU: 85123A). Sales velocity has surged by 145% in the UK region, significantly outpacing the Q4 baseline. This spike is driven by high-frequency bulk orders from Tier-1 retail accounts. I recommend increasing reorder frequency to 'Weekly' to prevent the predicted stock-out in 48h. Current predictive ensemble variance is ±2.2%.";
+      metadata = { type: "kpi", label: "SKU: 85123A Growth", value: "+145.2%", gain: 145.2 };
+    } else if (query.includes("revenue") || query.includes("forecast")) {
+      response = "Strategic Forecast Summary: The 90-day predictive ensemble indicates a 14.5% net growth. Primary drivers are 'Home Decor' (+18.2%) and 'Seasonal Gifts' (+22.1%), partially offset by a slowdown in 'Small Antiques'. High statistical significance (94% confidence) suggests we should increase liquidity reserves for Q1 inventory procurement.";
+      metadata = { type: "kpi", label: "Ensemble Revenue Forecast", value: "€1.42M", gain: 14.5 };
     } else if (query.includes("churn") || query.includes("risk")) {
-      response = "I have identified 12 high-value customers with a churn risk score above 0.75. The primary risk factor appears to be a decrease in order frequency over the last 30 days combined with delayed payment patterns.";
-      metadata = { type: "insight", label: "High Risk Customers", value: "12 identified", gain: -8.2 };
+      response = "Attrition Risk Detected: I have identified 12 high-value B2B accounts with a churn probability > 0.75. Analysis of 'Unit Logistics' shows a consistent decrease in average basket size (ABS) despite stable order frequency. I recommend manual specialist review for ID: 17841 and immediate credit limit adjustment.";
+      metadata = { type: "insight", label: "High Risk B2B Accounts", value: "12 identified", gain: -8.2 };
     } else if (query.includes("anomaly") || query.includes("anomalies")) {
-      response = "The anomaly detection engine flagged 3 critical events in the last 24 hours: two regional revenue spikes in Western Europe and one inventory depletion alert for SKU: NE-4521.";
-      metadata = { type: "insight", label: "Critical Anomalies", value: "3 detected", gain: 0 };
+      response = "Integrity Scan Results: 3 critical deviations detected. High-magnitude revenue spike in UK sector (SKU: 85123A) and a persistent latency issue on the London-Paris distribution line. The 'Intelligent Anomaly Scan' suggests these are transactional, not procedural, errors.";
+      metadata = { type: "insight", label: "Active Operational Risks", value: "3 critical", gain: 0 };
     } else if (query.includes("inventory") || query.includes("stock")) {
-      response = "Current inventory levels are 92% optimal. However, 15 items are approaching their reorder point, and 4 items are currently out of stock. I recommend initiating restock for the 'Premium Office' category immediately.";
-      metadata = { type: "kpi", label: "Stock Optimization", value: "92.4%", gain: 2.1 };
+      response = "Supply Chain Brief: Current stock optimization is at 92.4%. We are facing a high-risk depletion for 'RED RETROSPOT' lines. I have calculated that current turnover rates will exhaust existing warehouse buffer by April 12th. Automated restock triggers for these lines have been successfully queued for audit.";
+      metadata = { type: "kpi", label: "Stock Buffer Integrity", value: "92.4%", gain: 2.1 };
     } else {
-      response = "That's an interesting question about the " + message + ". Analyzing the UCI Online Retail dataset, I can see patterns suggesting seasonal variations in your core segments. Would you like me to generate a detailed report on these trends?";
+      response = "Query acknowledged. Cross-referencing current logs with the UCI transactional baseline. Analyzing your request regarding '" + message + "'... I recommend reviewing the latest 'Market Intel' module for categorical correlations related to this inquiry.";
     }
 
     // Simulate thinking time

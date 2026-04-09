@@ -36,27 +36,27 @@ export async function GET() {
     const demoAnomalies = [
       { 
         id: "A-1", 
-        metricName: "Revenue (UK)", 
+        metricName: "Revenue (Cluster Sétif)", 
         severity: "high", 
-        explanation: "Revenue spike detected for 'WHITE HANGING HEART T-LIGHT HOLDER' (+145%) over 24h. Possible viral trend or bulk order.", 
+        explanation: "Revenue spike detected in Sétif Hub (+145%) over 24h. Anomalous volume found in SARL TechÉlectrique accounts.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 2).toISOString(), 
         anomalyScore: 8.5, 
         resolved: false 
       },
       { 
         id: "A-2", 
-        metricName: "Inventory: Red Retrospot", 
+        metricName: "Inventory: Cluster Alger", 
         severity: "medium", 
-        explanation: "Unseasonal early stock depletion for 'JUMBO BAG RED RETROSPOT'. Stock-out predicted within 48h.", 
+        explanation: "Unseasonal stock depletion for 'Bulk Cable Reels' in Algiers WH-12. Possible misclassification of retail vs B2B stock.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 18).toISOString(), 
         anomalyScore: 6.2, 
         resolved: true 
       },
       { 
         id: "A-3", 
-        metricName: "Carrier Performance", 
+        metricName: "Carrier: Alger-Oran Axis", 
         severity: "critical", 
-        explanation: "Critical latency detected for 'Carrier-FR-02'. 72% of shipments to France delayed by 48h+.", 
+        explanation: "Critical latency detected for logistics route A1-Oran. 72% of shipments to Oranie delayed by 12h due to hub validation bottlenecks.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 48).toISOString(), 
         anomalyScore: 9.1, 
         resolved: false 
@@ -65,43 +65,43 @@ export async function GET() {
         id: "A-4", 
         metricName: "Order Value Threshold", 
         severity: "critical", 
-        explanation: "Single transaction outlier detected: €15,400 for 'VINTAGE SNAP CARDS' (Typical avg: €18.5). Potential fraud or B2B misclassification.", 
+        explanation: "Single transaction outlier: €5,400 for 'Circuit Breaker Batch' (Typical avg: €145). Possible bulk entry without B2B flag.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 8).toISOString(), 
         anomalyScore: 9.8, 
         resolved: false 
       },
       { 
         id: "A-5", 
-        metricName: "Regional VAT Error", 
+        metricName: "Regional Tax Variance", 
         severity: "high", 
-        explanation: "Inconsistent tax calculation for 45 invoices in Germany. VAT applying UK rates erroneously.", 
+        explanation: "Inconsistent tax calculation for 45 invoices in Constantine cluster. Error level exceeding 5% threshold.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 24).toISOString(), 
         anomalyScore: 7.9, 
         resolved: true 
       },
       { 
         id: "A-6", 
-        metricName: "Active Sessions", 
+        metricName: "Active Sync Sessions", 
         severity: "low", 
-        explanation: "Minor drop in active sessions (-15%) during peak hours. Server response time peaked at 450ms.", 
+        explanation: "Minor drop in active telemetry sessions (-15%) during Algerian peak hours (10:00-12:00).", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 5).toISOString(), 
         anomalyScore: 3.5, 
         resolved: false 
       },
       { 
         id: "A-7", 
-        metricName: "Return Rate: Home Decor", 
+        metricName: "Unit Return Rate", 
         severity: "medium", 
-        explanation: "Significant increase in returns for 'REGENCY CAKESTAND 3 TIER' in EIRE. Inspecting batch quality.", 
+        explanation: "Significant increase in returns for 'Control Units' in Blida region. Inspecting batch quality with supplier.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 30).toISOString(), 
         anomalyScore: 5.8, 
         resolved: false 
       },
       { 
         id: "A-8", 
-        metricName: "Customer Acquisition", 
+        metricName: "Network Compliance", 
         severity: "low", 
-        explanation: "Organic traffic surge from social media (Pinterest) in Nordic regions. Influence of 'Vintage' keyword detected.", 
+        explanation: "Partial schema mismatch detected in Annaba endpoint nodes. Handled via Zod catch-all.", 
         detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 12).toISOString(), 
         anomalyScore: 4.1, 
         resolved: true 

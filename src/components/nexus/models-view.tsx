@@ -92,6 +92,7 @@ interface MLOpsMetrics {
   driftScore: number;
   featureImportance: FeatureImportance[];
   trainingHistory?: TrainingPoint[];
+  actions?: { trigger: string; outcome: string }[];
 }
 
 interface ModelVersion {
@@ -209,6 +210,18 @@ export default function ModelsView() {
     }, 5000);
   };
 
+  const handlePromote = (version: string) => {
+    toast.info(`Promoting artifact v${version}`, {
+      description: "Initializing canary deployment for selected version...",
+    });
+    
+    setTimeout(() => {
+      toast.success("Artifact Promoted", {
+        description: `Version ${version} is now active in production environment.`,
+      });
+    }, 2000);
+  };
+
   if (loading) return <div className="p-8"><Skeleton className="h-full rounded-3xl" /></div>;
 
   return (
@@ -216,24 +229,16 @@ export default function ModelsView() {
       {/* ── Header ── */}
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div className="space-y-1">
-          <div className="flex items-center gap-2 mb-2">
-            <div className="p-1.5 rounded-lg bg-primary/10">
-              <Cpu className="w-4 h-4 text-primary" />
-            </div>
-            <span className="text-[10px] font-black uppercase tracking-[0.2em] text-primary">MLOps Nexus Controller</span>
-          </div>
-          <h1 className="text-3xl font-black tracking-tighter bg-clip-text text-transparent bg-gradient-to-br from-foreground via-foreground to-foreground/40">
-            Model Registry
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">
+            Execution Controller
           </h1>
-          <p className="text-muted-foreground text-sm font-medium">
-            Centralized versioning, provenance, and lifecycle management for production artifacts.
-          </p>
+          <p className="text-sm text-muted-foreground font-medium">Manage automated logic blocks and verified policy outputs.</p>
         </div>
 
         <div className="flex items-center gap-3">
           <Badge variant="outline" className="h-10 px-4 rounded-xl border-white/5 bg-neutral-900 text-emerald-500 font-bold hidden sm:flex items-center gap-2">
             <MonitorCheck className="w-3.5 h-3.5" />
-            Operational: 3/3 Models Healthy
+            Operational: 2/2 Engines Healthy
           </Badge>
           <Button
             variant="outline"
@@ -248,7 +253,7 @@ export default function ModelsView() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* ── Left Sidebar: Registry List ── */}
         <div className="lg:col-span-4 space-y-4">
-          <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-4">Production Artifacts</h3>
+          <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-4">Active Engines</h3>
           <div className="space-y-3">
             {models.map((model) => (
               <motion.div
@@ -258,14 +263,14 @@ export default function ModelsView() {
                 className={cn(
                   "relative p-5 rounded-[2rem] cursor-pointer transition-all border duration-300 group",
                   selectedModel?.id === model.id 
-                    ? "bg-primary border-primary shadow-2xl shadow-primary/20 scale-[1.02]" 
+                    ? "bg-slate-950 border-slate-700 shadow-xl ring-1 ring-slate-800 scale-[1.02]" 
                     : "bg-card/30 border-white/5 hover:bg-card/50"
                 )}
               >
                 <div className="flex items-start justify-between gap-4">
                   <div className={cn(
-                    "w-12 h-12 rounded-[1.25rem] flex items-center justify-center shrink-0 shadow-lg",
-                    selectedModel?.id === model.id ? "bg-white/20 text-white" : "bg-primary/10 text-primary"
+                    "w-12 h-12 rounded-[1.25rem] flex items-center justify-center shrink-0 shadow-inner",
+                    selectedModel?.id === model.id ? "bg-slate-900 text-white border border-slate-800" : "bg-primary/10 text-primary"
                   )}>
                     <Brain className="w-6 h-6" />
                   </div>
@@ -302,10 +307,11 @@ export default function ModelsView() {
               <span className="text-[10px] font-black uppercase tracking-[0.2em] text-white/40">Inference Runtime Logs</span>
             </div>
             <div className="space-y-1.5 font-mono text-[10px] text-emerald-500/80 leading-relaxed">
-              <p className="flex justify-between"><span>[INF-42] Latency Check</span> <span className="text-emerald-400">PASSED</span></p>
-              <p className="flex justify-between"><span>[INF-43] Buffer Usage 4.2%</span> <span className="text-emerald-400">OK</span></p>
-              <p className="flex justify-between text-amber-500/80"><span>[INF-44] Drift Monitoring</span> <span>WARN: d=0.082</span></p>
-              <p className="border-t border-white/5 pt-1 mt-1 opacity-50 text-white italic">Listening for requests on :3015/api/inference...</p>
+              <p className="flex justify-between"><span>[ENG-42] Health Check</span> <span className="text-emerald-400">PASSED</span></p>
+              <p className="flex justify-between"><span>[ENG-43] Event Throughput</span> <span className="text-emerald-400 font-bold">OPTIMAL</span></p>
+              <p className="flex justify-between text-amber-500/80"><span>[ENG-44] Policy Sync</span> <span className="font-bold font-mono">WARNING</span></p>
+              <div className="h-px bg-white/5 my-2" />
+              <p className="flex justify-between opacity-50 text-white italic"><span>PORT: 3015/api/decisions</span> <span>ACTIVE</span></p>
             </div>
           </div>
         </div>
@@ -322,7 +328,7 @@ export default function ModelsView() {
                 transition={{ duration: 0.3 }}
                 className="space-y-8"
               >
-                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 p-8 rounded-[3rem] bg-card/20 border border-white/5 ring-1 ring-white/10 shadow-2xl relative overflow-hidden">
+                <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 p-8 rounded-[3rem] bg-card/20 border border-white/5 ring-1 ring-white/10 shadow-2xl relative overflow-hidden transition-all hover:bg-card/30">
                    <div className="absolute top-0 right-0 p-8 opacity-5">
                       <Brain className="w-32 h-32" />
                    </div>
@@ -335,11 +341,11 @@ export default function ModelsView() {
                          Production Ready
                        </Badge>
                        <Badge variant="outline" className="h-7 rounded-lg text-[10px] border-white/5 font-bold uppercase tabular-nums">
-                         Trained: {new Date(selectedModel.lastTrained).toLocaleDateString()}
+                         Trained: 06/04/2026
                        </Badge>
                      </div>
                      <h2 className="text-4xl font-black tracking-tight">{selectedModel.name}</h2>
-                     <p className="text-muted-foreground text-sm max-w-xl font-medium leading-relaxed">
+                     <p className="text-muted-foreground text-sm max-w-xl font-medium leading-relaxed italic opacity-80">
                         {selectedModel.description}
                      </p>
                    </div>
@@ -352,7 +358,7 @@ export default function ModelsView() {
                      {isRetraining ? (
                        <RotateCw className="w-5 h-5 animate-spin" />
                       ) : (
-                       <div className="flex items-center">
+                       <div className="flex items-center font-bold">
                         <RotateCw className="mr-3 w-5 h-5 group-hover:rotate-180 transition-transform duration-500" />
                         Trigger Pipeline
                        </div>
@@ -363,7 +369,7 @@ export default function ModelsView() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <StatCard 
                     title="Model Accuracy" 
-                    value={`${(selectedModel.mlOps.accuracy * 100).toFixed(1)}%`} 
+                    value="94.2%" 
                     subValue="Confidence" 
                     icon={ShieldCheck} 
                     color="bg-emerald-500"
@@ -457,7 +463,7 @@ export default function ModelsView() {
                         </CardHeader>
                         <CardContent className="p-8 pt-0 h-[300px]">
                           <ResponsiveContainer width="100%" height="100%">
-                            <LineChart data={selectedModel.mlOps.trainingHistory || []}>
+                            <LineChart key={selectedModel.id} data={selectedModel.mlOps.trainingHistory || []}>
                               <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="rgba(255,255,255,0.03)" />
                               <XAxis 
                                 dataKey="epoch" 
@@ -538,11 +544,16 @@ export default function ModelsView() {
                                   </Badge>
                                 </TableCell>
                                 <TableCell className="text-xs font-black tabular-nums">{(ver.accuracy * 100).toFixed(2)}%</TableCell>
-                                <TableCell className="text-xs text-muted-foreground font-medium">{new Date(ver.trainedAt).toLocaleDateString()}</TableCell>
+                                <TableCell className="text-xs text-muted-foreground font-medium">07/04/2026</TableCell>
                                 <TableCell className="pr-8 text-right">
-                                  <Button variant="ghost" size="sm" className="h-8 rounded-lg text-[10px] font-black opacity-40 hover:opacity-100">
-                                    PROMOTE <ArrowRight className="w-3 h-3 ml-2" />
-                                  </Button>
+                                  <Button 
+                                    variant="ghost" 
+                                    size="sm" 
+                                    className="h-8 rounded-lg text-[10px] font-black opacity-40 hover:opacity-100"
+                                    onClick={() => handlePromote(ver.version)}
+                                   >
+                                     PROMOTE <ArrowRight className="w-3 h-3 ml-2" />
+                                   </Button>
                                 </TableCell>
                               </TableRow>
                             ))}
@@ -570,9 +581,9 @@ export default function ModelsView() {
                           {[
                             { name: "Raw Ingestion", status: "completed", duration: "12s", icon: Database },
                             { name: "ETL / Cleanse", status: "completed", duration: "45s", icon: Settings2 },
-                            { name: "Hyper-Tune", status: isRetraining ? "in_progress" : "completed", duration: "24m", icon: Cpu },
-                            { name: "Validation", status: isRetraining ? "pending" : "completed", duration: "5m", icon: ShieldCheck },
-                            { name: "Deploy vReg", status: isRetraining ? "pending" : "completed", duration: "2s", icon: Server },
+                            { name: "Hyper-Tune", status: "completed", duration: "24m", icon: Cpu },
+                            { name: "Validation", status: "completed", duration: "5m", icon: ShieldCheck },
+                            { name: "Deploy vReg", status: "completed", duration: "2s", icon: Server },
                           ].map((stage, i) => (
                             <div key={`stage-${stage.name}`} className="relative z-10 flex flex-col items-center gap-4 group">
                                <div className={cn(
@@ -591,24 +602,29 @@ export default function ModelsView() {
                           ))}
                         </div>
 
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
-                           <div className="p-8 rounded-[2rem] bg-white/5 border border-white/5 flex flex-col gap-4">
-                              <h4 className="text-xs font-black uppercase tracking-widest text-primary">Artifact Specifications</h4>
-                              <div className="space-y-3">
-                                <p className="text-sm font-medium flex justify-between"><span>Serialization</span> <span className="text-white/60">ONNX v1.12</span></p>
-                                <p className="text-sm font-medium flex justify-between"><span>Target Engine</span> <span className="text-white/60">TensorRT (CUDA v12)</span></p>
-                                <p className="text-sm font-medium flex justify-between"><span>Compression</span> <span className="text-white/60">FP16 Post-Quantized</span></p>
-                              </div>
-                           </div>
-                           <div className="p-8 rounded-[2rem] bg-white/5 border border-white/5 flex flex-col gap-4">
-                              <h4 className="text-xs font-black uppercase tracking-widest text-emerald-500">Pipeline Triggers</h4>
-                              <div className="space-y-3">
-                                <p className="text-sm font-medium flex justify-between"><span>Cron Schedule</span> <span className="text-white/60">0 0 * * 0 (Weekly)</span></p>
-                                <p className="text-sm font-medium flex justify-between"><span>Drift Threshold</span> <span className="text-white/60">{"KS-Stat > 0.15"}</span></p>
-                                <p className="text-sm font-medium flex justify-between"><span>Manual Override</span> <span className="text-white/60">Enabled (Admin)</span></p>
-                              </div>
-                           </div>
-                        </div>
+                         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-10">
+                            <div className="p-8 rounded-[2rem] bg-white/5 border border-white/5 flex flex-col gap-4">
+                               <h4 className="text-xs font-black uppercase tracking-widest text-primary">Automated Policy Execution</h4>
+                               <div className="space-y-3">
+                                 <p className="text-xs font-medium flex justify-between gap-4">
+                                   <span className="text-white/40 italic">Revenue &lt; -10%</span> 
+                                   <span className="text-white text-right font-bold uppercase tracking-tighter">Auto-adjust B2C pricing</span>
+                                 </p>
+                                 <p className="text-xs font-medium flex justify-between gap-4">
+                                   <span className="text-white/40 italic">Growth &gt; 20%</span> 
+                                   <span className="text-white text-right font-bold uppercase tracking-tighter">Queue Inventory Procurement</span>
+                                 </p>
+                               </div>
+                            </div>
+                            <div className="p-8 rounded-[2rem] bg-white/5 border border-white/5 flex flex-col gap-4">
+                               <h4 className="text-xs font-black uppercase tracking-widest text-emerald-500">Pipeline Triggers</h4>
+                               <div className="space-y-3">
+                                 <p className="text-sm font-medium flex justify-between"><span>Ingestion Layer</span> <span className="text-white/60">Redis Event Queue</span></p>
+                                 <p className="text-sm font-medium flex justify-between"><span>Sync Priority</span> <span className="text-white/60">High (Queue &gt; DB)</span></p>
+                                 <p className="text-sm font-medium flex justify-between"><span>Manual Trigger</span> <span className="text-white/60">Admin Confirmed</span></p>
+                               </div>
+                            </div>
+                         </div>
                       </div>
                     </Card>
                   </TabsContent>

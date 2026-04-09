@@ -42,6 +42,7 @@ import ForecastView from "@/components/nexus/forecast-view";
 import PredictionsView from "@/components/nexus/predictions-view";
 import CustomersView from "@/components/nexus/customers-view";
 import InventoryView from "@/components/nexus/inventory-view";
+import SupplyChainView from "@/components/nexus/supply-chain-view";
 import AnomaliesView from "@/components/nexus/anomalies-view";
 import MarketView from "@/components/nexus/market-view";
 import ModelsView from "@/components/nexus/models-view";
@@ -58,12 +59,13 @@ interface NavItem {
 }
 
 const NAV_ANALYTICS: NavItem[] = [
-  { id: "dashboard", label: "Dashboard", icon: LayoutDashboard },
-  { id: "forecast", label: "Revenue Forecast", icon: TrendingUp },
-  { id: "predictions", label: "Risk Analysis", icon: Target },
-  { id: "anomalies", label: "Anomalies", icon: Activity },
-  { id: "reports", label: "Smart Reports", icon: FileText },
-  { id: "market", label: "Market Intel", icon: Globe },
+  { id: "dashboard", label: "Operational Telemetry", icon: LayoutDashboard },
+  { id: "forecast", label: "Revenue Forecaster", icon: TrendingUp },
+  { id: "predictions", label: "Demand Validation", icon: Target },
+  { id: "supply-chain", label: "Supply Chain", icon: Factory },
+  { id: "anomalies", label: "Pattern Auditor", icon: Activity },
+  { id: "reports", label: "Operational Ledger", icon: FileText },
+  { id: "market", label: "Sector Intel", icon: Globe },
 ];
 
 const NAV_MANAGEMENT: NavItem[] = [
@@ -72,9 +74,9 @@ const NAV_MANAGEMENT: NavItem[] = [
 ];
 
 const NAV_ENGINE: NavItem[] = [
-  { id: "ai-assistant", label: "AI Assistant", icon: Sparkles },
-  { id: "models", label: "Model Registry", icon: Brain },
-  { id: "data-sources", label: "Data Sources", icon: Database },
+  { id: "ai-assistant", label: "Diagnostic Assistant", icon: Sparkles },
+  { id: "models", label: "Execution Controller", icon: Brain },
+  { id: "data-sources", label: "Data Ingress", icon: Database },
 ];
 
 const NAV_BOTTOM: NavItem[] = [
@@ -91,6 +93,7 @@ const VIEW_COMPONENTS: Record<ViewId, React.ComponentType> = {
   predictions: PredictionsView,
   customers: CustomersView,
   inventory: InventoryView,
+  "supply-chain": SupplyChainView,
   anomalies: AnomaliesView,
   market: MarketView,
   models: ModelsView,
@@ -199,13 +202,13 @@ function Sidebar() {
     >
       {/* Logo */}
       <div className="flex items-center gap-3 px-4 h-16 border-b flex-shrink-0">
-        <div className="w-9 h-9 rounded-xl bg-foreground flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm transition-transform duration-200 hover:scale-105">
-          <Image src="/logo.png" alt="Nexus" width={36} height={36} className="w-full h-full object-cover" />
+        <div className="w-9 h-9 rounded-xl bg-foreground flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm transition-transform duration-200 hover:scale-105 font-black text-background text-sm">
+          RDM
         </div>
         {!sidebarCollapsed && (
           <div className="overflow-hidden">
-            <h1 className="text-sm font-bold tracking-tight">Nexus</h1>
-            <p className="text-[10px] text-muted-foreground">Analytics</p>
+            <h1 className="text-sm font-bold tracking-tight">Distribution</h1>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-black">Manager</p>
           </div>
         )}
       </div>
@@ -238,6 +241,34 @@ function Sidebar() {
             <NavItemButton key={item.id} item={item} collapsed={sidebarCollapsed} />
           ))}
         </div>
+
+        {/* Operational Hub Status (Desktop only) */}
+        {!sidebarCollapsed && (
+          <div className="mt-auto px-4 pb-4 animate-fade-in">
+            <div className="p-3.5 rounded-[1.25rem] bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 space-y-3">
+              <div className="flex items-center gap-2 mb-1">
+                <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Operational Hub</span>
+              </div>
+              
+              <div className="space-y-2">
+                <div>
+                  <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight">Dataset Source</p>
+                  <p className="text-[11px] font-bold text-slate-900 dark:text-slate-100 italic">UCI Online Retail</p>
+                </div>
+                <div>
+                  <p className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight">Active Policy</p>
+                  <p className="text-[11px] font-bold text-slate-900 dark:text-slate-100 uppercase tracking-tighter">Rule AUD-12 Force</p>
+                </div>
+                <div className="flex items-center justify-between pt-1 mt-1 border-t border-slate-200/50 dark:border-slate-800/50">
+                  <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight">Compliance</span>
+                  <span className="text-[9px] font-bold text-emerald-600 dark:text-emerald-400">PASSED</span>
+                </div>
+                <p className="text-[8px] text-muted-foreground/60 font-mono text-right mt-0.5">CYCLE: 42ms</p>
+              </div>
+            </div>
+          </div>
+        )}
       </nav>
 
       {/* Bottom */}
@@ -267,12 +298,12 @@ function MobileSidebar({ onClose }: { onClose: () => void }) {
       {/* Header */}
       <div className="flex items-center justify-between px-4 h-16 border-b flex-shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-foreground flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm">
-            <Image src="/logo.png" alt="Nexus" width={36} height={36} className="w-full h-full object-cover" />
+          <div className="w-9 h-9 rounded-xl bg-foreground flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm font-black text-background text-sm">
+            RDM
           </div>
           <div>
-            <h1 className="text-sm font-bold tracking-tight">Nexus</h1>
-            <p className="text-[10px] text-muted-foreground">Analytics</p>
+            <h1 className="text-sm font-bold tracking-tight">Distribution</h1>
+            <p className="text-[10px] text-muted-foreground uppercase tracking-widest font-black">Manager</p>
           </div>
         </div>
         <button
@@ -336,7 +367,7 @@ function TopHeader({ onMenuClick }: { onMenuClick: () => void }) {
 
         {currentNav && (
           <div className="flex flex-col animate-fade-in -space-y-0.5">
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-bold sm:block hidden">NEXUS ANALYTICS</span>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-bold sm:block hidden">DISTRIBUTION TELEMETRY</span>
             <div className="flex items-center gap-2.5">
               <currentNav.icon className="w-4 h-4 text-primary sm:block hidden" />
               <h2 className="text-base font-bold tracking-tight">{currentNav.label}</h2>
@@ -565,10 +596,10 @@ export default function NexusApp() {
 
           {/* Footer */}
           <footer className="border-t bg-card/80 backdrop-blur-sm px-4 sm:px-6 py-3 flex items-center justify-between text-xs text-muted-foreground mt-auto transition-all duration-300">
-            <span className="truncate">Nexus Analytics v1.0</span>
+            <span className="truncate">RDM Distribution Controller v4.2.0</span>
             <span className="flex items-center gap-1.5 shrink-0">
-              <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse-soft" />
-              <span className="hidden sm:inline">Operational</span>
+              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+              <span className="hidden sm:inline">System Integrated</span>
             </span>
           </footer>
         </main>

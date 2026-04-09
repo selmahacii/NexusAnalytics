@@ -28,9 +28,26 @@ export async function GET() {
       ],
     };
 
+    // ── PRED-Q2-RESTOCK Predictive Audit Data ──────────────────────────────
+    const predictionData = {
+      id: "PRED-Q2-RESTOCK",
+      categoryDistribution: [
+        { name: "Outdoor & Garden", value: 450, fill: "#10b981" },
+        { name: "Home Decor", value: 310, fill: "#3b82f6" },
+        { name: "Seasonal Gifts", value: 240, fill: "#f59e0b" },
+        { name: "Kitchenware", value: 120, fill: "#ec4899" },
+        { name: "Furniture", value: 85, fill: "#8b5cf6" },
+      ],
+      regressionData: Array.from({ length: 45 }).map((_, i) => ({
+        day: i + 1,
+        actual: 3200 + i * 180 + (Math.sin(i / 3) * 500) + Math.random() * 300,
+        trend: 3400 + i * 175, 
+      })),
+    };
+
     return NextResponse.json({
       "REP-2026-03-A": reportData,
-      // We could add more reports here if needed
+      "PRED-Q2-RESTOCK": predictionData,
     });
   } catch (error) {
     return NextResponse.json({ error: "Failed to load report analytics" }, { status: 500 });
