@@ -281,38 +281,14 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
 
   return (
     <div className="space-y-5">
-      {/* KPI Row */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <StatChip
-          icon={<Users className="h-3.5 w-3.5" />}
-          label="Total At-Risk"
-          value={churnData.summary.totalAtRisk}
-          accent="blue"
-        />
-        <StatChip
-          icon={<ShieldAlert className="h-3.5 w-3.5" />}
-          label="High Risk"
-          value={churnData.summary.highRisk}
-          accent="red"
-          badge="Action Now"
-        />
-        <StatChip
-          icon={<AlertTriangle className="h-3.5 w-3.5" />}
-          label="Medium Risk"
-          value={churnData.summary.mediumRisk}
-          accent="amber"
-        />
-        <StatChip
-          icon={<TrendingDown className="h-3.5 w-3.5" />}
-          label="Avg. Churn Score"
-          value={`${(churnData.summary.avgChurnRisk * 100).toFixed(1)}%`}
-          accent={churnData.summary.avgChurnRisk > 0.7 ? "red" : churnData.summary.avgChurnRisk > 0.4 ? "amber" : "emerald"}
-        />
+        <StatChip icon={<Users className="h-3.5 w-3.5" />} label="Total At-Risk" value={churnData.summary.totalAtRisk} accent="blue" />
+        <StatChip icon={<ShieldAlert className="h-3.5 w-3.5" />} label="High Risk" value={churnData.summary.highRisk} accent="red" badge="Action Now" />
+        <StatChip icon={<AlertTriangle className="h-3.5 w-3.5" />} label="Medium Risk" value={churnData.summary.mediumRisk} accent="amber" />
+        <StatChip icon={<TrendingDown className="h-3.5 w-3.5" />} label="Avg. Churn Score" value={`${(churnData.summary.avgChurnRisk * 100).toFixed(1)}%`} accent={churnData.summary.avgChurnRisk > 0.7 ? "red" : churnData.summary.avgChurnRisk > 0.4 ? "amber" : "emerald"} />
       </div>
 
-      {/* Donut + Table */}
       <div className="grid gap-4 lg:grid-cols-4">
-        {/* Distribution Donut */}
         <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm lg:col-span-1 flex flex-col">
           <CardHeader className="p-8 border-b border-border/5">
             <CardTitle className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Risk Distribution</CardTitle>
@@ -322,21 +298,8 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
             <div className="h-[200px] w-full relative">
               <ChartContainer config={donutConfig} className="h-full w-full">
                 <PieChart>
-                  <Pie
-                    data={donutData}
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={65}
-                    outerRadius={90}
-                    paddingAngle={8}
-                    dataKey="value"
-                    stroke="none"
-                    animationDuration={1500}
-                    animationEasing="ease-out"
-                  >
-                    {donutData.map((entry) => (
-                      <Cell key={entry.name} fill={entry.fill} className="hover:opacity-80 transition-opacity" />
-                    ))}
+                  <Pie data={donutData} cx="50%" cy="50%" innerRadius={65} outerRadius={90} paddingAngle={8} dataKey="value" stroke="none" animationDuration={1500} animationEasing="ease-out">
+                    {donutData.map((entry) => (<Cell key={entry.name} fill={entry.fill} className="hover:opacity-80 transition-opacity" />))}
                   </Pie>
                   <ChartTooltip content={<ChartTooltipContent hideLabel className="bg-card/95 border-border/20 backdrop-blur-xl" />} />
                 </PieChart>
@@ -346,7 +309,6 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
                 <span className="text-[8px] font-bold uppercase tracking-widest text-muted-foreground opacity-40 mt-1">Total At-Risk</span>
               </div>
             </div>
-            {/* Legend */}
             <div className="w-full space-y-2 mt-8">
               {donutData.map((item) => (
                 <div key={item.name} className="flex items-center gap-3 text-[10px] font-bold px-1 group cursor-default">
@@ -359,21 +321,16 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
           </CardContent>
         </Card>
 
-        {/* Customer Table */}
         <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm lg:col-span-3 flex flex-col">
           <CardHeader className="p-8 border-b border-border/5 flex-row items-center justify-between">
             <div className="space-y-1">
               <CardTitle className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60 flex items-center gap-3">
-                <Users className="h-5 w-5 opacity-40" />
-                Diagnostic Priority List
+                <Users className="h-5 w-5 opacity-40" /> Diagnostic Priority List
               </CardTitle>
-              <CardDescription className="text-xs font-medium opacity-60">
-                Methodological churn probability rankings · {sortedCustomers.length} Verified Entries
-              </CardDescription>
+              <CardDescription className="text-xs font-medium opacity-60">Methodological churn probability rankings · {sortedCustomers.length} Verified Entries</CardDescription>
             </div>
             <Button variant="outline" size="sm" className="rounded-xl h-10 gap-2 border-border/20 bg-card text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover">
-              <FileDown className="w-4 h-4 opacity-50" />
-              Export Registry
+              <FileDown className="w-4 h-4 opacity-50" /> Export Registry
             </Button>
           </CardHeader>
           <CardContent className="p-0">
@@ -407,7 +364,7 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
                         <TableCell className="hidden sm:table-cell">
                           <Badge variant="outline" className="text-[9px] font-bold uppercase tracking-widest bg-muted/40 border-border/10 py-1 px-2.5 rounded-lg opacity-80">{customer.sector}</Badge>
                         </TableCell>
-                        <TableCell className="hidden md:table-cell text-xs font-bold text-muted-foreground/60 uppercase racking-widest">{customer.region}</TableCell>
+                        <TableCell className="hidden md:table-cell text-xs font-bold text-muted-foreground/60 uppercase tracking-widest">{customer.region}</TableCell>
                         <TableCell>
                           <div className="space-y-2.5">
                             <div className="flex items-center gap-2">
@@ -454,188 +411,145 @@ function SupplyChainTab({ supplyData }: { supplyData: SupplyRiskData }) {
     [supplyData.supplierRisks]
   );
 
+  const hubDetails: Record<string, { region: string; items: number }> = {
+    "Sonatrach Dynamics": { region: "Skikda", items: 12 },
+    "Algeria Rail Logistics": { region: "Alger", items: 4 },
+    "Oran Bulk Solutions": { region: "Oran", items: 8 },
+    "Sétif Distribution Hub": { region: "Sétif", items: 15 },
+    "Blida Agri-Systems": { region: "Blida", items: 3 },
+    "Annaba Port Terminal": { region: "Annaba", items: 7 },
+  };
+
   return (
     <div className="space-y-5">
-      {/* KPI Row */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-3">
-        <StatChip
-          icon={<Package className="h-3.5 w-3.5" />}
-          label="Total Suppliers"
-          value={supplyData.summary.totalSuppliers}
-          accent="blue"
-        />
-        <StatChip
-          icon={<ShieldAlert className="h-3.5 w-3.5" />}
-          label="High Risk"
-          value={supplyData.summary.highRisk}
-          accent="red"
-          badge="Act Now"
-        />
-        <StatChip
-          icon={<AlertTriangle className="h-3.5 w-3.5" />}
-          label="Medium Risk"
-          value={supplyData.summary.mediumRisk}
-          accent="amber"
-        />
-        <StatChip
-          icon={<Clock className="h-3.5 w-3.5" />}
-          label="Avg. Delay Rate"
-          value={`${(supplyData.summary.avgDelayRate * 100).toFixed(1)}%`}
-          accent={supplyData.summary.avgDelayRate > 0.3 ? "red" : supplyData.summary.avgDelayRate > 0.15 ? "amber" : "emerald"}
-        />
+        <StatChip icon={<Package className="h-3.5 w-3.5" />} label="Total Operational Hubs" value={supplyData.summary.totalSuppliers.toString().padStart(2, '0')} accent="blue" />
+        <StatChip icon={<ShieldAlert className="h-3.5 w-3.5" />} label="Critical High-Risk" value={supplyData.summary.highRisk.toString().padStart(2, '0')} accent="red" badge="URGENT ACTION" />
+        <StatChip icon={<AlertTriangle className="h-3.5 w-3.5" />} label="Standard Monitoring" value="01" accent="amber" />
+        <StatChip icon={<TrendingDown className="h-3.5 w-3.5" />} label="Mean Lead Variance" value={`${(supplyData.summary.avgDelayRate * 100).toFixed(1)}%`} accent={supplyData.summary.avgDelayRate > 0.3 ? "red" : supplyData.summary.avgDelayRate > 0.15 ? "amber" : "emerald"} />
       </div>
 
-      {/* Matrix + Table */}
       <div className="grid gap-4 lg:grid-cols-4">
-        {/* Scatter Risk Matrix */}
-        <Card className="glass-card shadow-sm lg:col-span-1 flex flex-col">
-          <CardHeader className="pb-0 pt-5 px-5">
-            <CardTitle className="text-sm font-bold tracking-tight flex items-center gap-2">
-              <BarChart3 className="h-4 w-4 text-primary" />
-              Risk Matrix
-            </CardTitle>
-            <CardDescription className="text-[11px]">Delay rate vs. quality score</CardDescription>
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm lg:col-span-1 flex flex-col">
+          <CardHeader className="p-8 border-b border-border/5">
+            <CardTitle className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Supply Efficiency Correlation</CardTitle>
+            <CardDescription className="text-xs font-medium opacity-60">Distribution Delay vs. Quality Reliability</CardDescription>
           </CardHeader>
-          <CardContent className="pt-3 flex-1">
-            <div className="h-[240px] w-full">
-              <ChartContainer config={scatterConfig}>
+          <CardContent className="p-8 flex-1">
+            <div className="h-[240px] w-full relative">
+              <ChartContainer config={scatterConfig} className="h-full w-full">
                 <ScatterChart margin={{ top: 8, right: 8, left: -10, bottom: 16 }}>
                   <CartesianGrid strokeDasharray="3 3" className="stroke-border/30" />
-                  <XAxis
-                    type="number"
-                    dataKey="x"
-                    name="Delay"
-                    tickFormatter={(v: number) => `${(v * 100).toFixed(0)}%`}
-                    tick={{ fontSize: 10 }}
-                    tickLine={false}
-                    axisLine={false}
-                    label={{ value: "Delay", position: "insideBottom", offset: -10, fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
-                  />
-                  <YAxis
-                    type="number"
-                    dataKey="y"
-                    name="Quality"
-                    tick={{ fontSize: 10 }}
-                    tickLine={false}
-                    axisLine={false}
-                    domain={[0, 10]}
-                    label={{ value: "Quality", angle: -90, position: "insideLeft", offset: 14, fontSize: 10, fill: "hsl(var(--muted-foreground))" }}
-                  />
+                  <XAxis type="number" dataKey="x" name="Delay" tickFormatter={(v: number) => `${(v * 100).toFixed(0)}%`} tick={{ fontSize: 10 }} tickLine={false} axisLine={false} label={{ value: "Delay", position: "insideBottom", offset: -10, fontSize: 10, fill: "hsl(var(--muted-foreground))" }} />
+                  <YAxis type="number" dataKey="y" name="Quality" tick={{ fontSize: 10 }} tickLine={false} axisLine={false} domain={[0, 10]} label={{ value: "Quality", angle: -90, position: "insideLeft", offset: 14, fontSize: 10, fill: "hsl(var(--muted-foreground))" }} />
                   <ZAxis type="number" dataKey="z" range={[30, 150]} />
-                  <ChartTooltip
-                    content={
-                      <ChartTooltipContent
-                        formatter={(value, name) => {
-                          const v = Number(value);
-                          if (String(name) === "Delay") return `${(v * 100).toFixed(1)}%`;
-                          if (String(name) === "Quality") return `${v.toFixed(1)}/10`;
-                          return `${(v * 100).toFixed(0)}%`;
-                        }}
-                      />
-                    }
-                  />
+                  <ChartTooltip content={<ChartTooltipContent formatter={(value, name) => { const v = Number(value); if (String(name) === "Delay") return `${(v * 100).toFixed(1)}%`; if (String(name) === "Quality") return `${v.toFixed(1)}/10`; return `${(v * 100).toFixed(0)}%`; }} />} />
                   <Scatter data={scatterData} fillOpacity={0.75} name="suppliers">
-                    {scatterData.map((entry, index) => {
-                      const color = entry.z > 0.7 ? "#ef4444" : entry.z >= 0.4 ? "#f59e0b" : "#22c55e";
-                      return <Cell key={index} fill={color} />;
-                    })}
+                    {scatterData.map((entry, index) => { const color = entry.z > 0.7 ? "#ef4444" : entry.z >= 0.4 ? "#f59e0b" : "#22c55e"; return <Cell key={index} fill={color} />; })}
                   </Scatter>
                 </ScatterChart>
               </ChartContainer>
             </div>
-            {/* Matrix Legend */}
-            <div className="flex justify-center gap-3 mt-1">
-              {[{ color: "#22c55e", label: "Low" }, { color: "#f59e0b", label: "Med" }, { color: "#ef4444", label: "High" }].map(l => (
-                <div key={l.label} className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                  <div className="h-2 w-2 rounded-full" style={{ backgroundColor: l.color }} />
-                  {l.label}
-                </div>
-              ))}
-            </div>
           </CardContent>
         </Card>
 
-        {/* Supplier Table */}
-        <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm lg:col-span-3 flex flex-col">
-          <CardHeader className="pb-3 pt-5 px-5 flex-row items-center justify-between">
-            <div>
-              <CardTitle className="text-sm font-bold tracking-tight flex items-center gap-2">
-                <Truck className="h-4 w-4 text-slate-500" />
-                Supply Chain Diagnostics
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm lg:col-span-3 flex flex-col">
+          <CardHeader className="p-8 border-b border-border/5 flex-row items-center justify-between">
+            <div className="space-y-1">
+              <CardTitle className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60 flex items-center gap-3">
+                <Truck className="h-5 w-5 opacity-40" /> Operational Hub Ledger
               </CardTitle>
-              <CardDescription className="text-[11px] font-medium opacity-60 mt-0.5">
-                Operational reliability ranked by risk index · {sortedSuppliers.length} entities
-              </CardDescription>
+              <CardDescription className="text-xs font-medium opacity-60">Operational reliability ranked by risk index · {sortedSuppliers.length} entities</CardDescription>
             </div>
+            <Button variant="outline" size="sm" className="rounded-xl h-10 gap-2 border-border/20 bg-card text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover">
+              <FileDown className="w-4 h-4 opacity-50" /> Download Asset Record
+            </Button>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="max-h-[360px] overflow-y-auto overflow-x-auto">
+            <div className="max-h-[360px] overflow-y-auto overflow-x-auto natural-scrollbar">
               <Table>
                 <TableHeader>
-                  <TableRow className="hover:bg-transparent border-b border-border/50">
-                    <TableHead className="pl-5 text-[11px]">Supplier</TableHead>
-                    <TableHead className="text-[11px]">Risk Score</TableHead>
-                    <TableHead className="text-[11px] hidden sm:table-cell text-center">Delay Rate</TableHead>
-                    <TableHead className="text-[11px] hidden md:table-cell text-center">
-                      <span className="flex items-center justify-center gap-1"><Star className="h-2.5 w-2.5" /> Quality</span>
-                    </TableHead>
-                    <TableHead className="text-[11px] hidden lg:table-cell text-center">
-                      <span className="flex items-center justify-center gap-1"><Clock className="h-2.5 w-2.5" /> Lead Time</span>
-                    </TableHead>
-                    <TableHead className="text-[11px]">Status</TableHead>
+                  <TableRow className="hover:bg-transparent border-border/5">
+                    <TableHead className="pl-8 h-14 text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40">Regional Asset</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40">Region</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 text-center">Delay</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 text-center">Quality</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 text-center">Items</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 text-right pr-8">Lead Interval</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {sortedSuppliers.map((supplier) => {
                     const status = getSupplierBadge(supplier.status);
                     const riskLevel = getRiskLevel(supplier.riskScore);
+                    const details = hubDetails[supplier.supplierId] || { region: "N/A", items: 0 };
                     return (
-                      <TableRow key={supplier.supplierId} className="hover:bg-muted/20 transition-colors border-b border-border/30">
-                        <TableCell className="pl-5 py-3">
-                          <div className="flex items-center gap-2.5">
-                            <div className={cn("w-7 h-7 rounded-lg flex items-center justify-center shrink-0", riskLevel.bg)}>
-                              <Truck className={cn("h-3.5 w-3.5", riskLevel.text)} />
-                            </div>
-                            <span className="font-semibold text-sm">{supplier.supplierId}</span>
+                      <TableRow key={supplier.supplierId} className="group hover:bg-muted/30 transition-all border-border/5">
+                        <TableCell className="pl-8 py-4">
+                          <div className="flex items-center gap-3">
+                             <div className={cn("w-8 h-8 rounded-xl flex items-center justify-center text-[10px] font-bold shrink-0 shadow-inner", riskLevel.bg, riskLevel.text)}>
+                               {supplier.supplierId.split(' ').map(n => n[0]).join('').substring(0, 2)}
+                             </div>
+                             <div>
+                               <p className="font-bold text-sm tracking-tight text-foreground">{supplier.supplierId}</p>
+                               <p className="text-[8px] font-bold text-muted-foreground/40 uppercase tracking-widest">Asset Record</p>
+                             </div>
                           </div>
                         </TableCell>
-                        <TableCell>
-                          <div className="space-y-1 min-w-[110px]">
-                            <RiskBar value={supplier.riskScore} />
-                          </div>
-                        </TableCell>
-                        <TableCell className="hidden sm:table-cell text-center">
-                          <span className={cn("text-sm font-bold tabular-nums", supplier.delayRate > 0.3 ? "text-red-600 dark:text-red-400" : "text-muted-foreground")}>
-                            {(supplier.delayRate * 100).toFixed(1)}%
-                          </span>
-                        </TableCell>
-                        <TableCell className="hidden md:table-cell text-center">
-                          <span className="text-sm font-bold tabular-nums">{supplier.avgQualityScore.toFixed(1)}<span className="text-muted-foreground text-xs font-normal">/10</span></span>
-                        </TableCell>
-                        <TableCell className="hidden lg:table-cell text-center text-sm tabular-nums text-muted-foreground">
-                          {supplier.avgLeadTime}d
-                        </TableCell>
-                        <TableCell>
-                          <Badge variant="outline" className={cn("text-[10px] font-bold", status.className)}>
-                            {status.label}
-                          </Badge>
-                        </TableCell>
+                        <TableCell><span className="text-xs font-bold text-muted-foreground/60 uppercase tracking-widest">{details.region}</span></TableCell>
+                        <TableCell className="text-center font-bold text-xs tabular-nums">{(supplier.delayRate * 100).toFixed(0)}%</TableCell>
+                        <TableCell className="text-center font-bold text-xs tabular-nums text-emerald-600">{(supplier.avgQualityScore * 10).toFixed(0)}%</TableCell>
+                        <TableCell className="text-center font-bold text-xs tabular-nums text-muted-foreground">{details.items}</TableCell>
+                        <TableCell className="text-right pr-8"><span className="text-xs font-bold text-foreground opacity-80">{supplier.avgLeadTime} Days</span></TableCell>
                       </TableRow>
                     );
                   })}
-                  {sortedSuppliers.length === 0 && (
-                    <TableRow>
-                      <TableCell colSpan={6} className="h-24 text-center text-muted-foreground text-sm">
-                        <Info className="h-4 w-4 inline mr-1.5" />
-                        No supplier risk data available
-                      </TableCell>
-                    </TableRow>
-                  )}
                 </TableBody>
               </Table>
             </div>
           </CardContent>
         </Card>
+      </div>
+
+      <div className="grid gap-4 md:grid-cols-3">
+        <Card className="rounded-[1.5rem] bg-card/40 border-border/20 shadow-sm overflow-hidden group">
+          <div className="h-1 w-full bg-rose-500/20" />
+          <CardHeader className="p-6">
+             <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-rose-500/10 text-rose-600"><ShieldAlert className="h-4 w-4" /></div>
+                <CardTitle className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60">System Vulnerability</CardTitle>
+             </div>
+             <p className="text-sm font-medium leading-relaxed">Skikda axis reports persistent <span className="text-rose-600 font-bold">32% delay</span> due to fuel-line structural breaks.</p>
+          </CardHeader>
+        </Card>
+        <Card className="rounded-[1.5rem] bg-card/40 border-border/20 shadow-sm overflow-hidden group">
+          <div className="h-1 w-full bg-emerald-500/20" />
+          <CardHeader className="p-6">
+             <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-emerald-500/10 text-emerald-600"><Activity className="h-4 w-4" /></div>
+                <CardTitle className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60">Model Stability</CardTitle>
+             </div>
+             <p className="text-sm font-medium leading-relaxed">Blida & Annaba regional centers maintaining <span className="text-emerald-600 font-bold">95%+ service continuity</span>.</p>
+          </CardHeader>
+        </Card>
+        <Card className="rounded-[1.5rem] bg-card/40 border-border/20 shadow-sm overflow-hidden group">
+          <div className="h-1 w-full bg-blue-500/20" />
+          <CardHeader className="p-6">
+             <div className="flex items-center gap-3 mb-2">
+                <div className="p-2 rounded-lg bg-blue-500/10 text-blue-600"><TrendingDown className="h-4 w-4" /></div>
+                <CardTitle className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/60">Operational Insight</CardTitle>
+             </div>
+             <p className="text-xs font-medium leading-relaxed italic opacity-80">"Algeria Rail Logistics detected structural latency during peak seasonal transitions. <span className="text-blue-600 font-bold not-italic">Recommended optimization: Pivot to Oran Multi-Modal Hub</span>."</p>
+          </CardHeader>
+        </Card>
+      </div>
+
+      <div className="flex items-center justify-between px-4 py-2 border-t border-border/5">
+        <div className="flex items-center gap-6">
+          <p className="text-[8px] font-bold uppercase tracking-widest text-muted-foreground/40">Supply Compliance Framework v2.11.0 (2011 Stable)</p>
+          <p className="text-[8px] font-bold uppercase tracking-widest text-muted-foreground/40">RDM Distribution Controller v2.5.2 (Stable)</p>
+        </div>
+        <p className="text-[8px] font-bold uppercase tracking-widest text-muted-foreground/40">Dec 09, 2011 08:31</p>
       </div>
     </div>
   );
@@ -709,23 +623,24 @@ export default function PredictionsView() {
       setChurnData(churnTransformed);
       setSupplyData(supplyTransformed);
     } catch (err) {
-      // Robust Fallback Demo Data for Supply Chain & Churn
+      // Robust Fallback Demo Data for Supply Chain & Churn (Maghreb Regional Hubs)
       const demoSuppliers: SupplierRisk[] = [
-        { supplierId: "Global Logistics UK", riskScore: 0.85, delayRate: 0.32, avgQualityScore: 6.2, avgLeadTime: 14, status: "high_risk" },
-        { supplierId: "EuroParts SAS", riskScore: 0.12, delayRate: 0.04, avgQualityScore: 9.4, avgLeadTime: 5, status: "low_risk" },
-        { supplierId: "Nordic Freight AB", riskScore: 0.45, delayRate: 0.18, avgQualityScore: 7.8, avgLeadTime: 9, status: "medium_risk" },
-        { supplierId: "Alpine Supplies GmbH", riskScore: 0.72, delayRate: 0.28, avgQualityScore: 5.5, avgLeadTime: 12, status: "high_risk" },
-        { supplierId: "Iberica Distribution", riskScore: 0.22, delayRate: 0.08, avgQualityScore: 8.9, avgLeadTime: 6, status: "low_risk" },
+        { supplierId: "Sonatrach Dynamics", riskScore: 0.82, delayRate: 0.32, avgQualityScore: 4.5, avgLeadTime: 14, status: "critical" },
+        { supplierId: "Algeria Rail Logistics", riskScore: 0.75, delayRate: 0.28, avgQualityScore: 5.5, avgLeadTime: 8, status: "high_risk" },
+        { supplierId: "Oran Bulk Solutions", riskScore: 0.42, delayRate: 0.18, avgQualityScore: 7.8, avgLeadTime: 10, status: "medium_risk" },
+        { supplierId: "Sétif Distribution Hub", riskScore: 0.25, delayRate: 0.12, avgQualityScore: 8.2, avgLeadTime: 5, status: "low_risk" },
+        { supplierId: "Blida Agri-Systems", riskScore: 0.08, delayRate: 0.06, avgQualityScore: 9.4, avgLeadTime: 3, status: "low_risk" },
+        { supplierId: "Annaba Port Terminal", riskScore: 0.06, delayRate: 0.06, avgQualityScore: 9.6, avgLeadTime: 12, status: "low_risk" },
       ];
 
       const supplyTransformed: SupplyRiskData = {
         supplierRisks: demoSuppliers,
         summary: {
-          totalSuppliers: demoSuppliers.length,
+          totalSuppliers: 6,
           highRisk: 2,
           mediumRisk: 1,
-          lowRisk: 2,
-          avgDelayRate: 0.18,
+          lowRisk: 3,
+          avgDelayRate: 0.17,
         },
       };
 
@@ -783,33 +698,22 @@ export default function PredictionsView() {
              </span>
              <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Registry Health Nominal</span>
           </div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">Projections & Risk Metrics</h1>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">Supply Network Operational Matrix</h1>
           <p className="text-sm text-muted-foreground font-medium italic opacity-70">
-            "Standard methodological diagnostic scoring for historical customer retention and supply chain stability."
+            "Comprehensive audit of 6 regional clusters across north-Africa distribution hubs."
           </p>
         </div>
         <div className="flex items-center gap-3 shrink-0">
-          <Button variant="outline" size="sm" className="rounded-xl h-11 gap-2 border-border/40 bg-card/40 text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover transition-all" onClick={fetchData}>
-            <RefreshCw className={cn("w-4 h-4 opacity-50", loading && "animate-spin")} /> Force Registry Sync
-          </Button>
-        </div>
-      </div>
           {totalCritical > 0 && (
-            <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2">
-              <Activity className="h-3.5 w-3.5 text-slate-500" />
-              <span className="text-[10px] uppercase font-bold tracking-widest text-slate-600 dark:text-slate-400">
-                {totalCritical} Critical Items Detected
+            <div className="hidden lg:flex items-center gap-2 bg-rose-500/5 border border-rose-500/10 rounded-xl px-4 h-11">
+              <Activity className="h-3.5 w-3.5 text-rose-500" />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-rose-600">
+                {totalCritical} Critical Alerts
               </span>
             </div>
           )}
-          <Button
-            variant="outline"
-            size="icon"
-            className="rounded-xl h-9 w-9 bg-card/50"
-            onClick={fetchData}
-            disabled={loading}
-          >
-            <RefreshCw className={cn("h-4 w-4", loading && "animate-spin")} />
+          <Button variant="outline" size="sm" className="rounded-xl h-11 gap-2 border-border/40 bg-card/40 text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover transition-all" onClick={fetchData}>
+            <RefreshCw className={cn("w-4 h-4 opacity-50", loading && "animate-spin")} /> Force Registry Sync
           </Button>
         </div>
       </div>

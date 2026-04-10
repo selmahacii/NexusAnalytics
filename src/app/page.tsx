@@ -42,7 +42,7 @@ import ForecastView from "@/components/nexus/forecast-view";
 import PredictionsView from "@/components/nexus/predictions-view";
 import CustomersView from "@/components/nexus/customers-view";
 import InventoryView from "@/components/nexus/inventory-view";
-import SupplyChainView from "@/components/nexus/supply-chain-view";
+
 import AnomaliesView from "@/components/nexus/anomalies-view";
 import MarketView from "@/components/nexus/market-view";
 import ModelsView from "@/components/nexus/models-view";
@@ -62,7 +62,7 @@ const NAV_ANALYTICS: NavItem[] = [
   { id: "dashboard", label: "Operational Sector Ledger", icon: LayoutDashboard },
   { id: "forecast", label: "Revenue Forecaster", icon: TrendingUp },
   { id: "predictions", label: "Demand Validation", icon: Target },
-  { id: "supply-chain", label: "Supply Chain", icon: Factory },
+
   { id: "anomalies", label: "Pattern Auditor", icon: Activity },
   { id: "reports", label: "Operational Ledger", icon: FileText },
   { id: "market", label: "Sector Intel", icon: Globe },
@@ -93,7 +93,7 @@ const VIEW_COMPONENTS: Record<ViewId, React.ComponentType> = {
   predictions: PredictionsView,
   customers: CustomersView,
   inventory: InventoryView,
-  "supply-chain": SupplyChainView,
+
   anomalies: AnomaliesView,
   market: MarketView,
   models: ModelsView,

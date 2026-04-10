@@ -6,7 +6,7 @@ export type ViewId =
   | 'predictions'
   | 'customers'
   | 'inventory'
-  | 'supply-chain'
+
   | 'anomalies'
   | 'market'
   | 'models'
