@@ -230,7 +230,7 @@ export default function ModelsView() {
       <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
         <div className="space-y-1">
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
-            Execution Controller
+            Operational Logic Manager
           </h1>
           <p className="text-sm text-muted-foreground font-medium">Manage automated logic blocks and verified policy outputs.</p>
         </div>
@@ -253,7 +253,7 @@ export default function ModelsView() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         {/* ── Left Sidebar: Registry List ── */}
         <div className="lg:col-span-4 space-y-4">
-          <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-4">Active Engines</h3>
+          <h3 className="text-[10px] font-black uppercase tracking-widest text-muted-foreground mb-4">Diagnostic logic blocks</h3>
           <div className="space-y-3">
             {models.map((model) => (
               <motion.div
@@ -283,10 +283,10 @@ export default function ModelsView() {
                     </p>
                     <div className="flex items-center gap-3">
                       <span className={cn("text-[11px] font-medium tabular-nums", selectedModel?.id === model.id ? "text-white/80" : "text-muted-foreground")}>
-                        Acc: <strong>{(model.mlOps.accuracy * 100).toFixed(1)}%</strong>
+                        Verification: <strong>{(model.mlOps.accuracy * 100).toFixed(1)}%</strong>
                       </span>
                       <span className={cn("text-[11px] font-medium tabular-nums", selectedModel?.id === model.id ? "text-white/80" : "text-muted-foreground")}>
-                        Drift: <strong className={model.mlOps.driftStatus === 'stable' ? 'text-emerald-400' : 'text-amber-400'}>{model.mlOps.driftScore.toFixed(3)}</strong>
+                        Variance: <strong className={model.mlOps.driftStatus === 'stable' ? 'text-emerald-400' : 'text-amber-400'}>{model.mlOps.driftScore.toFixed(3)}</strong>
                       </span>
                     </div>
                   </div>
@@ -335,13 +335,13 @@ export default function ModelsView() {
                    <div className="space-y-4">
                      <div className="flex flex-wrap items-center gap-3">
                        <Badge className="bg-primary/20 text-primary border-primary/30 h-7 rounded-lg text-[10px] font-black uppercase tracking-widest">
-                         v{selectedModel.versions[0].version} Active
+                         Build v2.5.2 (Stable)
                        </Badge>
                        <Badge className="bg-emerald-500/10 text-emerald-500 border-emerald-500/20 h-7 rounded-lg text-[10px] font-black uppercase tracking-widest">
-                         Production Ready
+                         Production Verified
                        </Badge>
                        <Badge variant="outline" className="h-7 rounded-lg text-[10px] border-white/5 font-bold uppercase tabular-nums">
-                         Trained: 06/04/2026
+                         Validated: 09/12/2011
                        </Badge>
                      </div>
                      <h2 className="text-4xl font-black tracking-tight">{selectedModel.name}</h2>
@@ -368,7 +368,7 @@ export default function ModelsView() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                   <StatCard 
-                    title="Model Accuracy" 
+                    title="Verification Rate" 
                     value="94.2%" 
                     subValue="Confidence" 
                     icon={ShieldCheck} 
@@ -376,7 +376,7 @@ export default function ModelsView() {
                     trend="+1.2%"
                   />
                   <StatCard 
-                    title="Drift Index" 
+                    title="Variance Delta" 
                     value={selectedModel.mlOps.driftScore.toFixed(3)} 
                     subValue={selectedModel.mlOps.driftStatus.toUpperCase()} 
                     icon={Activity} 
@@ -517,10 +517,10 @@ export default function ModelsView() {
                         <Table>
                           <TableHeader className="bg-muted/20">
                             <TableRow className="hover:bg-transparent">
-                              <TableHead className="pl-8 text-[10px] font-black uppercase tracking-widest">Version Artifact</TableHead>
+                              <TableHead className="pl-8 text-[10px] font-black uppercase tracking-widest">Logic Build Artifact</TableHead>
                               <TableHead className="text-[10px] font-black uppercase tracking-widest">Status</TableHead>
-                              <TableHead className="text-[10px] font-black uppercase tracking-widest">Accuracy</TableHead>
-                              <TableHead className="text-[10px] font-black uppercase tracking-widest">Trained Date</TableHead>
+                              <TableHead className="text-[10px] font-black uppercase tracking-widest">Verification</TableHead>
+                              <TableHead className="text-[10px] font-black uppercase tracking-widest">Validation Date</TableHead>
                               <TableHead className="pr-8 text-right text-[10px] font-black uppercase tracking-widest">Controls</TableHead>
                             </TableRow>
                           </TableHeader>
@@ -544,7 +544,7 @@ export default function ModelsView() {
                                   </Badge>
                                 </TableCell>
                                 <TableCell className="text-xs font-black tabular-nums">{(ver.accuracy * 100).toFixed(2)}%</TableCell>
-                                <TableCell className="text-xs text-muted-foreground font-medium">07/04/2026</TableCell>
+                                <TableCell className="text-xs text-muted-foreground font-medium">08/12/2011</TableCell>
                                 <TableCell className="pr-8 text-right">
                                   <Button 
                                     variant="ghost" 

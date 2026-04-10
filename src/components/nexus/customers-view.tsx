@@ -98,57 +98,64 @@ export default function CustomersView() {
   return (
     <div className="space-y-6 animate-fade-in">
       {/* ── Header ─────────────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-foreground">Projections & Risk Metrics</h1>
-          <p className="text-sm text-muted-foreground mt-1 max-w-2xl font-medium">
-            Method: <strong>Rolling Mean + Seasonal Drift Analysis</strong>. Diagnostic risk scoring for retail distribution hubs.
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 px-4">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-1">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-500 opacity-20"></span>
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-400"></span>
+            </span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Registry Health Nominal</span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">Projections & Risk Metrics</h1>
+          <p className="text-sm text-muted-foreground font-medium italic opacity-70">
+            Method: Rolling Mean + Seasonal Drift Analysis. Diagnostic risk scoring for retail distribution hubs.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-           <div className="flex items-center gap-2 px-4 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[10px] font-black uppercase tracking-widest text-slate-500">
-             <Activity className="w-3 h-3 text-emerald-500" />
+        <div className="flex items-center gap-3">
+           <div className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-card/40 backdrop-blur-md border border-border/20 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground shadow-sm">
+             <Activity className="w-3.5 h-3.5 text-emerald-500 mr-1.5" />
              Diagnostic Sync Active
            </div>
-           <Button variant="outline" size="sm" className="rounded-xl h-9 gap-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shadow-sm font-bold">
-             <Download className="w-4 h-4" /> Export Report
+           <Button variant="outline" size="sm" className="rounded-xl h-11 gap-2 border-border/40 bg-card/40 text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover">
+             <Download className="w-4 h-4 opacity-50" /> Export Registry
            </Button>
         </div>
       </div>
 
       {/* ── Summary Stats ───────────────────────────────────────────── */}
-      <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm p-6 flex flex-col justify-between">
-          <div className="flex items-center gap-3 text-muted-foreground">
-             <ShieldAlert className="w-5 h-5" />
-             <span className="text-[10px] font-black uppercase tracking-widest">Total At-Risk</span>
+      <div className="grid grid-cols-1 md:grid-cols-4 gap-4 px-4">
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm p-8 flex flex-col justify-between transition-all hover:bg-muted/40 card-hover group">
+          <div className="flex items-center gap-3 text-muted-foreground/60">
+             <ShieldAlert className="w-5 h-5 opacity-50 group-hover:text-primary transition-colors" />
+             <span className="text-[10px] font-bold uppercase tracking-[0.2em]">Total At-Risk</span>
           </div>
-          <h2 className="text-5xl font-black tracking-tighter mt-4">532</h2>
+          <h2 className="text-5xl font-bold tracking-tighter mt-6 text-foreground">532</h2>
         </Card>
 
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-rose-500/[0.03] shadow-sm p-6">
+        <Card className="rounded-[1.5rem] bg-rose-500/5 backdrop-blur-md border-rose-500/20 shadow-sm p-8 flex flex-col justify-between card-hover group">
           <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] font-black uppercase tracking-widest text-rose-600/70">High Risk</span>
-            <Badge className="bg-rose-500 text-white border-none text-[8px] font-black uppercase tracking-widest px-1.5 h-4">Priority 1</Badge>
+            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-rose-600/70">Critical Tier</span>
+            <Badge className="bg-rose-500 text-white border-none text-[8px] font-bold uppercase tracking-widest px-2 h-5 rounded-lg">Priority I</Badge>
           </div>
-          <h3 className="text-4xl font-black text-rose-600 tracking-tighter">07</h3>
-          <p className="text-[10px] font-bold text-rose-600/60 leading-none mt-2">Immediate Action Required</p>
+          <h3 className="text-5xl font-bold text-rose-600 tracking-tighter mt-4">07</h3>
+          <p className="text-[10px] font-bold text-rose-600/40 uppercase tracking-widest mt-4">Manual Sweep Required</p>
         </Card>
 
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-blue-500/[0.03] shadow-sm p-6">
+        <Card className="rounded-[1.5rem] bg-blue-500/5 backdrop-blur-md border-blue-500/20 shadow-sm p-8 flex flex-col justify-between card-hover group">
           <div className="flex items-center justify-between mb-2">
-             <span className="text-[10px] font-black uppercase tracking-widest text-blue-600/70">Medium Risk</span>
-             <Badge variant="outline" className="border-blue-500/20 text-blue-600 text-[8px] font-black uppercase tracking-widest px-1.5 h-4">Priority 2</Badge>
+             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600/70">Observation Tier</span>
+             <Badge variant="outline" className="border-blue-500/20 text-blue-600 text-[8px] font-bold uppercase tracking-widest px-2 h-5 rounded-lg">Priority II</Badge>
           </div>
-          <h3 className="text-4xl font-black text-blue-600 tracking-tighter">525</h3>
-          <p className="text-[10px] font-bold text-blue-600/60 leading-none mt-2">Monitored Segments</p>
+          <h3 className="text-5xl font-bold text-blue-600 tracking-tighter mt-4">525</h3>
+          <p className="text-[10px] font-bold text-blue-600/40 uppercase tracking-widest mt-4">Passive Monitoring</p>
         </Card>
 
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-emerald-500/[0.03] shadow-sm p-6">
-           <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600/70">Avg. Churn Score</span>
-           <h3 className="text-4xl font-black text-emerald-600 tracking-tighter mt-4">63.7%</h3>
-           <p className="text-[10px] text-emerald-600/60 font-bold uppercase tracking-tight mt-2 italic">
-             Signal Probability Density
+        <Card className="rounded-[1.5rem] bg-emerald-500/5 backdrop-blur-md border-emerald-500/20 shadow-sm p-8 flex flex-col justify-between card-hover group">
+           <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600/70">Avg. Signal Density</span>
+           <h3 className="text-5xl font-bold text-emerald-600 tracking-tighter mt-4">63.7%</h3>
+           <p className="text-[10px] text-emerald-600/40 font-bold uppercase tracking-widest mt-4 italic">
+             Probabilistic Distribution
            </p>
         </Card>
       </div>
@@ -156,45 +163,44 @@ export default function CustomersView() {
       <div className="h-px bg-slate-100 dark:bg-slate-900 mx-10 my-2" />
 
       {/* ── Table Controls ─────────────────────────────────────────── */}
-      <div className="flex items-center justify-between gap-4">
-        <div className="flex items-center gap-3">
-           <div className="relative w-72">
-             <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
+      <div className="flex items-center justify-between gap-6 px-4">
+        <div className="flex items-center gap-4">
+           <div className="relative w-80 group">
+             <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground/40 group-focus-within:text-primary transition-colors" />
              <Input
-               placeholder="Search by name or region..."
-               className="pl-9 h-10 rounded-xl bg-card/50 border-slate-200 dark:border-slate-800"
+               placeholder="Filter by entity or regional hub..."
+               className="pl-11 h-12 rounded-[1.2rem] bg-card/40 backdrop-blur-md border-border/20 shadow-inner ring-1 ring-border/5 focus-visible:ring-primary/20"
                value={search}
                onChange={(e) => setSearch(e.target.value)}
              />
            </div>
            <DropdownMenu>
             <DropdownMenuTrigger asChild>
-              <Button variant="outline" className="rounded-xl gap-2 h-10 px-4 border-slate-200 dark:border-slate-800 font-bold text-xs uppercase tracking-tight">
-                <Layers className="w-4 h-4 text-slate-400" />
-                 {sectorFilter === "all" ? "All Sectors" : sectorFilter}
+              <Button variant="outline" className="rounded-[1.2rem] gap-3 h-12 px-6 border-border/20 bg-card/40 font-bold text-[10px] uppercase tracking-widest shadow-sm card-hover">
+                <Layers className="w-4 h-4 opacity-40" />
+                 {sectorFilter === "all" ? "Strategic Sectors" : sectorFilter}
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-56 rounded-xl">
-              <DropdownMenuLabel className="text-[10px] font-black uppercase tracking-widest text-slate-500">Market Segmentation</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem onClick={() => setSectorFilter("all")}>All Sectors</DropdownMenuItem>
+            <DropdownMenuContent className="w-64 rounded-2xl p-2 bg-card/95 backdrop-blur-xl border-border/20 shadow-2xl">
+              <DropdownMenuLabel className="px-4 py-3 text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/50 border-b border-border/5 mb-1.5">Market Segmentation</DropdownMenuLabel>
+              <DropdownMenuItem onClick={() => setSectorFilter("all")} className="rounded-xl h-10 px-4 text-xs font-bold transition-all focus:bg-primary focus:text-white">All Strategic Sectors</DropdownMenuItem>
               {sectors.map((s) => (
-                <DropdownMenuItem key={s} onClick={() => setSectorFilter(s)} className="capitalize">{s}</DropdownMenuItem>
+                <DropdownMenuItem key={s} onClick={() => setSectorFilter(s)} className="rounded-xl h-10 px-4 text-xs font-bold transition-all focus:bg-primary focus:text-white capitalize">{s}</DropdownMenuItem>
               ))}
             </DropdownMenuContent>
           </DropdownMenu>
         </div>
-        <div className="flex items-center gap-2">
-          <p className="text-[10px] font-black uppercase tracking-[0.2em] text-muted-foreground opacity-40">
-             Showing top 25 priority rankings
+        <div className="flex items-center gap-3">
+          <p className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 italic">
+             Displaying top 25 priority rankings
           </p>
           <div className="group relative">
-             <Info className="w-3.5 h-3.5 text-muted-foreground cursor-help" />
-             <div className="absolute right-0 bottom-full mb-2 w-48 bg-slate-900 text-white p-2 rounded-lg text-[9px] font-bold invisible group-hover:visible z-50 shadow-xl">
-               <p className="mb-1 text-slate-400">ENTITY TYPES:</p>
-               <ul className="space-y-1">
+             <Info className="w-4 h-4 text-muted-foreground opacity-30 cursor-help hover:opacity-100 transition-opacity" />
+             <div className="absolute right-0 bottom-full mb-3 w-64 bg-slate-800 text-white p-6 rounded-[1.5rem] text-[10px] font-medium invisible group-hover:visible z-50 shadow-2xl animate-slide-up border border-border/10 ring-1 ring-black/20">
+               <p className="mb-4 text-[9px] font-bold uppercase tracking-[0.3em] text-white/40 border-b border-white/5 pb-2">ENTITY TYPES:</p>
+               <ul className="space-y-2.5">
                  {Object.entries(ENTITY_LEGEND).map(([k, v]) => (
-                   <li key={k} className="flex justify-between"><span>{k}:</span> <span>{v}</span></li>
+                   <li key={k} className="flex justify-between items-center"><span className="font-bold opacity-60 bg-white/5 px-2 py-0.5 rounded-md">{k}</span> <span className="text-right opacity-90">{v}</span></li>
                  ))}
                </ul>
              </div>
@@ -203,65 +209,68 @@ export default function CustomersView() {
       </div>
 
       {/* ── Accounts Ledger ─────────────────────────────────────────── */}
-      <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
+      <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden mx-4">
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="hover:bg-transparent border-slate-100 dark:border-slate-900">
-                  <TableHead className="pl-8 text-[10px] font-black uppercase tracking-widest text-slate-500">Customer Entity</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500">Sector</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500">Region</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-center">Churn Risk (Score)</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-right">Revenue YTD</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-right pr-8">Inactivity</TableHead>
+                <TableRow className="hover:bg-transparent border-border/5">
+                  <TableHead className="pl-10 h-16 text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/50">Customer Entity</TableHead>
+                  <TableHead className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/50">Strategic Sector</TableHead>
+                  <TableHead className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/50 text-center">Inactivity Hub (Days)</TableHead>
+                  <TableHead className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/50 text-center">Diagnostic Score</TableHead>
+                  <TableHead className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/50 text-right pr-10">Revenue YTD</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredAccounts.map((account, idx) => (
-                  <TableRow key={idx} className="group border-slate-100 dark:border-slate-900 transition-colors hover:bg-slate-50/50 dark:hover:bg-slate-900/40">
-                    <TableCell className="pl-8 py-4">
-                      <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-[10px] font-black text-slate-600 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-slate-900 transition-all duration-300">
+                  <TableRow key={idx} className="group border-border/5 transition-all duration-300 hover:bg-muted/30">
+                    <TableCell className="pl-10 py-6">
+                      <div className="flex items-center gap-5">
+                        <div className="w-11 h-11 rounded-2xl bg-slate-500/10 flex items-center justify-center text-[11px] font-bold text-slate-500 group-hover:bg-slate-800 group-hover:text-white transition-all shadow-inner ring-1 ring-border/5">
                           {account.id}
                         </div>
-                        <div className="flex flex-col">
-                          <span className="font-bold text-sm tracking-tight text-foreground">{account.name}</span>
-                          <span className="text-[9px] text-muted-foreground font-black tracking-tighter uppercase">Verified Client Entry</span>
+                        <div className="flex flex-col min-w-0">
+                          <span className="font-bold text-base tracking-tight text-foreground truncate">{account.name}</span>
+                          <span className="text-[10px] text-muted-foreground/50 font-bold uppercase tracking-widest mt-1">Verified Distribution Agent</span>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>
-                       <Badge variant="outline" className="bg-slate-50/50 dark:bg-slate-900/50 border-slate-200 dark:border-slate-800 text-[10px] font-bold px-2 py-0 h-4.5 rounded-lg capitalize">
-                         {account.sector}
-                       </Badge>
+                       <div className="flex flex-col">
+                          <span className="text-xs font-bold text-foreground/80 capitalize">{account.sector} Cluster</span>
+                          <div className="flex items-center gap-2 mt-1.5 text-[10px] font-bold text-muted-foreground/60 uppercase tracking-widest">
+                            <MapPin className="w-3 h-3 opacity-40 text-blue-500" />
+                            {account.region}
+                          </div>
+                       </div>
                     </TableCell>
-                    <TableCell>
-                       <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground uppercase tracking-tight">
-                         <MapPin className="w-3 h-3 text-slate-400" />
-                         {account.region}
+                    <TableCell className="text-center">
+                       <div className="flex items-center justify-center gap-2 text-[13px] font-bold tabular-nums text-foreground/80 lowercase bg-muted/40 w-fit mx-auto px-4 py-1 rounded-xl border border-border/5">
+                          <Calendar className="w-4 h-4 opacity-30" />
+                          {account.inactive}
                        </div>
                     </TableCell>
                     <TableCell className="text-center">
                        <div className="flex flex-col items-center">
                           <span className={cn(
-                            "text-xs font-black tabular-nums",
-                            account.risk === "High" ? "text-rose-600" : "text-amber-600"
+                            "text-base font-bold tabular-nums tracking-tighter",
+                            account.risk === "High" ? "text-rose-600" : "text-blue-600"
                           )}>
-                            {account.riskPct}% [{account.risk}]
+                            {account.riskPct}%
                           </span>
+                          <Badge variant="outline" className={cn(
+                            "text-[8px] font-bold uppercase tracking-widest h-4 px-2 mt-1.5 border-none",
+                            account.risk === "High" ? "bg-rose-500/10 text-rose-600" : "bg-blue-500/10 text-blue-600"
+                          )}>
+                             {account.risk === "High" ? "Immediate Sync" : "Nominal Data"}
+                          </Badge>
                        </div>
                     </TableCell>
-                    <TableCell className="text-right">
-                       <span className="font-black text-sm tabular-nums tracking-tighter text-foreground">
+                    <TableCell className="text-right pr-10">
+                       <span className="font-bold text-base tabular-nums tracking-tighter text-foreground opacity-80">
                          {account.revenue}
                        </span>
-                    </TableCell>
-                    <TableCell className="text-right pr-8">
-                       <div className="flex items-center justify-end gap-2 text-xs font-black tabular-nums text-muted-foreground uppercase tracking-tighter">
-                          <Calendar className="w-3.5 h-3.5 opacity-40" />
-                          {account.inactive}
-                       </div>
                     </TableCell>
                   </TableRow>
                 ))}
@@ -271,14 +280,14 @@ export default function CustomersView() {
         </CardContent>
       </Card>
       
-      <div className="flex items-center justify-between py-2 border-t border-slate-100 dark:border-slate-900 mt-4 opacity-30">
-        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-slate-500">
-          RDM Distribution Controller v4.2.0
+      <div className="flex items-center justify-between px-10 py-6 border-t border-border/5 mt-8 opacity-40">
+        <p className="text-[10px] font-bold uppercase tracking-[0.4em] text-muted-foreground/60">
+          Industrial Registry Suite v2.1.2 
         </p>
-        <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-slate-500">
-          <span>Regional Cluster: Maghreb</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-          <span>Encryption: AES-256-GCM</span>
+        <div className="flex items-center gap-6 text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/40">
+          <span className="flex items-center gap-2"><MapPin className="w-3 h-3"/> Regional Hub: Sétif</span>
+          <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+          <span>AES-256 Verified Ledger</span>
         </div>
       </div>
     </div>

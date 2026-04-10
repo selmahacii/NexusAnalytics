@@ -6,9 +6,9 @@ import { NextResponse } from "next/server";
  */
 export async function GET() {
   try {
-    // ── REP-2026-03-A Specialized High-Fidelity Data ────────────────────────
+    // ── REP-2011-Q4 Specialized High-Fidelity Data ────────────────────────
     const reportData = {
-      id: "REP-2026-03-A",
+      id: "REP-2011-Q4",
       categoryDistribution: [
         { name: "Giftware", value: 342, fill: "#3b82f6" },
         { name: "Home Decor", value: 215, fill: "#10b981" },
@@ -22,15 +22,15 @@ export async function GET() {
         trend: 4200 + i * 215, // Linear projection
       })),
       kpis: [
-        { label: "Q1 Net Revenue", value: "€3.42M", trend: 12.8 },
+        { label: "Q4 Net Revenue", value: "€3.42M", trend: 12.8 },
         { label: "Wholesale Split", value: "62%", trend: 4.5 },
         { label: "Avg. Profit/Unit", value: "€14.20", trend: -5.2 }
       ],
     };
 
-    // ── PRED-Q2-RESTOCK Predictive Audit Data ──────────────────────────────
+    // ── PRED-2011-RESTOCK Predictive Audit Data ──────────────────────────────
     const predictionData = {
-      id: "PRED-Q2-RESTOCK",
+      id: "PRED-2011-RESTOCK",
       categoryDistribution: [
         { name: "Outdoor & Garden", value: 450, fill: "#10b981" },
         { name: "Home Decor", value: 310, fill: "#3b82f6" },
@@ -46,8 +46,8 @@ export async function GET() {
     };
 
     return NextResponse.json({
-      "REP-2026-03-A": reportData,
-      "PRED-Q2-RESTOCK": predictionData,
+      "REP-2011-Q4": reportData,
+      "PRED-2011-RESTOCK": predictionData,
     });
   } catch (error) {
     return NextResponse.json({ error: "Failed to load report analytics" }, { status: 500 });

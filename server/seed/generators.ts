@@ -126,14 +126,14 @@ export function generateCustomers(count: number): any[] {
     { item: "Enterprise", weight: 15 },
   ];
 
-  const startDate = new Date("2020-01-01");
-  const endDate = new Date("2024-06-30");
+  const startDate = new Date("2008-01-01");
+  const endDate = new Date("2011-06-30");
   const rangeMs = endDate.getTime() - startDate.getTime();
 
   for (let i = 0; i < count; i++) {
     const acquisitionDate = new Date(startDate.getTime() + rand() * rangeMs);
     const lastOrderOffset = randInt(0, 90) * 86400000;
-    const lastOrderDate = new Date(Date.now() - lastOrderOffset);
+    const lastOrderDate = new Date(new Date("2011-12-09T08:00:00Z").getTime() - lastOrderOffset);
     const isActive = rand() > 0.12;
 
     customers.push({
@@ -195,8 +195,8 @@ export async function generateSaleTransactions(
   customerIds: string[],
   productIds: string[]
 ): Promise<number> {
-  const startDate = new Date(Date.now() - 2 * 365 * 86400000);
-  const endDate = new Date();
+  const endDate = new Date("2011-12-09T08:00:00Z");
+  const startDate = new Date(endDate.getTime() - 2 * 365 * 86400000);
   const rangeMs = endDate.getTime() - startDate.getTime();
 
   // Pre-fetch product list prices

@@ -27,7 +27,7 @@ export async function POST(request: Request) {
       response = "Integrity Scan Results: 3 critical deviations detected. High-magnitude revenue spike in UK sector (SKU: 85123A) and a persistent latency issue on the London-Paris distribution line. The 'Intelligent Anomaly Scan' suggests these are transactional, not procedural, errors.";
       metadata = { type: "insight", label: "Active Operational Risks", value: "3 critical", gain: 0 };
     } else if (query.includes("inventory") || query.includes("stock")) {
-      response = "Supply Chain Brief: Current stock optimization is at 92.4%. We are facing a high-risk depletion for 'RED RETROSPOT' lines. I have calculated that current turnover rates will exhaust existing warehouse buffer by April 12th. Automated restock triggers for these lines have been successfully queued for audit.";
+      response = "Supply Chain Brief: Current stock optimization is at 92.4%. We are facing a high-risk depletion for 'RED RETROSPOT' lines. I have calculated that current turnover rates will exhaust existing warehouse buffer by December 12th. Automated restock triggers for these lines have been successfully queued for audit.";
       metadata = { type: "kpi", label: "Stock Buffer Integrity", value: "92.4%", gain: 2.1 };
     } else {
       response = "Query acknowledged. Cross-referencing current logs with the UCI transactional baseline. Analyzing your request regarding '" + message + "'... I recommend reviewing the latest 'Market Intel' module for categorical correlations related to this inquiry.";
@@ -40,7 +40,7 @@ export async function POST(request: Request) {
       response,
       metadata,
       status: "success",
-      timestamp: new Date().toISOString(),
+      timestamp: "2011-12-09T08:15:00Z",
     });
   } catch (error: unknown) {
     const msg = error instanceof Error ? error.message : "AI engine connection failed";

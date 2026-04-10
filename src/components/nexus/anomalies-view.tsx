@@ -86,28 +86,28 @@ interface AnomalyData {
 
 const SEVERITY_STYLES: Record<string, { bg: string; text: string; border: string; color: string }> = {
   critical: {
-    bg: "bg-rose-500/15",
-    text: "text-rose-500",
-    border: "border-rose-500/30",
-    color: "#f43f5e",
+    bg: "bg-rose-500/10",
+    text: "text-rose-600",
+    border: "border-rose-500/20",
+    color: "#e11d48",
   },
   high: {
-    bg: "bg-orange-500/15",
-    text: "text-orange-500",
-    border: "border-orange-500/30",
-    color: "#f97316",
+    bg: "bg-amber-600/10",
+    text: "text-amber-600",
+    border: "border-amber-600/20",
+    color: "#d97706",
   },
   medium: {
-    bg: "bg-blue-500/15",
-    text: "text-blue-500",
-    border: "border-blue-500/30",
-    color: "#3b82f6",
+    bg: "bg-blue-600/10",
+    text: "text-blue-600",
+    border: "border-blue-600/20",
+    color: "#2563eb",
   },
   low: {
-    bg: "bg-emerald-500/15",
-    text: "text-emerald-500",
-    border: "border-emerald-500/30",
-    color: "#10b981",
+    bg: "bg-slate-500/10",
+    text: "text-slate-500",
+    border: "border-slate-500/20",
+    color: "#64748b",
   },
 };
 
@@ -246,39 +246,40 @@ export default function AnomaliesView() {
   return (
     <div className="space-y-8 pb-12 animate-in fade-in duration-700">
       {/* ── Header Area ────────────────────────────────────────────── */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6">
-        <div className="space-y-1">
-          <div className="flex items-center gap-2 mb-2">
+      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-6 px-4">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-1">
             <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-500 opacity-20"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-400"></span>
             </span>
-            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground/80">Continuous Monitoring Active</span>
+            <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Registry Health Nominal</span>
           </div>
           <h1 className="text-3xl font-bold tracking-tight text-foreground">
             Integrity Journal
           </h1>
-          <p className="text-muted-foreground text-sm font-medium">
-            Systematic observations and manual validations of retail data stream anomalies.
+          <p className="text-muted-foreground text-sm font-medium italic opacity-70">
+            "Audit-ready chronological registry of systematic stream observations."
           </p>
         </div>
 
         <div className="flex items-center gap-3">
-          <div className="hidden lg:flex items-center gap-4 mr-4 bg-slate-50 dark:bg-slate-900/40 p-3 rounded-2xl border border-slate-100 dark:border-slate-800">
-             <div className="flex items-center gap-2">
-               <div className="w-2 h-2 rounded-full bg-slate-400" />
-               <span className="text-[10px] font-black uppercase text-slate-500">Revenue</span>
+          <div className="hidden lg:flex items-center gap-5 mr-4 bg-muted/20 backdrop-blur-md px-6 py-2.5 rounded-2xl border border-border/20">
+             <div className="flex items-center gap-2.5">
+               <div className="w-2 h-2 rounded-full bg-slate-500" />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Revenue</span>
              </div>
-             <div className="flex items-center gap-2">
-               <div className="w-2 h-2 rounded-full bg-blue-400" />
-               <span className="text-[10px] font-black uppercase text-slate-500">Logistics</span>
+             <div className="flex items-center gap-2.5">
+               <div className="w-2 h-2 rounded-full bg-blue-500" />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Logistics</span>
              </div>
-             <div className="flex items-center gap-2">
-               <div className="w-2 h-2 rounded-full bg-orange-400" />
-               <span className="text-[10px] font-black uppercase text-slate-500">Supply</span>
+             <div className="flex items-center gap-2.5">
+               <div className="w-2 h-2 rounded-full bg-amber-500" />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Supply</span>
              </div>
-             <div className="flex items-center gap-2">
-               <div className="w-2 h-2 rounded-full bg-emerald-400" />
-               <span className="text-[10px] font-black uppercase text-slate-500">Integrity</span>
+             <div className="flex items-center gap-2.5">
+               <div className="w-2 h-2 rounded-full bg-rose-500" />
+               <span className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground">Integrity</span>
              </div>
           </div>
           <Button
@@ -286,29 +287,29 @@ export default function AnomaliesView() {
             disabled={scanning}
             variant="outline"
             className={cn(
-              "relative px-8 h-12 rounded-xl font-bold transition-all border-slate-200 dark:border-slate-800 text-sm group overflow-hidden",
-              scanning ? "bg-slate-50" : "bg-white hover:bg-slate-50 dark:bg-slate-900/50"
+               "relative px-8 h-12 rounded-xl font-bold transition-all border-border/40 shadow-sm group overflow-hidden bg-card/40 backdrop-blur-md",
+               scanning && "bg-muted/50"
             )}
           >
             {scanning ? (
               <>
-                <Loader2 className="mr-2 h-4 w-4 animate-spin" />
-                Reviewing Streams...
+                <Loader2 className="mr-2 h-4 w-4 animate-spin opacity-50" />
+                Validating Sequences...
               </>
             ) : (
               <>
-                <FileSearch className="mr-2 h-4 w-4" />
-                Run Diagnostic Review
+                <FileSearch className="mr-2 h-4 w-4 opacity-50" />
+                Diagnostic Review
               </>
             )}
           </Button>
           <Button
             variant="outline"
             size="icon"
-            className="h-14 w-14 rounded-2xl bg-card/40 border-white/5 hover:bg-card/60 transition-colors"
+            className="h-12 w-12 rounded-xl bg-card/40 border-border/40 shadow-sm"
             onClick={fetchData}
           >
-            <RefreshCw className="h-5 w-5 opacity-60" />
+            <RefreshCw className={cn("h-4 w-4 opacity-50", loading && "animate-spin")} />
           </Button>
         </div>
       </div>
@@ -317,38 +318,38 @@ export default function AnomaliesView() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         
         {/* Optimized Area Chart (Large) */}
-        <Card className="lg:col-span-8 rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 overflow-hidden shadow-sm">
-          <CardHeader className="p-8 border-b border-slate-100 dark:border-slate-900">
+        <Card className="lg:col-span-8 rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 overflow-hidden shadow-sm">
+          <CardHeader className="p-10 border-b border-border/5">
             <div className="flex items-center justify-between">
-              <div>
-                <CardTitle className="text-sm font-bold tracking-tight text-foreground uppercase opacity-70">Observation Intensity</CardTitle>
+              <div className="space-y-1">
+                <CardTitle className="text-sm font-bold tracking-[0.2em] text-foreground uppercase opacity-40">Observation Intensity</CardTitle>
                 <CardDescription className="text-xs font-medium opacity-60">Anomaly volume identified by automated collectors over 15 days</CardDescription>
               </div>
-              <Badge variant="secondary" className="bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-none font-bold">Standard Sampling</Badge>
+              <Badge variant="secondary" className="bg-muted/30 text-muted-foreground border-none font-bold text-[10px] py-1 px-3">Standard Sampling</Badge>
             </div>
           </CardHeader>
-          <CardContent className="p-8">
-            <div className="h-[380px] w-full">
+          <CardContent className="p-10">
+            <div className="h-[400px] w-full">
               <ChartContainer config={chartConfig} className="h-full w-full">
                 <AreaChart data={timelineData}>
                   <defs>
                     <linearGradient id="obsGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#64748b" stopOpacity={0.1} />
-                      <stop offset="100%" stopColor="#64748b" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#64748b" stopOpacity={0.15} />
+                      <stop offset="100%" stopColor="#64748b" stopOpacity={0.01} />
                     </linearGradient>
                     <linearGradient id="varGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stopColor="#94a3b8" stopOpacity={0.05} />
-                      <stop offset="100%" stopColor="#94a3b8" stopOpacity={0} />
+                      <stop offset="0%" stopColor="#94a3b8" stopOpacity={0.1} />
+                      <stop offset="100%" stopColor="#94a3b8" stopOpacity={0.01} />
                     </linearGradient>
                   </defs>
-                  <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-slate-200 dark:stroke-slate-800" />
-                  <XAxis dataKey="date" tickLine={false} axisLine={false} fontSize={11} tickMargin={12} stroke="#94a3b8" />
-                  <YAxis tickLine={false} axisLine={false} fontSize={11} stroke="#94a3b8" />
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-border/20" />
+                  <XAxis dataKey="date" tickLine={false} axisLine={false} fontSize={10} tickMargin={15} stroke="#94a3b8" fontWeight={700} />
+                  <YAxis tickLine={false} axisLine={false} fontSize={10} stroke="#94a3b8" fontWeight={700} />
                   <ChartTooltip
                     content={
                       <ChartTooltipContent
                         labelFormatter={(label) => `Diagnostic Date: ${label}`}
-                        className="bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800"
+                        className="bg-card/95 border-border/40 backdrop-blur-xl"
                       />
                     }
                   />
@@ -358,8 +359,8 @@ export default function AnomaliesView() {
                     stackId="1"
                     stroke="#64748b"
                     fill="url(#obsGrad)"
-                    strokeWidth={2}
-                    animationDuration={1500}
+                    strokeWidth={3}
+                    animationDuration={2000}
                   />
                   <Area
                     type="monotone"
@@ -367,46 +368,38 @@ export default function AnomaliesView() {
                     stackId="1"
                     stroke="#94a3b8"
                     fill="url(#varGrad)"
-                    strokeWidth={1}
-                    strokeDasharray="4 4"
-                    animationDuration={1500}
+                    strokeWidth={1.5}
+                    strokeDasharray="6 4"
+                    animationDuration={2000}
                   />
                 </AreaChart>
               </ChartContainer>
-            </div>
-            <div className="flex gap-8 mt-6">
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full bg-slate-500" />
-                <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Observed Deviations</span>
-              </div>
-              <div className="flex items-center gap-2">
-                <div className="w-3 h-3 rounded-full border-2 border-slate-400 border-dashed" />
-                <span className="text-xs font-bold text-muted-foreground uppercase tracking-widest">Baseline Variance</span>
-              </div>
             </div>
           </CardContent>
         </Card>
 
         {/* Severity Radial (Small) */}
-        <Card className="lg:col-span-4 rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col">
-          <CardHeader className="p-8 border-b border-slate-50 dark:border-slate-900">
-            <CardTitle className="text-sm font-bold tracking-tight text-center uppercase opacity-70">Threat Split</CardTitle>
-            <CardDescription className="text-center text-xs font-medium opacity-60">Categorized by potential impact</CardDescription>
+        <Card className="lg:col-span-4 rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden flex flex-col">
+          <CardHeader className="p-10 border-b border-border/5">
+             <div className="space-y-1 text-center">
+              <CardTitle className="text-sm font-bold tracking-[0.2em] uppercase opacity-40">Threat Split</CardTitle>
+              <CardDescription className="text-xs font-medium opacity-60">Categorized by potential impact</CardDescription>
+             </div>
           </CardHeader>
-          <CardContent className="flex flex-col items-center justify-center flex-1">
-            <div className="h-[260px] w-full relative">
+          <CardContent className="flex flex-col items-center justify-center p-10 flex-1">
+            <div className="h-[280px] w-full relative">
               <ResponsiveContainer width="100%" height="100%">
                 <PieChart>
                   <Pie
                     data={donutData}
                     dataKey="value"
                     nameKey="name"
-                    innerRadius={80}
-                    outerRadius={110}
-                    paddingAngle={10}
+                    innerRadius={85}
+                    outerRadius={115}
+                    paddingAngle={15}
                     stroke="none"
                     animationBegin={200}
-                    animationDuration={1500}
+                    animationDuration={2000}
                   >
                     {donutData.map((entry, index) => (
                       <Cell key={`cell-${index}`} fill={entry.fill} />
@@ -415,15 +408,15 @@ export default function AnomaliesView() {
                 </PieChart>
               </ResponsiveContainer>
               <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
-                <span className="text-6xl font-black tracking-tighter tabular-nums text-foreground">08</span>
-                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.4em] font-black mt-1">Total Risk</span>
+                <span className="text-6xl font-bold tracking-tighter tabular-nums text-foreground">08</span>
+                <span className="text-[10px] text-muted-foreground uppercase tracking-[0.5em] font-bold mt-2">Active Risk</span>
               </div>
             </div>
             
-            <div className="w-full grid grid-cols-2 gap-4 mt-8">
+            <div className="w-full grid grid-cols-2 gap-4 mt-10">
               {Object.entries(SEVERITY_STYLES).map(([key, style]) => (
-                <div key={key} className={cn("p-4 rounded-[1.5rem] border transition-all flex flex-col", style.bg, style.border)}>
-                  <span className="text-[9px] uppercase font-black tracking-widest opacity-60 mb-1">{key}</span>
+                <div key={key} className={cn("p-5 rounded-[1.5rem] border transition-all flex flex-col shadow-sm card-hover", style.bg, style.border)}>
+                  <span className="text-[9px] uppercase font-bold tracking-widest opacity-40 mb-1.5">{key}</span>
                   <span className={cn("text-2xl font-bold tracking-tight", style.text)}>
                     {data ? data.summary[key as keyof typeof data.summary] : 0}
                   </span>
@@ -434,7 +427,7 @@ export default function AnomaliesView() {
         </Card>
 
         {/* Detector Engines */}
-        <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-5 gap-6 mb-4">
+        <div className="lg:col-span-12 grid grid-cols-1 md:grid-cols-5 gap-6">
           {data?.detectorStats.map((stat, i) => {
             const Info = DETECTOR_INFO[i];
             return (
@@ -443,24 +436,24 @@ export default function AnomaliesView() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: i * 0.1 }}
-                className="group relative p-8 rounded-[2rem] bg-gradient-to-b from-white/[0.03] to-transparent border border-white/5 hover:border-primary/40 transition-all hover:shadow-2xl hover:shadow-primary/5"
+                className="group relative p-8 rounded-[2rem] bg-card/40 backdrop-blur-md border border-border/20 card-hover shadow-sm"
               >
-                <div className="flex items-center justify-between mb-6">
-                  <div className="p-3 rounded-2xl bg-white/5 group-hover:bg-primary/20 transition-colors">
-                    <Info.icon className="w-6 h-6" style={{ color: Info.color }} />
+                <div className="flex items-center justify-between mb-8">
+                  <div className="p-3.5 rounded-2xl bg-slate-500/10 group-hover:bg-primary/20 transition-all group-hover:scale-110">
+                    <Info.icon className="w-6 h-6 opacity-70" style={{ color: Info.color }} />
                   </div>
-                  <div className="text-[10px] font-black text-white/50 px-3 py-1 rounded-full bg-white/5 ring-1 ring-white/10 uppercase tracking-widest">
-                    {stat.accuracy.toFixed(1)}% Acc.
-                  </div>
+                  <Badge variant="outline" className="text-[9px] font-bold text-muted-foreground/60 px-3 py-1 rounded-lg bg-muted/30 uppercase tracking-widest border-border/20">
+                    {stat.accuracy.toFixed(1)}% Precision
+                  </Badge>
                 </div>
-                <div className="text-sm font-bold text-muted-foreground uppercase tracking-widest mb-1">{stat.name}</div>
-                <div className="text-4xl font-black tracking-tighter tabular-nums">{stat.detected}</div>
-                <div className="mt-6 h-1 w-full bg-slate-100 dark:bg-slate-900 rounded-full overflow-hidden">
+                <div className="text-[11px] font-bold text-muted-foreground uppercase tracking-[0.2em] mb-1.5 opacity-60">{stat.name}</div>
+                <div className="text-4xl font-bold tracking-tighter tabular-nums text-foreground">{stat.detected} Signal</div>
+                <div className="mt-8 h-1.5 w-full bg-muted/40 rounded-full overflow-hidden ring-1 ring-border/5">
                   <motion.div 
                     initial={{ width: 0 }}
                     animate={{ width: `${stat.accuracy}%` }}
                     className="h-full bg-slate-400 dark:bg-slate-600"
-                    transition={{ duration: 1, delay: i * 0.1 + 0.5 }}
+                    transition={{ duration: 1.5, delay: i * 0.1 + 0.5 }}
                   />
                 </div>
               </motion.div>
@@ -469,28 +462,28 @@ export default function AnomaliesView() {
         </div>
 
         {/* Live Threat Feed */}
-        <Card className="lg:col-span-12 rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden mt-6">
-          <CardHeader className="p-8 border-b border-slate-100 dark:border-slate-900 flex flex-col md:flex-row md:items-center justify-between gap-6">
-            <div className="flex items-center gap-4">
-              <div className="h-10 w-1 bg-slate-300 dark:bg-slate-700 rounded-full hidden md:block" />
+        <Card className="lg:col-span-12 rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden mt-6">
+          <CardHeader className="p-10 border-b border-border/5 flex flex-col md:flex-row md:items-center justify-between gap-6">
+            <div className="flex items-center gap-6">
+              <div className="h-12 w-1.5 bg-slate-500/20 rounded-full hidden md:block" />
               <div>
-                <CardTitle className="text-xl font-semibold tracking-tight flex items-center gap-2">
-                  <Activity className="w-5 h-5 text-slate-500" />
+                <CardTitle className="text-2xl font-bold tracking-tight flex items-center gap-3">
+                  <Activity className="w-6 h-6 text-slate-500 opacity-60" />
                   Observation Archive
                 </CardTitle>
-                <CardDescription className="text-xs font-semibold uppercase tracking-widest opacity-40">
-                  Validated data deviations and specialist notes
+                <CardDescription className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
+                  Validated Diagnostic Registry
                 </CardDescription>
               </div>
             </div>
             <div className="flex items-center gap-3">
-              <Button variant="outline" className="rounded-lg border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 font-bold h-10 px-4 text-xs gap-2">
-                <FileDown className="w-3.5 h-3.5" /> Export Journal
+              <Button variant="outline" className="rounded-xl border-border/40 bg-card/40 font-bold h-11 px-6 text-[10px] gap-2 uppercase tracking-widest shadow-sm card-hover">
+                <FileDown className="w-4 h-4 opacity-50" /> Export Journal
               </Button>
             </div>
           </CardHeader>
           <div className="p-0">
-            <div className="divide-y divide-white/[0.03]">
+            <div className="divide-y divide-border/5">
               <AnimatePresence mode="popLayout">
                 {data?.anomalies.reduce((acc, curr) => {
                   const cat = getAnomalyCategory(curr.metricName).label;
@@ -506,9 +499,9 @@ export default function AnomaliesView() {
                   }, {} as Record<string, AnomalyEvent[]>) || {}
                 ).map(([category, items], groupIdx) => (
                   <div key={category} className="animate-in fade-in duration-500">
-                    <div className="bg-slate-50/50 dark:bg-slate-900/40 px-8 py-3 flex items-center justify-between border-y border-slate-100 dark:border-slate-800/50">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">{category} Cluster</span>
-                      <span className="text-[10px] font-bold text-slate-400">{items.length} Observations</span>
+                    <div className="bg-muted/30 px-10 py-4 flex items-center justify-between border-y border-border/5">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">{category} Cluster</span>
+                      <span className="text-[10px] font-bold text-muted-foreground/40">{items.length} Observations Identified</span>
                     </div>
                     {items.map((anomaly, i) => {
                       const style = SEVERITY_STYLES[anomaly.severity] || SEVERITY_STYLES.low;
@@ -516,33 +509,33 @@ export default function AnomaliesView() {
                         <div
                           key={anomaly.id}
                           className={cn(
-                            "group relative flex flex-col lg:flex-row lg:items-center gap-6 p-8 transition-all duration-300",
-                            anomaly.resolved ? "opacity-30 scale-[0.98]" : "hover:bg-slate-50/50 dark:hover:bg-slate-900/20"
+                            "group relative flex flex-col lg:flex-row lg:items-center gap-8 px-10 py-10 transition-all duration-300",
+                            anomaly.resolved ? "opacity-30 scale-[0.98]" : "hover:bg-muted/20"
                           )}
                         >
-                          <div className="flex flex-1 items-start gap-6">
+                          <div className="flex flex-1 items-start gap-8">
                             <div className={cn(
-                              "p-3 rounded-2xl border shrink-0 transition-all shadow-sm",
-                              anomaly.resolved ? "bg-slate-100 dark:bg-slate-800" : "bg-white dark:bg-slate-950"
+                              "p-4 rounded-2xl border shrink-0 transition-all shadow-inner",
+                              anomaly.resolved ? "bg-muted" : "bg-card/40 border-border/20"
                             )}>
-                              {anomaly.resolved ? <CheckCircle2 className="h-5 w-5 text-emerald-500" /> : <Clock className={cn("h-5 w-5", style.text)} />}
+                              {anomaly.resolved ? <CheckCircle2 className="h-6 w-6 text-emerald-500" /> : <Clock className={cn("h-6 w-6", style.text)} />}
                             </div>
                             
                             <div className="flex-1">
-                              <div className="flex items-center gap-3 mb-1.5">
-                                <h4 className={cn("text-base font-black tracking-tighter uppercase", anomaly.resolved ? "text-muted-foreground line-through" : "text-foreground")}>
+                              <div className="flex items-center gap-4 mb-2.5">
+                                <h4 className={cn("text-lg font-bold tracking-tight uppercase", anomaly.resolved ? "text-muted-foreground line-through" : "text-foreground")}>
                                   {anomaly.metricName}
                                 </h4>
-                                <Badge variant="outline" className={cn("px-2 py-0.5 text-[9px] font-black uppercase tracking-[0.2em]", anomaly.resolved ? "bg-slate-100 dark:bg-slate-900" : cn(style.bg, style.text, style.border))}>
-                                  {anomaly.severity} (Score: {anomaly.anomalyScore.toFixed(1)})
+                                <Badge variant="outline" className={cn("px-3 py-0.5 text-[9px] font-bold uppercase tracking-[0.2em] rounded-lg", anomaly.resolved ? "bg-muted text-muted-foreground" : cn(style.bg, style.text, style.border))}>
+                                  {anomaly.severity} (Signal: {anomaly.anomalyScore.toFixed(1)})
                                 </Badge>
                               </div>
-                              <p className="text-xs text-muted-foreground font-medium italic mb-3 leading-relaxed max-w-2xl">
-                                {anomaly.explanation}
+                              <p className="text-sm text-muted-foreground font-medium italic mb-5 leading-relaxed max-w-2xl opacity-80">
+                                "{anomaly.explanation}"
                               </p>
-                              <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-slate-400/80">
-                                <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded-md"><Calendar className="w-3 h-3"/> D-{Math.floor(Math.random() * 5) + 1}</span>
-                                <span className="flex items-center gap-1.5 bg-slate-100 dark:bg-slate-900 px-2 py-1 rounded-md">REF: LOG-{anomaly.id}</span>
+                              <div className="flex items-center gap-5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground/50">
+                                <span className="flex items-center gap-2 bg-muted/40 px-3 py-1.5 rounded-xl border border-border/10"><Calendar className="w-3.5 h-3.5 opacity-50"/> D-{Math.floor(Math.random() * 5) + 1}</span>
+                                <span className="flex items-center gap-2 bg-muted/40 px-3 py-1.5 rounded-xl border border-border/10">ID: LOG-{anomaly.id}</span>
                               </div>
                             </div>
                           </div>
@@ -554,11 +547,11 @@ export default function AnomaliesView() {
                               disabled={anomaly.resolved}
                               onClick={() => handleResolve(anomaly.id)}
                               className={cn(
-                                "h-10 px-6 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all shadow-sm",
-                                anomaly.resolved ? "text-emerald-500 bg-emerald-500/5 border-emerald-500/10 cursor-default" : "bg-white dark:bg-slate-950 hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-slate-900 border-slate-200 dark:border-slate-800"
+                                "h-11 px-8 rounded-xl text-[10px] font-bold uppercase tracking-widest transition-all shadow-sm",
+                                anomaly.resolved ? "text-emerald-500 bg-emerald-500/5 cursor-default" : "bg-card/60 border-border/40 hover:bg-foreground hover:text-background"
                               )}
                             >
-                              {anomaly.resolved ? "Signed Off" : "Authorize"}
+                              {anomaly.resolved ? "Diagnostic Signed" : "Authorize Sync"}
                             </Button>
                           </div>
                         </div>
@@ -569,20 +562,20 @@ export default function AnomaliesView() {
               </AnimatePresence>
             </div>
           </div>
-          <div className="p-8 bg-slate-50/50 dark:bg-slate-900/30 border-t border-slate-100 dark:border-slate-800">
-            <div className="flex flex-col md:flex-row md:items-start justify-between gap-6">
-              <div className="max-w-xl">
-                <h5 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400 mb-3">Diagnostic Summary</h5>
-                <p className="text-sm font-medium text-muted-foreground leading-relaxed italic">
-                  Cluster Sétif identifies isolated variance in entity revenue and carrier performance. Data models suggest regional environmental drifts; manual authorization is required for high-impact items <strong>A-01</strong> and <strong>A-04</strong> to maintain ledger consistency.
+          <div className="p-10 bg-muted/30 border-t border-border/5">
+            <div className="flex flex-col md:flex-row md:items-start justify-between gap-10">
+              <div className="max-w-xl space-y-3">
+                <h5 className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Executive Operational Summary</h5>
+                <p className="text-sm font-medium text-muted-foreground leading-relaxed italic opacity-80">
+                  "Cluster Sétif identifies isolated variance in entity revenue and carrier performance. Data models suggest regional environmental drifts; manual authorization is required for high-impact items to maintain ledger consistency and historical audit standards."
                 </p>
               </div>
-              <div className="flex items-center gap-4 pt-1">
+              <div className="flex items-center gap-5 pt-2">
                 <div className="text-right">
-                  <p className="text-[9px] font-black uppercase text-slate-400">Operations Control</p>
-                  <p className="text-sm font-bold text-foreground/80">Selma Hacii</p>
+                  <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/40 mb-1">Controller Signature</p>
+                  <p className="text-base font-bold text-foreground opacity-80">Selma Hacii</p>
                 </div>
-                <div className="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 border border-border flex items-center justify-center text-xs font-black">SH</div>
+                <div className="w-12 h-12 rounded-2xl bg-slate-500/10 border border-border/20 flex items-center justify-center text-xs font-bold text-slate-500">SH</div>
               </div>
             </div>
           </div>

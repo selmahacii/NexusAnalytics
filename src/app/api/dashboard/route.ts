@@ -30,7 +30,7 @@ export async function GET() {
         cause: "Out-of-Season Volume Surge",
         action: "Trigger Rule AUD-12 (Price Sync)",
         impact: "€42.4K Protected",
-        detectedAt: new Date().toISOString(),
+        detectedAt: "2011-12-09T08:15:00Z",
         anomalyScore: 42.4
       },
       {
@@ -41,7 +41,7 @@ export async function GET() {
         cause: "Distribution Imbalance",
         action: "Execute Rule INV-04 (Restock)",
         impact: "€12.8K Risk Mitigation",
-        detectedAt: new Date(Date.now() - 3600000).toISOString(),
+        detectedAt: "2011-12-09T07:15:00Z",
         anomalyScore: 12.8
       },
       {
@@ -52,7 +52,7 @@ export async function GET() {
         cause: "Churn Risk Probability > 0.65",
         action: "Flag for FIN-09 Audit",
         impact: "€8.5K Retention Value",
-        detectedAt: new Date(Date.now() - 7200000).toISOString(),
+        detectedAt: "2011-12-09T06:15:00Z",
         anomalyScore: 8.5
       },
       { 
@@ -63,7 +63,7 @@ export async function GET() {
         cause: "B2B Order Spike (Qty > 500)",
         action: "Freeze Transaction (Verify Account)",
         impact: "€15.4K Liquidity Guard",
-        detectedAt: new Date(Date.now() - 1000 * 60 * 60 * 8).toISOString(), 
+        detectedAt: "2011-12-08T18:15:00Z",
         anomalyScore: 15.4 
       }
     ];

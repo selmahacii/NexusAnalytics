@@ -38,6 +38,14 @@ export async function computeSupplyRisk(
 ): Promise<SupplyRiskResult> {
   const { db } = params;
 
+  // ─── Find reference date (latest transaction) ───
+  const latestTx = await db.saleTransaction.findFirst({
+    orderBy: { date: "desc" },
+    select: { date: true },
+  });
+
+  const now = latestTx?.date || new Date("2011-12-09T00:00:00Z");
+
   // ─── Fetch all products ───
   const products = await db.product.findMany({
     select: {
@@ -67,12 +75,11 @@ export async function computeSupplyRisk(
       },
       totalOrdersAnalyzed: 0,
       totalSuppliers: 0,
-      generatedAt: new Date().toISOString(),
+      generatedAt: now.toISOString(),
     };
   }
 
-  // ─── Fetch recent transaction summary per product ───
-  const ninetyDaysAgo = new Date(Date.now() - 90 * 86400000);
+  const ninetyDaysAgo = new Date(now.getTime() - 90 * 86400000);
   const transactions = await db.saleTransaction.findMany({
     where: { date: { gte: ninetyDaysAgo } },
     select: {

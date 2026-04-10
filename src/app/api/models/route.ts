@@ -10,9 +10,9 @@ export async function GET() {
     const models = [
       {
         id: "revenue_forecaster",
-        name: "Revenue Decision Engine",
+        name: "Revenue Forecasting Logic",
         type: "Trend + Seasonal Projection",
-        description: "Ensemble engine identifying growth vectors and triggering liquidity procurement workflows based on predicted categorical demand.",
+        description: "Specialized logic block identifying regional growth vectors and managing inventory procurement workflows based on verified categorical demand patterns.",
         status: "active",
         lastTrained: new Date(Date.now() - 86400000 * 2.5).toISOString(),
         mlOps: {
@@ -42,9 +42,9 @@ export async function GET() {
       },
       {
         id: "anomaly_engine",
-        name: "Strategic Anomaly Scan",
+        name: "Risk Compliance Auditor",
         type: "Structural Risk Detection",
-        description: "Multi-layered detector triggering immediate transactional blocks and manual audit workflows when structural deviations exceed 0.85 confidence.",
+        description: "Multi-layered diagnostic logic identifying structural deviations in regional transactions; triggers immediate audit workflows upon threshold violation.",
         status: "active",
         lastTrained: new Date(Date.now() - 3600000 * 4).toISOString(),
         mlOps: {
@@ -75,7 +75,7 @@ export async function GET() {
 
     return NextResponse.json(models);
   } catch (error: unknown) {
-    return NextResponse.json({ error: "Failed to fetch decision engines" }, { status: 500 });
+    return NextResponse.json({ error: "Failed to fetch diagnostic logic blocks" }, { status: 500 });
   }
 }
 
@@ -84,17 +84,17 @@ export async function POST(request: NextRequest) {
     const { searchParams } = new URL(request.url);
     const modelId = searchParams.get("model");
 
-    if (!modelId) return NextResponse.json({ error: "Missing engine ID" }, { status: 400 });
+    if (!modelId) return NextResponse.json({ error: "Missing logic block ID" }, { status: 400 });
 
-    // Simulate specialized Decision Engine pipeline stages
+    // Simulate specialized diagnostic logic pipeline stages
     return NextResponse.json({
       success: true,
-      jobId: `eng_pipe_${Date.now()}`,
+      jobId: `logic_pipe_${Date.now()}`,
       stages: [
         { name: "Event Queue Consumption", status: "completed", duration: "12s" },
-        { name: "Decision Pattern Extraction", status: "completed", duration: "45s" },
-        { name: "Action Trigger Validation", status: "in_progress", duration: "pending" },
-        { name: "Policy Registry Sync", status: "pending", duration: "pending" },
+        { name: "Risk Pattern Extraction", status: "completed", duration: "45s" },
+        { name: "Logic Chain Validation", status: "in_progress", duration: "pending" },
+        { name: "Audit Trail Sync", status: "pending", duration: "pending" },
       ],
     });
   } catch (error: unknown) {

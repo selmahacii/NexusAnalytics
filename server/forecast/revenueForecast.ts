@@ -52,7 +52,13 @@ export async function generateRevenueForecast(
   params: RevenueForecastParams,
 ): Promise<RevenueForecastResult> {
   const { db, horizonDays } = params;
-  const endDate = params.endDate || new Date();
+  // ─── Find reference date (latest transaction) ───
+  const latestTx = await db.saleTransaction.findFirst({
+    orderBy: { date: "desc" },
+    select: { date: true },
+  });
+
+  const endDate = params.endDate || latestTx?.date || new Date("2011-12-09T00:00:00Z");
   const startDate =
     params.startDate ||
     (() => {
@@ -61,28 +67,27 @@ export async function generateRevenueForecast(
       return d;
     })();
 
-  // Fetch daily revenue data — last 365 days of actuals + beyond
-  const transactions = await db.saleTransaction.groupBy({
-    by: ["date"],
+  // Fetch daily revenue data — last 365 days of actuals
+  // Since timestamps might be granular (HH:mm:ss.SSS), we fetch raw and aggregate in-memory
+  // for absolute precision across days.
+  const rawData = await db.saleTransaction.findMany({
     where: { date: { gte: startDate, lt: endDate } },
-    _sum: { revenue: true },
+    select: { date: true, revenue: true },
     orderBy: { date: "asc" },
   });
 
-  if (transactions.length < 30) {
-    throw new Error(
-      `Insufficient historical data for forecasting. Need at least 30 days. Available: ${transactions.length}`,
-    );
+  if (rawData.length < 30) {
+    throw new Error(`Insufficient historical data for forecasting block. Available points: ${rawData.length}`);
   }
 
   // Build daily time series
   const dailyMap = new Map<string, number>();
-  for (const t of transactions) {
+  for (const t of rawData) {
     const key = formatDate(new Date(t.date));
-    dailyMap.set(key, t._sum.revenue || 0);
+    dailyMap.set(key, (dailyMap.get(key) || 0) + (t.revenue || 0));
   }
 
-  // Fill gaps
+  // Fill gaps for the time series
   const values: number[] = [];
   const dates: string[] = [];
   const current = new Date(startDate);

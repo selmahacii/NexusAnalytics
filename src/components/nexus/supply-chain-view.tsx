@@ -87,115 +87,123 @@ export default function SupplyChainView() {
 
   return (
     <div className="space-y-6 animate-fade-in">
-      {/* ── Header ─────────────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4">
-        <div>
-          <h1 className="text-3xl font-extrabold tracking-tight text-foreground flex items-center gap-3">
-            Supply Chain Diagnostics
-            <Badge variant="outline" className="bg-rose-500/5 text-rose-600 border-rose-500/20 text-[10px] font-black uppercase">
-              2 Critical Items detected
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 pb-2">
+        <div className="space-y-1">
+          <h1 className="text-3xl font-bold tracking-tight text-foreground flex items-center gap-3">
+            Supply Network Operational Matrix
+            <Badge className="bg-rose-500/10 text-rose-500 border-none text-[9px] font-bold px-2 py-0">
+               2 CRITICAL VULNERABILITIES
             </Badge>
           </h1>
-          <p className="text-sm text-muted-foreground mt-1 max-w-2xl font-medium">
-            Operational reliability ranked by risk index · 6 clusters in Maghreb network.
+          <p className="text-sm text-muted-foreground max-w-2xl font-medium tracking-tight">
+            Comprehensive audit of 6 regional clusters across north-Africa distribution hubs.
           </p>
         </div>
-        <div className="flex items-center gap-2">
-           <div className="flex items-center gap-2 px-4 h-9 rounded-xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 text-[10px] font-black uppercase tracking-widest text-slate-500">
-             <Activity className="w-3 h-3 text-emerald-500" />
-             Diagnostic Sync Active
+        <div className="flex items-center gap-3">
+           <div className="flex items-center gap-2 px-3 py-1.5 rounded-xl bg-muted/50 border border-border/50 text-[9px] font-bold uppercase tracking-widest text-muted-foreground">
+             <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+             Network Integrity: Active
            </div>
-           <Button variant="outline" size="sm" className="rounded-xl h-9 gap-2 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shadow-sm font-bold">
-             <Download className="w-4 h-4" /> Export Report
+           <Button variant="outline" size="sm" className="rounded-xl h-9 gap-2 bg-card/50 backdrop-blur-sm border-border/40 text-xs font-bold shadow-sm transition-all hover:bg-muted">
+             <Download className="w-4 h-4 opacity-70" /> 
+             Operational Report
            </Button>
         </div>
       </div>
 
       {/* ── Summary Stats ───────────────────────────────────────────── */}
       <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm p-6 flex flex-col justify-between">
-          <div className="flex items-center gap-3 text-muted-foreground">
+        <Card className="glass-card card-hover shadow-sm p-6 flex flex-col items-start gap-4">
+          <div className="h-10 w-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
              <Factory className="w-5 h-5" />
-             <span className="text-[10px] font-black uppercase tracking-widest">Total Suppliers</span>
           </div>
-          <h2 className="text-5xl font-black tracking-tighter mt-4">06</h2>
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">Total Operational Hubs</span>
+            <h2 className="text-4xl font-bold tracking-tighter">06</h2>
+          </div>
         </Card>
 
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-rose-500/[0.03] shadow-sm p-6">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-[10px] font-black uppercase tracking-widest text-rose-600/70">High Risk</span>
-            <Badge className="bg-rose-500 text-white border-none text-[8px] font-black uppercase tracking-widest px-1.5 h-4 text-center">Act Now</Badge>
+        <Card className="glass-card card-hover shadow-sm p-6 flex flex-col items-start gap-4 border-l-4 border-l-rose-500/50">
+          <div className="flex w-full items-center justify-between">
+            <div className="h-10 w-10 rounded-xl bg-rose-500/10 flex items-center justify-center text-rose-500">
+               <ShieldAlert className="w-5 h-5" />
+            </div>
+            <Badge className="bg-rose-500/20 text-rose-500 border-none text-[8px] font-bold px-1.5">URGENT ACTION</Badge>
           </div>
-          <h3 className="text-4xl font-black text-rose-600 tracking-tighter">02</h3>
-          <p className="text-[10px] font-bold text-rose-600/60 leading-none mt-2 italic">Immediate intervention required</p>
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 text-rose-500">Critical High-Risk</span>
+            <h2 className="text-4xl font-bold tracking-tighter text-rose-500">02</h2>
+          </div>
         </Card>
 
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-blue-500/[0.03] shadow-sm p-6">
-          <div className="flex items-center justify-between mb-2">
-             <span className="text-[10px] font-black uppercase tracking-widest text-blue-600/70">Medium Risk</span>
+        <Card className="glass-card card-hover shadow-sm p-6 flex flex-col items-start gap-4 border-l-4 border-l-blue-500/50">
+          <div className="h-10 w-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500">
+             <Activity className="w-5 h-5" />
           </div>
-          <h3 className="text-4xl font-black text-blue-600 tracking-tighter">01</h3>
-          <p className="text-[10px] font-bold text-blue-600/60 leading-none mt-2">Active Monitoring active</p>
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 text-blue-500">Standard Monitoring</span>
+            <h2 className="text-4xl font-bold tracking-tighter text-blue-500">01</h2>
+          </div>
         </Card>
 
-        <Card className="rounded-3xl border-slate-200 dark:border-slate-800 bg-emerald-500/[0.03] shadow-sm p-6">
-           <span className="text-[10px] font-black uppercase tracking-widest text-emerald-600/70">Avg. Delay Rate</span>
-           <h3 className="text-4xl font-black text-emerald-600 tracking-tighter mt-4">17.0%</h3>
-           <p className="text-[10px] text-emerald-600/60 font-bold uppercase tracking-tight mt-2">
-             Cluster Average Variance
-           </p>
+        <Card className="glass-card card-hover shadow-sm p-6 flex flex-col items-start gap-4 border-l-4 border-l-emerald-500/50">
+          <div className="h-10 w-10 rounded-xl bg-emerald-500/10 flex items-center justify-center text-emerald-500">
+             <Clock className="w-5 h-5" />
+          </div>
+          <div className="space-y-1">
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-40 text-emerald-500">Mean Lead Variance</span>
+            <h2 className="text-4xl font-bold tracking-tighter text-emerald-600">17.0%</h2>
+          </div>
         </Card>
       </div>
 
       {/* ── Risk Matrix ────────────────────────────────────────────── */}
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-        <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden">
-          <CardHeader className="pb-3 px-8 pt-6 border-b border-slate-50 dark:border-slate-900 mb-4">
-             <CardTitle className="text-xs font-black tracking-widest text-foreground uppercase opacity-40">
-                Supply Chain Risk Matrix
+      {/* ── Correlation Analysis Zone ────────────────────────────────── */}
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        <Card className="glass-card shadow-lg p-0 overflow-hidden animate-slide-up">
+          <div className="p-6 border-b border-border/10 bg-muted/5">
+             <CardTitle className="text-xs font-bold tracking-[0.2em] uppercase opacity-40">
+                Supply Efficiency Correlation
              </CardTitle>
-             <CardDescription className="text-xs font-medium">
-                Delay rate vs. quality score across 6 regional entities.
+             <CardDescription className="text-xs font-medium text-muted-foreground">
+                Distribution Delay vs. Quality Reliability across hubs.
              </CardDescription>
-          </CardHeader>
-          <CardContent className="h-[300px] flex items-center justify-center p-8">
+          </div>
+          <div className="h-[320px] p-4">
              <ResponsiveContainer width="100%" height="100%">
-                <ScatterChart margin={{ top: 20, right: 20, bottom: 20, left: 20 }}>
-                  <CartesianGrid strokeDasharray="3 3" opacity={0.1} />
+                <ScatterChart margin={{ top: 20, right: 30, bottom: 20, left: 10 }}>
+                  <CartesianGrid strokeDasharray="3 3" opacity={0.05} vertical={false} />
                   <XAxis 
                     type="number" 
                     dataKey="delay" 
-                    name="Delay Rate" 
+                    name="Delay" 
                     unit="%" 
-                    label={{ value: 'Delay %', position: 'insideBottom', offset: -10, fontSize: 10, fontWeight: 800 }} 
-                    fontSize={10}
+                    tick={{ fontSize: 10, opacity: 0.5 }}
                     tickLine={false}
                     axisLine={false}
                   />
                   <YAxis 
                     type="number" 
                     dataKey="quality" 
-                    name="Quality Score" 
+                    name="Quality" 
                     unit="%" 
-                    label={{ value: 'Quality %', angle: -90, position: 'insideLeft', fontSize: 10, fontWeight: 800 }} 
                     domain={[0, 100]}
-                    fontSize={10}
+                    tick={{ fontSize: 10, opacity: 0.5 }}
                     tickLine={false}
                     axisLine={false}
                   />
-                  <ZAxis type="number" dataKey="score" range={[100, 400]} />
+                  <ZAxis type="number" dataKey="score" range={[80, 450]} />
                   <Tooltip 
-                    cursor={{ strokeDasharray: '3 3' }} 
+                    cursor={{ strokeDasharray: '4 4' }} 
                     content={({ active, payload }) => {
-                       if (active && payload && payload.length) {
+                       if (active && payload?.[0]) {
                          const d = payload[0].payload;
                          return (
-                           <div className="bg-slate-900 text-white p-3 rounded-xl border border-white/10 shadow-2xl">
-                             <p className="text-[10px] font-black uppercase mb-1">{d.name}</p>
-                             <div className="space-y-0.5">
-                               <p className="text-[9px] flex justify-between gap-4"><span>Delay:</span> <span>{d.delay}%</span></p>
-                               <p className="text-[9px] flex justify-between gap-4"><span>Quality:</span> <span>{d.quality}%</span></p>
-                               <p className="text-[9px] flex justify-between gap-4 font-black"><span>Risk Score:</span> <span>{d.score}</span></p>
+                           <div className="glass-card !bg-slate-900/90 text-white p-3 rounded-2xl border-white/10 shadow-2xl backdrop-blur-xl">
+                             <p className="text-[10px] font-bold uppercase opacity-50 mb-1.5">{d.name}</p>
+                             <div className="space-y-1">
+                               <p className="text-sm font-bold flex justify-between gap-6"><span>Quality Score:</span> <span>{d.quality}%</span></p>
+                               <p className="text-[10px] flex justify-between gap-6 opacity-70"><span>Risk Index:</span> <span>{d.score}pts</span></p>
                              </div>
                            </div>
                          );
@@ -203,110 +211,114 @@ export default function SupplyChainView() {
                        return null;
                     }}
                   />
-                  <Scatter name="Suppliers" data={matrixData}>
+                  <Scatter name="Clusters" data={matrixData}>
                     {matrixData.map((entry, index) => (
-                      <Cell key={`cell-${index}`} fill={entry.score > 70 ? '#f43f5e' : entry.score > 40 ? '#3b82f6' : '#10b981'} />
+                      <Cell key={`cell-${index}`} fill={entry.score > 70 ? '#c62828' : entry.score > 40 ? '#1565c0' : '#2e7d32'} className="filter drop-shadow-sm transition-all duration-500" />
                     ))}
                   </Scatter>
                 </ScatterChart>
              </ResponsiveContainer>
-          </CardContent>
+          </div>
         </Card>
 
-        {/* Diagnostic Legend / Stats */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <Card className="rounded-[1.5rem] bg-slate-50/50 dark:bg-slate-900/10 border-slate-100 dark:border-slate-800 p-6 flex flex-col justify-center">
-             <div className="flex items-center gap-3 text-rose-600 mb-2">
-                <AlertTriangle className="w-5 h-5" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Critical Vulnerability</span>
+        {/* Diagnostic Insight Logic */}
+        <div className="grid gap-6 h-full">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <Card className="glass-card shadow-sm p-5 border-t-2 border-t-rose-500/20">
+               <div className="flex items-center gap-2 text-rose-500 mb-3">
+                  <AlertTriangle className="w-4 h-4" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest opacity-60">System Vulnerability</span>
+               </div>
+               <p className="text-xs font-semibold leading-relaxed">Skikda axis reports persistent 32% delay due to fuel-line structural breaks.</p>
+            </Card>
+            <Card className="glass-card shadow-sm p-5 border-t-2 border-t-emerald-500/20">
+               <div className="flex items-center gap-2 text-emerald-500 mb-3">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span className="text-[10px] font-bold uppercase tracking-widest opacity-60">Model Stability</span>
+               </div>
+               <p className="text-xs font-semibold leading-relaxed">Blida & Annaba regional centers maintaining 95%+ service continuity.</p>
+            </Card>
+          </div>
+          <Card className="glass-card shadow-sm p-8 bg-slate-900 border-none text-white relative flex-1 min-h-[160px] overflow-hidden">
+             <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
+                <Zap className="w-48 h-48" />
              </div>
-             <p className="text-xs font-bold text-foreground">Skikda axis shows 32% delay rate due to port congestion models.</p>
-             <div className="mt-4 flex items-center gap-2">
-                <Badge variant="outline" className="text-[8px] font-black uppercase tracking-widest text-rose-600 border-rose-500/20">High Priority Action</Badge>
+             <div className="relative z-10 space-y-4">
+               <div>
+                  <Badge variant="outline" className="text-[9px] font-bold border-white/20 text-white/50 mb-2">OPERATIONAL INSIGHT</Badge>
+                  <h4 className="text-2xl font-bold tracking-tight">Supply Path Inefficiency</h4>
+               </div>
+               <p className="text-xs text-slate-300 font-medium leading-relaxed max-w-sm">
+                  Algeria Rail Logistics detected structural latency during peak seasonal transitions. **Recommended optimization: Pivot to Oran Multi-Modal Hub**.
+               </p>
+               <Button variant="outline" size="sm" className="h-8 text-[10px] font-bold bg-white/5 border-white/10 text-white hover:bg-white/10">Execute Model Swap</Button>
              </div>
-          </Card>
-          <Card className="rounded-[1.5rem] bg-slate-50/50 dark:bg-slate-900/10 border-slate-100 dark:border-slate-800 p-6 flex flex-col justify-center">
-             <div className="flex items-center gap-3 text-blue-600 mb-2">
-                <ShieldAlert className="w-5 h-5" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-muted-foreground">Optimal Performance</span>
-             </div>
-             <p className="text-xs font-bold text-foreground">Blida & Annaba hubs maintaining 94%+ quality consistency.</p>
-             <div className="mt-4 flex items-center gap-2">
-                <Badge variant="outline" className="text-[8px] font-black uppercase tracking-widest text-emerald-600 border-emerald-500/20">System Healthy</Badge>
-             </div>
-          </Card>
-          <Card className="col-span-1 sm:col-span-2 rounded-[1.5rem] bg-slate-900 border-slate-800 p-6 text-white relative overflow-hidden group">
-             <div className="absolute top-0 right-0 p-8 opacity-10 group-hover:opacity-20 transition-opacity">
-                <Zap className="w-24 h-24" />
-             </div>
-             <p className="text-[10px] font-black uppercase tracking-widest text-slate-400 mb-4">Diagnostic Insight</p>
-             <h4 className="text-xl font-black tracking-tight mb-2">Lead-Time Volatility Detected</h4>
-             <p className="text-xs text-slate-400 font-medium leading-relaxed max-w-sm">
-                Rail logistics in Algiers Cluster are currently underperforming against seasonal benchmarks. Suggested intervention: **Cycle Shift to Oran Bulk Hub**.
-             </p>
           </Card>
         </div>
       </div>
 
       {/* ── Supplier Ledger ─────────────────────────────────────────── */}
-      <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden animate-slide-up">
+      <Card className="glass-card shadow-sm overflow-hidden animate-slide-up">
+        <div className="p-6 border-b border-border/10 bg-muted/5">
+           <CardTitle className="text-xs font-bold tracking-[0.2em] uppercase opacity-40">
+              Operational Hub Ledger
+           </CardTitle>
+        </div>
         <CardContent className="p-0">
           <div className="overflow-x-auto">
             <Table>
               <TableHeader>
-                <TableRow className="hover:bg-transparent border-slate-100 dark:border-slate-900">
-                  <TableHead className="pl-8 text-[10px] font-black uppercase tracking-widest text-slate-500">Service Entity</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500">Region</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-center">Delay Rate</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-center">Quality Score</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-right">Active Items</TableHead>
-                  <TableHead className="text-[10px] font-black uppercase tracking-widest text-slate-500 text-right pr-8">Lead Time</TableHead>
+                <TableRow className="hover:bg-transparent border-border/10">
+                  <TableHead className="pl-8 text-[9px] font-bold uppercase tracking-widest opacity-50">Regional Asset</TableHead>
+                  <TableHead className="text-[9px] font-bold uppercase tracking-widest opacity-50">Region</TableHead>
+                  <TableHead className="text-[9px] font-bold uppercase tracking-widest opacity-50 text-center">Delay</TableHead>
+                  <TableHead className="text-[9px] font-bold uppercase tracking-widest opacity-50 text-center">Quality</TableHead>
+                  <TableHead className="text-[9px] font-bold uppercase tracking-widest opacity-50 text-right">Items</TableHead>
+                  <TableHead className="text-[9px] font-bold uppercase tracking-widest opacity-50 text-right pr-8">Lead Interval</TableHead>
                 </TableRow>
               </TableHeader>
               <TableBody>
                 {filteredSuppliers.map((s, idx) => (
-                  <TableRow key={idx} className="group border-slate-100 dark:border-slate-900 transition-colors hover:bg-slate-50/50 dark:hover:bg-slate-900/40">
+                  <TableRow key={idx} className="group border-border/5 transition-colors hover:bg-muted/50">
                     <TableCell className="pl-8 py-4">
                       <div className="flex items-center gap-4">
-                        <div className="w-10 h-10 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 flex items-center justify-center text-[10px] font-black text-slate-600 group-hover:bg-slate-900 group-hover:text-white dark:group-hover:bg-white dark:group-hover:text-slate-900 transition-all duration-300">
+                        <div className="w-10 h-10 rounded-2xl bg-card border border-border/50 flex items-center justify-center text-[10px] font-bold text-muted-foreground group-hover:scale-105 transition-transform duration-300 shadow-inner">
                           {s.id}
                         </div>
                         <div className="flex flex-col">
-                          <span className="font-bold text-sm tracking-tight text-foreground">{s.name}</span>
-                          <span className="text-[9px] text-muted-foreground font-black tracking-tighter uppercase">RDM Supplier Record</span>
+                          <span className="font-bold text-sm tracking-tight">{s.name}</span>
+                          <span className="text-[9px] text-muted-foreground font-bold tracking-tighter uppercase opacity-50">Asset Record</span>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>
-                       <div className="flex items-center gap-2 text-xs font-semibold text-muted-foreground">
-                         <MapPin className="w-3.5 h-3.5 text-slate-400" />
+                       <div className="flex items-center gap-2 text-[11px] font-semibold text-muted-foreground">
+                         <MapPin className="w-3 h-3 opacity-40" />
                          {s.region}
                        </div>
                     </TableCell>
                     <TableCell className="text-center">
                        <span className={cn(
-                         "text-xs font-black tabular-nums",
-                         s.delay > 20 ? "text-rose-600" : s.delay > 10 ? "text-amber-600" : "text-emerald-600"
+                         "text-xs font-bold tabular-nums",
+                         s.delay > 20 ? "text-rose-500" : s.delay > 10 ? "text-amber-500" : "text-emerald-500"
                        )}>
                          {s.delay}%
                        </span>
                     </TableCell>
                     <TableCell className="text-center">
                        <span className={cn(
-                         "text-xs font-black tabular-nums",
-                         s.quality > 90 ? "text-emerald-600" : s.quality > 70 ? "text-amber-600" : "text-rose-600"
+                         "text-xs font-bold tabular-nums",
+                         s.quality > 90 ? "text-emerald-500" : s.quality > 70 ? "text-amber-500" : "text-rose-500"
                        )}>
                          {s.quality}%
                        </span>
                     </TableCell>
-                    <TableCell className="text-right">
-                       <span className="font-black text-sm tabular-nums tracking-tighter text-foreground">
-                         {s.items}
-                       </span>
+                    <TableCell className="text-right font-bold text-xs tabular-nums">
+                       {s.items}
                     </TableCell>
                     <TableCell className="text-right pr-8">
-                       <div className="flex items-center justify-end gap-2 text-xs font-black tabular-nums text-muted-foreground">
-                          <Clock className="w-3.5 h-3.5" />
+                       <div className="flex items-center justify-end gap-2 text-[10px] font-bold tabular-nums opacity-60">
+                          <Clock className="w-3 h-3" />
                           {s.leadTime}
                        </div>
                     </TableCell>
@@ -318,14 +330,14 @@ export default function SupplyChainView() {
         </CardContent>
       </Card>
       
-      <div className="flex items-center justify-between py-2 border-t border-slate-100 dark:border-slate-900 mt-4 opacity-30">
-        <p className="text-[9px] font-black uppercase tracking-[0.4em] text-slate-500">
-          RDM Distribution Controller v4.2.0
+      <div className="flex items-center justify-between py-4 border-t border-border/10 mt-6 opacity-30">
+        <p className="text-[9px] font-bold uppercase tracking-[0.3em]">
+          Supply Compliance Framework v2.11.0 (2011 Stable)
         </p>
-        <div className="flex items-center gap-4 text-[9px] font-black uppercase tracking-widest text-slate-500">
-          <span>Diagnostic Mode: ORI-v2</span>
+        <div className="flex items-center gap-4 text-[9px] font-bold uppercase tracking-widest">
+          <span>Dec 09, 2011 08:31</span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-          <span>System Stable</span>
+          <span>Operational Stability</span>
         </div>
       </div>
     </div>

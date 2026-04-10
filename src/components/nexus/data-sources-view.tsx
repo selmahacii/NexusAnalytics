@@ -79,7 +79,7 @@ const DATA_SOURCES_CONFIG: DataSource[] = [
     name: "UCI Online Retail Dataset",
     type: "internal",
     status: "active",
-    lastSync: "2026-04-08T22:25:16Z",
+    lastSync: "2011-12-08T22:25:16Z",
     totalRecords: 541909,
     syncFrequency: "Manual / On-demand",
     health: 100,
@@ -89,7 +89,7 @@ const DATA_SOURCES_CONFIG: DataSource[] = [
     name: "World Bank Economic Data",
     type: "external",
     status: "active",
-    lastSync: "2026-04-08T00:25:16Z",
+    lastSync: "2011-12-08T00:25:16Z",
     totalRecords: 1240,
     syncFrequency: "Weekly",
     health: 100,
@@ -99,7 +99,7 @@ const DATA_SOURCES_CONFIG: DataSource[] = [
     name: "Open-Meteo Weather API",
     type: "external",
     status: "active",
-    lastSync: "2026-04-08T23:25:16Z",
+    lastSync: "2011-12-08T23:25:16Z",
     totalRecords: 8520,
     syncFrequency: "Hourly",
     health: 98,
@@ -109,7 +109,7 @@ const DATA_SOURCES_CONFIG: DataSource[] = [
     name: "Standard Forex Rates Feed",
     type: "external",
     status: "active",
-    lastSync: "2026-04-09T00:05:16Z",
+    lastSync: "2011-12-09T00:05:16Z",
     totalRecords: 22500,
     syncFrequency: "Daily",
     health: 100,
@@ -144,11 +144,11 @@ export default function DataSourcesView() {
     setLoading(true);
     // Real industrial dataset for Maghreb Cluster
     const demoLogs: DataIngestionLog[] = [
-      { id: "L1", source: "UCI Online Retail", status: "success", recordsCount: 381240, durationMs: 4200, createdAt: "2026-04-08T22:25:16Z" },
-      { id: "L2", source: "World Bank", status: "success", recordsCount: 45, durationMs: 850, createdAt: "2026-04-08T00:25:16Z" },
-      { id: "L3", source: "Open-Meteo", status: "success", recordsCount: 168, durationMs: 420, createdAt: "2026-04-08T23:25:16Z" },
-      { id: "L4", source: "Forex rates", status: "success", recordsCount: 22, durationMs: 310, createdAt: "2026-04-09T00:05:16Z" },
-      { id: "L5", source: "Forex rates", status: "failed", recordsCount: 0, durationMs: 120, createdAt: "2026-04-07T12:25:16Z" },
+      { id: "L1", source: "UCI Online Retail", status: "success", recordsCount: 381240, durationMs: 4200, createdAt: "2011-12-08T22:25:16Z" },
+      { id: "L2", source: "World Bank", status: "success", recordsCount: 45, durationMs: 850, createdAt: "2011-12-08T00:25:16Z" },
+      { id: "L3", source: "Open-Meteo", status: "success", recordsCount: 168, durationMs: 420, createdAt: "2011-12-08T23:25:16Z" },
+      { id: "L4", source: "Forex rates", status: "success", recordsCount: 22, durationMs: 310, createdAt: "2011-12-09T00:05:16Z" },
+      { id: "L5", source: "Forex rates", status: "failed", recordsCount: 0, durationMs: 120, createdAt: "2011-12-07T12:25:16Z" },
     ];
     setLogs(demoLogs);
     setLoading(false);

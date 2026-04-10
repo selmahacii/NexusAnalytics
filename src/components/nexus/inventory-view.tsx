@@ -109,9 +109,9 @@ function fmtCurrency(val: number): string {
 }
 
 function getStockStatus(stock: number, reorderPoint: number) {
-  if (stock <= 0) return { label: "Stock-out", color: "bg-rose-500/10 text-rose-600 border-rose-200 dark:border-rose-800" };
-  if (stock <= reorderPoint) return { label: "Critical", color: "bg-amber-500/10 text-amber-600 border-amber-200 dark:border-amber-800" };
-  return { label: "Healthy", color: "bg-slate-100 dark:bg-slate-900 text-slate-600 dark:text-slate-400 border-slate-200 dark:border-slate-800" };
+  if (stock <= 0) return { label: "Depleted", color: "bg-rose-500/15 text-rose-500 border-rose-500/30" };
+  if (stock <= reorderPoint) return { label: "Under Threshold", color: "bg-amber-600/15 text-amber-600 border-amber-600/30" };
+  return { label: "Nominal", color: "bg-slate-500/10 text-slate-500 border-slate-500/20" };
 }
 
 // ── Main Component ───────────────────────────────────────────────────────────
@@ -242,64 +242,64 @@ export default function InventoryView() {
     <div className="space-y-6 animate-fade-in">
       {/* ── Summary Stats ───────────────────────────────────────────── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
-          <CardContent className="pt-6">
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm transition-all hover:bg-muted/40 card-hover group">
+          <CardContent className="pt-8 px-8">
             <div className="flex items-center justify-between">
-              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
-                <Boxes className="w-5 h-5 text-slate-500" />
+              <div className="bg-slate-500/10 p-2.5 rounded-xl text-slate-500 transition-all group-hover:bg-slate-500/20">
+                <Boxes className="w-5 h-5" />
               </div>
             </div>
-            <div className="mt-3">
-              <p className="text-3xl font-black tracking-tight text-foreground">362</p>
-              <p className="text-[10px] text-muted-foreground font-black uppercase tracking-widest mt-0.5 opacity-60">Referenced Products</p>
+            <div className="mt-4">
+              <p className="text-3xl font-bold tracking-tight text-foreground">362</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-[0.2em] mt-1 opacity-60">Verified SKU Count</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
-          <CardContent className="pt-6">
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm transition-all hover:bg-muted/40 card-hover group">
+          <CardContent className="pt-8 px-8">
             <div className="flex items-center justify-between">
-              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
-                <Warehouse className="w-5 h-5 text-slate-500" />
+              <div className="bg-slate-500/10 p-2.5 rounded-xl text-slate-500 transition-all group-hover:bg-slate-500/20">
+                <Warehouse className="w-5 h-5" />
               </div>
             </div>
-            <div className="mt-3">
-              <p className="text-3xl font-black tracking-tight text-foreground">€1365.9M</p>
-              <p className="text-[10px] text-muted-foreground font-black uppercase tracking-widest mt-0.5 opacity-60">Total Asset Value</p>
+            <div className="mt-4">
+              <p className="text-3xl font-bold tracking-tight text-foreground">€1365.9M</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-[0.2em] mt-1 opacity-60">Total Operational Asset</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
-          <CardContent className="pt-6">
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm transition-all hover:bg-muted/40 card-hover group">
+          <CardContent className="pt-8 px-8">
             <div className="flex items-center justify-between">
-              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
-                <AlertTriangle className="w-5 h-5 text-amber-500" />
+              <div className="bg-amber-600/10 p-2.5 rounded-xl text-amber-600">
+                <AlertTriangle className="w-5 h-5" />
               </div>
-              <Badge variant="outline" className="bg-amber-500/5 text-amber-600 border-amber-500/20 text-[10px] font-black uppercase">
+              <Badge variant="outline" className="bg-amber-600/5 text-amber-600 border-amber-600/20 text-[10px] font-bold">
                 24.6%
               </Badge>
             </div>
-            <div className="mt-3">
-              <p className="text-3xl font-black tracking-tight text-foreground">89</p>
-              <p className="text-[10px] text-muted-foreground font-black uppercase tracking-widest mt-0.5 opacity-60">Near Threshold</p>
+            <div className="mt-4">
+              <p className="text-3xl font-bold tracking-tight text-amber-600/90">89</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-[0.2em] mt-1 opacity-60">Alert Threshold Status</p>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 shadow-sm transition-all hover:bg-slate-50 dark:hover:bg-slate-900/50 group">
-          <CardContent className="pt-6">
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm transition-all hover:bg-muted/40 card-hover group">
+          <CardContent className="pt-8 px-8">
             <div className="flex items-center justify-between">
-              <div className="bg-slate-100 dark:bg-slate-900 p-2 rounded-xl group-hover:bg-slate-200 dark:group-hover:bg-slate-800 transition-colors">
-                <AlertCircle className="w-5 h-5 text-rose-500" />
+              <div className="bg-rose-500/10 p-2.5 rounded-xl text-rose-500">
+                <AlertCircle className="w-5 h-5" />
               </div>
-              <Badge variant="outline" className="bg-rose-500/5 text-rose-600 border-rose-500/20 text-[10px] font-black uppercase">
+              <Badge variant="outline" className="bg-rose-500/5 text-rose-600 border-rose-500/20 text-[10px] font-bold">
                 0.0%
               </Badge>
             </div>
-            <div className="mt-3">
-              <p className="text-3xl font-black tracking-tight text-foreground">0</p>
-              <p className="text-[10px] text-muted-foreground font-black uppercase tracking-widest mt-0.5 opacity-60">Zero Inventory</p>
+            <div className="mt-4">
+              <p className="text-3xl font-bold tracking-tight text-rose-600/90">0</p>
+              <p className="text-[10px] text-muted-foreground font-bold uppercase tracking-[0.2em] mt-1 opacity-60">Zero Signal Count</p>
             </div>
           </CardContent>
         </Card>
@@ -459,21 +459,20 @@ export default function InventoryView() {
       </div>
 
       {/* ── Inventory Table ─────────────────────────────────────────── */}
-      <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm animate-slide-up stagger-5">
-        <CardHeader className="flex flex-row items-center justify-between pb-4 border-b border-slate-100 dark:border-slate-900 px-8 py-6">
-          <div>
-            <CardTitle className="text-lg font-bold tracking-tight text-foreground">Operational Catalog</CardTitle>
-            <CardDescription className="text-xs font-medium opacity-60">
-              Detailed list of {filteredProducts.length} verified stock records
+      <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm animate-slide-up stagger-5 overflow-hidden">
+        <CardHeader className="flex flex-row items-center justify-between p-8 border-b border-border/5">
+          <div className="space-y-1">
+            <CardTitle className="text-lg font-bold tracking-tight text-foreground leading-none">Operational Record Base</CardTitle>
+            <CardDescription className="text-[10px] font-bold uppercase tracking-[0.3em] opacity-40">
+              Verified Ledger: {filteredProducts.length} System Records
             </CardDescription>
           </div>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="rounded-xl h-8 gap-2 bg-card/50 text-xs">
-              <FileDown className="w-3.5 h-3.5" />
-              Export
+          <div className="flex items-center gap-3">
+            <Button variant="outline" size="sm" className="rounded-xl h-9 gap-2 bg-card/40 border-border/20 shadow-sm text-xs font-bold px-4">
+              <FileDown className="w-3.5 h-3.5 opacity-60" /> Export Ledger
             </Button>
-            <Button variant="ghost" size="icon" onClick={() => fetchData()}>
-              <RefreshCw className={cn("w-4 h-4", loading && "animate-spin")} />
+            <Button variant="outline" size="icon" className="h-9 w-9 rounded-xl bg-card/40 border-border/20 shadow-sm" onClick={() => fetchData()}>
+              <RefreshCw className={cn("w-4 h-4 opacity-60", loading && "animate-spin")} />
             </Button>
           </div>
         </CardHeader>
@@ -496,41 +495,42 @@ export default function InventoryView() {
                 {filteredProducts.map((product) => {
                   const status = getStockStatus(product.currentStock, product.reorderPoint);
                   return (
-                  <TableRow key={product.id} className="group transition-colors duration-200">
-                    <TableCell className="pl-6 py-4">
-                      <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl bg-muted flex items-center justify-center text-primary font-bold text-xs shadow-inner">
-                          <Package className="w-4 h-4" />
+                  <TableRow key={product.id} className="group transition-colors duration-200 hover:bg-muted/30">
+                    <TableCell className="pl-8 py-5">
+                      <div className="flex items-center gap-4">
+                        <div className="w-10 h-10 rounded-xl bg-slate-500/10 flex items-center justify-center text-primary font-bold text-xs shadow-inner ring-1 ring-border/20">
+                          <Package className="w-4 h-4 opacity-70" />
                         </div>
                         <div className="flex flex-col max-w-[200px]">
-                          <span className="font-bold text-sm tracking-tight truncate">{product.name}</span>
+                          <span className="font-bold text-sm tracking-tight truncate text-foreground group-hover:text-primary transition-colors">{product.name}</span>
+                          <span className="text-[10px] text-muted-foreground/60 font-bold uppercase tracking-widest">{product.sku}</span>
                         </div>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <span className="font-mono text-xs font-semibold text-muted-foreground">{product.sku}</span>
-                    </TableCell>
-                    <TableCell>
-                      <span className="text-xs font-medium text-muted-foreground">{product.category || "—"}</span>
+                      <span className="text-xs font-bold text-muted-foreground/80 lowercase bg-muted/40 px-2 py-0.5 rounded-md">{product.category || "—"}</span>
                     </TableCell>
                     <TableCell>
                       <div className="flex flex-col">
-                        <span className="font-bold text-sm">Qty: {product.currentStock}</span>
-                        <span className="text-[10px] text-muted-foreground">Reorder: {product.reorderPoint}</span>
+                        <span className="font-bold text-[13px] tracking-tight">{product.currentStock} Units</span>
+                        <div className="flex items-center gap-1.5 mt-0.5">
+                          <div className={cn("w-1.5 h-1.5 rounded-full", product.currentStock <= product.reorderPoint ? "bg-amber-500" : "bg-emerald-500")} />
+                          <span className="text-[10px] text-muted-foreground font-medium">Min: {product.reorderPoint}</span>
+                        </div>
                       </div>
                     </TableCell>
                     <TableCell>
-                      <Badge variant="outline" className={cn("text-[10px] px-2 font-bold uppercase tracking-wider", status.color)}>
+                      <Badge variant="outline" className={cn("text-[10px] px-2.5 py-0.5 font-bold uppercase tracking-widest", status.color)}>
                         {status.label}
                       </Badge>
                     </TableCell>
                     <TableCell className="text-right">
-                      <span className="font-bold text-sm tabular-nums tracking-tight">
+                      <span className="font-bold text-sm tabular-nums tracking-tighter opacity-80">
                         {fmtCurrency(product.listPrice || 0)}
                       </span>
                     </TableCell>
-                    <TableCell className="text-right">
-                       <span className="text-xs font-bold tabular-nums text-emerald-600 dark:text-emerald-400">
+                    <TableCell className="text-right pr-6">
+                       <span className="text-[13px] font-bold tabular-nums text-emerald-600 dark:text-emerald-400">
                         {product.marginPct ? (product.marginPct).toFixed(1) : "—"}%
                       </span>
                     </TableCell>

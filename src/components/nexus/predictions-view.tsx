@@ -119,26 +119,26 @@ function getRiskLevel(score: number): {
 } {
   if (score > 0.7)
     return {
-      bg: "bg-red-500/10",
-      text: "text-red-600 dark:text-red-400",
-      bar: "bg-red-500",
-      badge: "bg-red-500/15 text-red-700 border-red-500/30 dark:text-red-400",
-      label: "High",
+      bg: "bg-rose-500/10",
+      text: "text-rose-600",
+      bar: "bg-rose-600",
+      badge: "bg-rose-500/10 text-rose-600 border-rose-500/20",
+      label: "Critical",
     };
   if (score >= 0.4)
     return {
-      bg: "bg-amber-500/10",
-      text: "text-amber-600 dark:text-amber-400",
-      bar: "bg-amber-500",
-      badge: "bg-amber-500/15 text-amber-700 border-amber-500/30 dark:text-amber-400",
-      label: "Medium",
+      bg: "bg-amber-600/10",
+      text: "text-amber-600",
+      bar: "bg-amber-600",
+      badge: "bg-amber-600/10 text-amber-600 border-amber-600/20",
+      label: "Observation",
     };
   return {
-    bg: "bg-emerald-500/10",
-    text: "text-emerald-600 dark:text-emerald-400",
-    bar: "bg-emerald-500",
-    badge: "bg-emerald-500/15 text-emerald-700 border-emerald-500/30 dark:text-emerald-400",
-    label: "Low",
+    bg: "bg-emerald-600/10",
+    text: "text-emerald-600",
+    bar: "bg-emerald-600",
+    badge: "bg-emerald-600/10 text-emerald-600 border-emerald-600/20",
+    label: "Nominal",
   };
 }
 
@@ -205,40 +205,40 @@ function StatChip({
   badge?: string;
 }) {
   const accentMap = {
-    red: "border-l-red-500 bg-red-500/5",
-    amber: "border-l-amber-500 bg-amber-500/5",
-    emerald: "border-l-emerald-500 bg-emerald-500/5",
-    blue: "border-l-blue-500 bg-blue-500/5",
+    red: "bg-rose-500/5 border-rose-500/10",
+    amber: "bg-amber-600/5 border-amber-600/10",
+    emerald: "bg-emerald-600/5 border-emerald-600/10",
+    blue: "bg-slate-500/5 border-slate-500/10",
   };
   const textMap = {
-    red: "text-red-600 dark:text-red-400",
-    amber: "text-amber-600 dark:text-amber-400",
-    emerald: "text-emerald-600 dark:text-emerald-400",
-    blue: "text-blue-600 dark:text-blue-400",
+    red: "text-rose-600",
+    amber: "text-amber-600",
+    emerald: "text-emerald-600",
+    blue: "text-slate-500",
   };
 
   return (
     <div className={cn(
-      "flex items-center gap-3 p-3 rounded-xl border-l-2 border border-border/50 transition-all",
-      accent ? accentMap[accent] : "bg-card/60"
+      "flex items-center gap-4 p-5 rounded-[1.5rem] border backdrop-blur-md shadow-sm card-hover transition-all",
+       accent ? accentMap[accent] : "bg-card/40 border-border/20"
     )}>
       <div className={cn(
-        "p-2 rounded-lg bg-muted/80 shrink-0",
+        "p-3 rounded-xl bg-card border border-border/5 shadow-inner scale-95 group-hover:scale-100 transition-transform",
         accent && textMap[accent]
       )}>
         {icon}
       </div>
       <div className="flex-1 min-w-0">
-        <p className="text-[10px] font-bold uppercase tracking-widest text-muted-foreground/70">{label}</p>
+        <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground/50 mb-1">{label}</p>
         <p className={cn(
-          "text-xl font-bold tracking-tight tabular-nums leading-tight",
+          "text-2xl font-bold tracking-tighter tabular-nums leading-none",
           accent && textMap[accent]
         )}>
           {value}
         </p>
       </div>
       {badge && (
-        <Badge variant="outline" className={cn("text-[9px] font-bold shrink-0", accent === "red" ? "bg-red-500/15 text-red-700 border-red-500/30 dark:text-red-400" : "")}>
+        <Badge variant="outline" className={cn("text-[8px] font-bold uppercase tracking-widest px-2 h-5 rounded-lg", accent === "red" ? "bg-rose-500/10 text-rose-600 border-rose-500/20" : "")}>
           {badge}
         </Badge>
       )}
@@ -313,42 +313,46 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
       {/* Donut + Table */}
       <div className="grid gap-4 lg:grid-cols-4">
         {/* Distribution Donut */}
-        <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm lg:col-span-1 flex flex-col">
-          <CardHeader className="pb-0 pt-5 px-5">
-            <CardTitle className="text-sm font-bold tracking-tight">Risk Distribution</CardTitle>
-            <CardDescription className="text-[11px] font-medium opacity-60">Customer segments grouped by probability</CardDescription>
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm lg:col-span-1 flex flex-col">
+          <CardHeader className="p-8 border-b border-border/5">
+            <CardTitle className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Risk Distribution</CardTitle>
+            <CardDescription className="text-xs font-medium opacity-60">Probabilistic segmentation of {churnData.summary.totalAtRisk} units</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-col items-center pt-3 flex-1">
-            <div className="h-[180px] w-[180px]">
-              <ChartContainer config={donutConfig}>
+          <CardContent className="flex flex-col items-center p-8 flex-1">
+            <div className="h-[200px] w-full relative">
+              <ChartContainer config={donutConfig} className="h-full w-full">
                 <PieChart>
                   <Pie
                     data={donutData}
                     cx="50%"
                     cy="50%"
-                    innerRadius={44}
-                    outerRadius={72}
-                    paddingAngle={3}
+                    innerRadius={65}
+                    outerRadius={90}
+                    paddingAngle={8}
                     dataKey="value"
                     stroke="none"
-                    animationDuration={900}
+                    animationDuration={1500}
                     animationEasing="ease-out"
                   >
                     {donutData.map((entry) => (
                       <Cell key={entry.name} fill={entry.fill} className="hover:opacity-80 transition-opacity" />
                     ))}
                   </Pie>
-                  <ChartTooltip content={<ChartTooltipContent hideLabel className="bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800" />} />
+                  <ChartTooltip content={<ChartTooltipContent hideLabel className="bg-card/95 border-border/20 backdrop-blur-xl" />} />
                 </PieChart>
               </ChartContainer>
+              <div className="absolute inset-0 flex flex-col items-center justify-center pointer-events-none">
+                <span className="text-3xl font-bold tracking-tighter text-foreground">{churnData.summary.totalAtRisk}</span>
+                <span className="text-[8px] font-bold uppercase tracking-widest text-muted-foreground opacity-40 mt-1">Total At-Risk</span>
+              </div>
             </div>
             {/* Legend */}
-            <div className="w-full space-y-1.5 mt-2">
+            <div className="w-full space-y-2 mt-8">
               {donutData.map((item) => (
-                <div key={item.name} className="flex items-center gap-2 text-xs px-1">
-                  <div className="h-2 w-2 rounded-full shrink-0" style={{ backgroundColor: item.fill }} />
-                  <span className="text-muted-foreground capitalize flex-1">{item.name} risk</span>
-                  <span className="font-bold tabular-nums">{item.value}</span>
+                <div key={item.name} className="flex items-center gap-3 text-[10px] font-bold px-1 group cursor-default">
+                  <div className="h-2 w-2 rounded-full shrink-0 group-hover:scale-125 transition-transform" style={{ backgroundColor: item.fill }} />
+                  <span className="text-muted-foreground uppercase tracking-widest flex-1 opacity-60">{item.name} status</span>
+                  <span className="tabular-nums text-foreground">{item.value}</span>
                 </div>
               ))}
             </div>
@@ -356,89 +360,72 @@ function CustomerChurnTab({ churnData }: { churnData: ChurnData }) {
         </Card>
 
         {/* Customer Table */}
-        <Card className="rounded-[2.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm lg:col-span-3 flex flex-col">
-          <CardHeader className="pb-3 pt-5 px-5 flex-row items-center justify-between">
-            <div>
-              <CardTitle className="text-sm font-bold tracking-tight flex items-center gap-2">
-                <Users className="h-4 w-4 text-slate-500" />
-                At-Risk segments
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm lg:col-span-3 flex flex-col">
+          <CardHeader className="p-8 border-b border-border/5 flex-row items-center justify-between">
+            <div className="space-y-1">
+              <CardTitle className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60 flex items-center gap-3">
+                <Users className="h-5 w-5 opacity-40" />
+                Diagnostic Priority List
               </CardTitle>
-              <CardDescription className="text-[11px] font-medium opacity-60 mt-0.5">
-                Priority rankings by calculated churn probability · {sortedCustomers.length} accounts
+              <CardDescription className="text-xs font-medium opacity-60">
+                Methodological churn probability rankings · {sortedCustomers.length} Verified Entries
               </CardDescription>
             </div>
-            <Button variant="outline" size="sm" className="rounded-xl h-8 gap-1.5 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shrink-0 font-bold">
-              <FileDown className="w-3 h-3" />
-              Export Record
+            <Button variant="outline" size="sm" className="rounded-xl h-10 gap-2 border-border/20 bg-card text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover">
+              <FileDown className="w-4 h-4 opacity-50" />
+              Export Registry
             </Button>
           </CardHeader>
           <CardContent className="p-0">
-            <div className="max-h-[360px] overflow-y-auto overflow-x-auto">
+            <div className="max-h-[460px] overflow-y-auto overflow-x-auto natural-scrollbar">
               <Table>
                 <TableHeader>
-                  <TableRow className="hover:bg-transparent border-b border-border/50">
-                    <TableHead className="pl-5 text-[11px]">Customer</TableHead>
-                    <TableHead className="text-[11px] hidden sm:table-cell">Sector</TableHead>
-                    <TableHead className="text-[11px] hidden md:table-cell">Region</TableHead>
-                    <TableHead className="text-[11px] min-w-[130px]">Churn Risk</TableHead>
-                    <TableHead className="text-[11px] hidden sm:table-cell text-right">Revenue</TableHead>
-                    <TableHead className="text-[11px] hidden lg:table-cell text-center">Days Inactive</TableHead>
+                  <TableRow className="hover:bg-transparent border-border/5">
+                    <TableHead className="pl-8 h-14 text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40">Entity Registry</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 hidden sm:table-cell">Hub Sector</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 hidden md:table-cell">Regional Axis</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 min-w-[150px]">Diagnostic Index</TableHead>
+                    <TableHead className="text-[9px] font-bold uppercase tracking-[0.3em] text-muted-foreground/40 hidden sm:table-cell text-right pr-8">Revenue YTD</TableHead>
                   </TableRow>
                 </TableHeader>
                 <TableBody>
                   {sortedCustomers.map((customer) => {
                     const risk = getRiskLevel(customer.churnRisk);
                     return (
-                      <TableRow key={customer.customerId} className="hover:bg-muted/20 transition-colors border-b border-border/30">
-                        <TableCell className="pl-5 py-3">
-                          <div className="flex items-center gap-2.5">
-                            <div className={cn("w-7 h-7 rounded-lg flex items-center justify-center text-[10px] font-bold shrink-0", risk.bg, risk.text)}>
+                      <TableRow key={customer.customerId} className="group hover:bg-muted/30 transition-all border-border/5">
+                        <TableCell className="pl-8 py-6">
+                          <div className="flex items-center gap-4">
+                            <div className={cn("w-10 h-10 rounded-2xl flex items-center justify-center text-[11px] font-bold shrink-0 transition-transform group-hover:scale-105 shadow-inner ring-1 ring-border/5", risk.bg, risk.text)}>
                               {customer.name.substring(0, 2).toUpperCase()}
                             </div>
-                            <div>
-                              <p className="font-semibold text-sm leading-none">{customer.name}</p>
-                              <p className="text-[10px] text-muted-foreground mt-0.5 sm:hidden">{customer.sector}</p>
+                            <div className="min-w-0">
+                              <p className="font-bold text-base leading-none tracking-tight text-foreground truncate">{customer.name}</p>
+                              <p className="text-[9px] font-bold uppercase tracking-widest text-muted-foreground/40 mt-1.5 opacity-60">ID: RF-{customer.customerId.substring(0, 4)}</p>
                             </div>
                           </div>
                         </TableCell>
                         <TableCell className="hidden sm:table-cell">
-                          <Badge variant="outline" className="text-[10px] font-normal">{customer.sector}</Badge>
+                          <Badge variant="outline" className="text-[9px] font-bold uppercase tracking-widest bg-muted/40 border-border/10 py-1 px-2.5 rounded-lg opacity-80">{customer.sector}</Badge>
                         </TableCell>
-                        <TableCell className="hidden md:table-cell text-xs text-muted-foreground">{customer.region}</TableCell>
+                        <TableCell className="hidden md:table-cell text-xs font-bold text-muted-foreground/60 uppercase racking-widest">{customer.region}</TableCell>
                         <TableCell>
-                          <div className="space-y-1">
-                            <div className="flex items-center gap-1.5">
-                              <Badge variant="outline" className={cn("text-[9px] font-bold px-1.5 py-0", risk.badge)}>
+                          <div className="space-y-2.5">
+                            <div className="flex items-center gap-2">
+                              <Badge variant="outline" className={cn("text-[8px] font-bold uppercase tracking-widest px-2 py-0 h-4.5 rounded-md border-none", risk.badge)}>
                                 {risk.label}
                               </Badge>
                             </div>
                             <RiskBar value={customer.churnRisk} />
                           </div>
                         </TableCell>
-                        <TableCell className="hidden sm:table-cell text-right font-medium text-sm tabular-nums">
-                          {fmtRevenue(customer.totalRevenue)}
-                        </TableCell>
-                        <TableCell className="hidden lg:table-cell text-center">
-                          <span className={cn(
-                            "text-xs font-bold tabular-nums",
-                            customer.daysSinceLastOrder > 90 ? "text-red-600 dark:text-red-400" :
-                            customer.daysSinceLastOrder > 60 ? "text-amber-600 dark:text-amber-400" :
-                            "text-muted-foreground"
-                          )}>
-                            {customer.daysSinceLastOrder}d
-                          </span>
+                        <TableCell className="hidden sm:table-cell text-right pr-8">
+                           <span className="font-bold text-base tabular-nums tracking-tighter text-foreground opacity-80">
+                             €{fmtRevenue(customer.totalRevenue)}
+                           </span>
                         </TableCell>
                       </TableRow>
                     );
                   })}
-                  {sortedCustomers.length === 0 && (
-                    <TableRow>
-                      <TableCell colSpan={6} className="h-24 text-center text-muted-foreground text-sm">
-                        <Info className="h-4 w-4 inline mr-1.5" />
-                        No at-risk customers found
-                      </TableCell>
-                    </TableRow>
-                  )}
                 </TableBody>
               </Table>
             </div>
@@ -787,14 +774,26 @@ export default function PredictionsView() {
   return (
     <div className="space-y-6">
       {/* ── Page Header ──────────────────────────────────────────────── */}
-      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 animate-fade-in">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">Projections & Risk Metrics</h1>
-          <p className="text-sm text-muted-foreground mt-1">
-            Standard diagnostic risk scoring for customer retention and supply chain stability.
+      <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-6 px-4 animate-fade-in stagger-1">
+        <div className="space-y-2">
+          <div className="flex items-center gap-2 mb-1">
+             <span className="relative flex h-2 w-2">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-slate-500 opacity-20"></span>
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-slate-400"></span>
+             </span>
+             <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-muted-foreground/60">Registry Health Nominal</span>
+          </div>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">Projections & Risk Metrics</h1>
+          <p className="text-sm text-muted-foreground font-medium italic opacity-70">
+            "Standard methodological diagnostic scoring for historical customer retention and supply chain stability."
           </p>
         </div>
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-3 shrink-0">
+          <Button variant="outline" size="sm" className="rounded-xl h-11 gap-2 border-border/40 bg-card/40 text-[10px] font-bold uppercase tracking-widest px-6 shadow-sm card-hover transition-all" onClick={fetchData}>
+            <RefreshCw className={cn("w-4 h-4 opacity-50", loading && "animate-spin")} /> Force Registry Sync
+          </Button>
+        </div>
+      </div>
           {totalCritical > 0 && (
             <div className="flex items-center gap-2 bg-slate-100 dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl px-3 py-2">
               <Activity className="h-3.5 w-3.5 text-slate-500" />

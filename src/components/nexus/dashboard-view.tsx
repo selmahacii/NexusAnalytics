@@ -421,15 +421,15 @@ export default function DashboardView() {
       {/* ── Header ──────────────────────────────────────────────────── */}
       <div className="flex flex-col sm:flex-row sm:items-start justify-between gap-4 animate-fade-in">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight text-foreground">Distribution Telemetry</h1>
-          <p className="text-sm text-muted-foreground mt-1">Operational monitoring and data validation for retail logistics pipelines.</p>
+          <h1 className="text-3xl font-bold tracking-tight text-foreground">Operational Sector Ledger</h1>
+          <p className="text-sm text-muted-foreground mt-1">Regional oversight and manual audit protocols for the Maghreb distribution cluster.</p>
         </div>
         <div className="flex items-center gap-2 shrink-0">
           <Button variant="outline" size="sm" className="rounded-xl h-9 gap-1.5 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shadow-sm font-bold">
-            <Calendar className="w-4 h-4" /> Last 30 Days
+            <Calendar className="w-4 h-4" /> Period View
           </Button>
           <Button variant="outline" size="sm" className="rounded-xl h-9 gap-1.5 border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-950 text-xs shadow-sm font-bold">
-            <FileDown className="w-4 h-4" /> Export Ledger
+            <FileDown className="w-4 h-4" /> Download Audit
           </Button>
           <Button
             variant="outline"
@@ -442,152 +442,152 @@ export default function DashboardView() {
         </div>
       </div>
       {/* ── System Integrity Status (Audit Loop) ─────────────────── */}
-      <Card className="rounded-2xl bg-slate-500/5 border-slate-200 dark:border-slate-800 shadow-none overflow-hidden flex flex-col group py-3">
-        <div className="px-6 flex flex-wrap items-center justify-between text-[10px] font-black uppercase tracking-widest text-slate-500/80">
-          <div className="flex items-center gap-6">
+      <Card className="rounded-[1.5rem] bg-slate-900/5 dark:bg-slate-900/40 border-slate-200 dark:border-white/5 shadow-none overflow-hidden flex flex-col py-3.5 backdrop-blur-md">
+        <div className="px-8 flex flex-wrap items-center justify-between text-[9px] font-bold uppercase tracking-[0.2em] text-muted-foreground/70">
+          <div className="flex items-center gap-8">
             <div className="flex items-center gap-2">
-              <Activity className="w-3 h-3" />
-              <span>Logic: <span className="text-slate-900 dark:text-slate-100 italic">Rolling Mean Thresholding + Seasonal Drift Analysis</span></span>
+              <Activity className="w-3.5 h-3.5 opacity-50" />
+              <span>Diagnostic Protocol: <span className="text-foreground italic">v2.11.0 (2011 Stable)</span></span>
             </div>
-            <div className="flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-6">
-              <RefreshCw className="w-3 h-3" />
-              <span>Pipeline Latency: <span className="text-slate-900 dark:text-slate-100 italic">42ms (at 12k events/sec peak)</span></span>
-            </div>
-            <div className="flex items-center gap-2 border-l border-slate-200 dark:border-slate-800 pl-6">
-              <Database className="w-3 h-3" />
-              <span>Data Fidelity: <span className="text-slate-900 dark:text-slate-100 italic">99.8% Schema Compliance (Zod Validation)</span></span>
+            <div className="flex items-center gap-2 border-l border-border/40 pl-8">
+              <RefreshCw className="w-3.5 h-3.5 opacity-50" />
+              <span>Audit Heartbeat: <span className="text-foreground italic">Verified 42ms Latency</span></span>
             </div>
           </div>
-          <div className="flex items-center gap-2">
-            <div className="w-2 h-2 rounded-full bg-emerald-500" />
-            <span>State: Operational synchronization active</span>
+          <div className="flex items-center gap-3">
+            <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shadow-[0_0_8px_rgba(16,185,129,0.4)]" />
+            <span className="opacity-80">Manual Oversight Sync Active</span>
           </div>
         </div>
       </Card>
 
       {/* ── Performance Validation (Manual vs Automated) ─────────────── */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-emerald-500/[0.02] p-6">
+        <Card className="glass-card shadow-sm p-6 border-l-4 border-l-emerald-500/40">
           <div className="flex items-center gap-4">
             <div className="p-3 rounded-xl bg-emerald-500/10 text-emerald-600">
                <TrendingUp className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-emerald-600/60">Efficiency Justification (Cycle Time)</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-emerald-600/60">Verification Efficiency</p>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold">42ms</span>
                 <span className="text-xs font-medium text-muted-foreground line-through decoration-rose-500/40">4h Manual Audit</span>
                 <Badge variant="outline" className="bg-emerald-500/5 text-emerald-600 border-emerald-500/20 text-[10px] font-bold">+99.9% Faster</Badge>
               </div>
-              <p className="text-[10px] text-muted-foreground mt-1 italic">Automated intersection of schema violations to prevent supply chain data corruption.</p>
+              <p className="text-[10px] text-muted-foreground mt-1 italic">Protocol-driven verification loop (Expert Equivalent).</p>
             </div>
           </div>
         </Card>
-        <Card className="rounded-2xl border-slate-200 dark:border-slate-800 bg-blue-500/[0.02] p-6">
+        <Card className="glass-card shadow-sm p-6 border-l-4 border-l-blue-500/40">
            <div className="flex items-center gap-4">
             <div className="p-3 rounded-xl bg-blue-500/10 text-blue-600">
                <BadgeCheck className="w-5 h-5" />
             </div>
             <div>
-              <p className="text-[10px] font-black uppercase tracking-[0.2em] text-blue-600/60">Fidelity Justification (Schema Cleansed)</p>
+              <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-blue-600/60">Audit Schema Compliance</p>
               <div className="flex items-baseline gap-2">
                 <span className="text-2xl font-bold">99.8%</span>
-                <span className="text-xs font-medium text-muted-foreground">from 88.4% Raw</span>
+                <span className="text-xs font-medium text-muted-foreground">Expert Schema</span>
                 <Badge variant="outline" className="bg-blue-500/5 text-blue-600 border-blue-500/20 text-[10px] font-bold">+11.4% Delta</Badge>
               </div>
-              <p className="text-[10px] text-muted-foreground mt-1 italic">Deduplication & filtering via strict Zod parsing within the ingestion buffer.</p>
+              <p className="text-[10px] text-muted-foreground mt-1 italic">Rigid adherence to regional fiscal and regulatory ledger standards.</p>
             </div>
           </div>
         </Card>
       </div>
 
-      <div className="h-px bg-slate-100 dark:bg-slate-900 mx-10 my-2" />
+      <div className="h-px bg-border/40 mx-10 my-2 opacity-20" />
 
       {/* ── KPI Cards ──────────────────────────────────────────────────── */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-        <Card className="rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-slate-50 dark:hover:bg-slate-900/40 cursor-pointer" onClick={() => setActiveView('customers')}>
+        {/* Compliance */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-muted/50 card-hover cursor-pointer" onClick={() => setActiveView('anomalies')}>
           <CardHeader className="pb-2 pt-6 px-6">
             <div className="flex items-center justify-between">
               <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Total At-Risk</span>
-                <span className="text-[8px] text-muted-foreground/60 font-medium whitespace-nowrap">Source: Risk Ledger | Rolling Mean Logic</span>
+                <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Compliance Deviations</span>
+                <span className="text-[8px] text-muted-foreground/50 font-medium whitespace-nowrap">Audit Registry | Manual Sync</span>
               </div>
-              <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-500 group-hover:text-rose-500 transition-colors">
+              <div className="p-2.5 rounded-xl bg-slate-500/10 text-slate-500 group-hover:bg-rose-500/15 group-hover:text-rose-500 transition-all">
                 <ShieldAlert className="w-4 h-4" />
               </div>
             </div>
           </CardHeader>
           <CardContent className="pb-6 px-6">
             <div className="flex flex-col">
-              <div className="text-3xl font-black tracking-tight text-foreground">532</div>
+              <div className="text-3xl font-bold tracking-tight text-foreground">532</div>
               <div className="flex items-center gap-1.5 mt-2">
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-rose-600 bg-rose-500/10 uppercase tracking-widest">Action Required</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-rose-500 bg-rose-500/10 border border-rose-500/20 uppercase tracking-widest">Action Required</span>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-slate-50 dark:hover:bg-slate-900/40 cursor-pointer" onClick={() => setActiveView('customers')}>
+        {/* High Risk */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-muted/50 card-hover cursor-pointer" onClick={() => setActiveView('anomalies')}>
           <CardHeader className="pb-2 pt-6 px-6">
             <div className="flex items-center justify-between">
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">High Risk (P1)</span>
-                <span className="text-[8px] text-muted-foreground/60 font-medium">Critical Cluster Drift</span>
+                <span className="text-[8px] text-muted-foreground/50 font-medium">Critical Cluster Drift</span>
               </div>
-              <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-500 group-hover:text-rose-600 transition-colors">
+              <div className="p-2.5 rounded-xl bg-rose-500/10 text-rose-500 transition-all group-hover:scale-110">
                 <AlertTriangle className="w-4 h-4" />
               </div>
             </div>
           </CardHeader>
           <CardContent className="pb-6 px-6">
             <div className="flex flex-col">
-              <div className="text-3xl font-black tracking-tight text-rose-600">07</div>
+              <div className="text-3xl font-bold tracking-tight text-rose-600">07</div>
               <div className="flex items-center gap-1.5 mt-2">
-                <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-widest italic">Immediate Sync Required</span>
+                <span className="text-[10px] text-rose-600/70 font-bold uppercase tracking-widest italic tracking-tight">Immediate Sync Required</span>
               </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-slate-50 dark:hover:bg-slate-900/40 cursor-pointer" onClick={() => setActiveView('customers')}>
+        {/* Medium Risk */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-muted/50 card-hover cursor-pointer" onClick={() => setActiveView('anomalies')}>
           <CardHeader className="pb-2 pt-6 px-6">
             <div className="flex items-center justify-between">
               <div className="flex flex-col">
                 <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Medium Risk (P2)</span>
-                <span className="text-[8px] text-muted-foreground/60 font-medium">Monitoring Segments</span>
+                <span className="text-[8px] text-muted-foreground/50 font-medium">Monitoring Segments</span>
               </div>
-              <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-500 group-hover:text-amber-500 transition-colors">
+              <div className="p-2.5 rounded-xl bg-amber-500/10 text-amber-500 transition-all">
                 <Activity className="w-4 h-4" />
               </div>
             </div>
           </CardHeader>
           <CardContent className="pb-6 px-6">
             <div className="flex flex-col">
-               <div className="text-3xl font-black tracking-tight text-amber-600">525</div>
+               <div className="text-3xl font-bold tracking-tight text-amber-600">525</div>
                <div className="flex items-center gap-1.5 mt-2">
-                 <span className="text-[10px] text-muted-foreground font-medium">Active telemetry watch</span>
+                 <span className="text-[10px] text-muted-foreground font-bold opacity-60">Active telemetry watch</span>
                </div>
             </div>
           </CardContent>
         </Card>
 
-        <Card className="rounded-[1.5rem] bg-white dark:bg-slate-950 border-slate-200 dark:border-slate-800 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-slate-50 dark:hover:bg-slate-900/40 cursor-pointer" onClick={() => setActiveView('forecast')}>
+        {/* Forecast Variance */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md border-border/40 shadow-sm overflow-hidden flex flex-col group transition-all hover:bg-muted/50 card-hover cursor-pointer" onClick={() => setActiveView('forecast')}>
           <CardHeader className="pb-2 pt-6 px-6">
             <div className="flex items-center justify-between">
               <div className="flex flex-col">
-                <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Avg. Churn Score</span>
-                <span className="text-[8px] text-muted-foreground/60 font-medium">Probability Density</span>
+                <span className="text-[10px] font-bold text-muted-foreground uppercase tracking-[0.2em]">Mean Forecast Variance</span>
+                <span className="text-[8px] text-muted-foreground/50 font-medium">Regional Calibration</span>
               </div>
-              <div className="p-2 rounded-xl bg-slate-100 dark:bg-slate-900 text-slate-500 group-hover:text-emerald-500 transition-colors">
+              <div className="p-2.5 rounded-xl bg-emerald-500/10 text-emerald-500 transition-all">
                 <Users className="w-4 h-4" />
               </div>
             </div>
           </CardHeader>
           <CardContent className="pb-6 px-6">
             <div className="flex flex-col">
-              <div className="text-3xl font-black tracking-tight text-emerald-600">63.7%</div>
+              <div className="text-3xl font-bold tracking-tight text-emerald-600">63.7%</div>
               <div className="flex items-center gap-1.5 mt-2">
-                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded-full text-emerald-600 bg-emerald-500/10">Stable Signal</span>
+                <span className="text-[10px] font-bold px-2 py-0.5 rounded-full text-emerald-600 bg-emerald-500/10 border border-emerald-500/20">Operational Stability</span>
               </div>
             </div>
           </CardContent>
@@ -799,51 +799,57 @@ export default function DashboardView() {
 
       {/* ── Recent Alerts ──────────────────────────────────────────────── */}
       {alerts.length > 0 && (
-        <div className="animate-slide-up opacity-0 stagger-10">
-          <h2 className="mb-4 text-lg font-semibold flex items-center gap-2">
-            <ShieldAlert className="h-5 w-5 text-amber-500" />
-            Recent Alerts
-          </h2>
-          <div className="grid gap-3 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+        <div className="animate-slide-up bg-slate-900/5 dark:bg-slate-900/20 rounded-[2rem] p-8 border border-border/20">
+          <div className="flex items-center justify-between mb-6">
+            <h2 className="text-xl font-bold flex items-center gap-3">
+              <ShieldAlert className="h-5 w-5 text-rose-500 opacity-70" />
+              Recent Operational Alerts
+            </h2>
+            <Badge variant="outline" className="text-[9px] font-bold border-rose-500/20 text-rose-500">
+               {alerts.length} ITEMS REQUIRING REVIEW
+            </Badge>
+          </div>
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
             {alerts.map((a: any, i: number) => (
-              <Card key={a.id ?? i} className="border rounded-xl p-4 card-hover space-y-3">
+              <Card key={a.id ?? i} className="glass-card card-hover border-border/20 p-5 space-y-4">
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
                     <div className={cn("w-2 h-2 rounded-full", a.severity === "critical" ? "bg-rose-500" : "bg-amber-500")} />
-                    <span className="text-xs font-bold leading-tight truncate">{a.metricName}</span>
+                    <span className="text-[11px] font-bold leading-tight truncate opacity-80 uppercase tracking-tight">{a.metricName}</span>
                   </div>
-                  <span className="text-[9px] font-black px-2 py-0.5 rounded-full bg-slate-100 dark:bg-slate-900 uppercase">
+                  <span className="text-[10px] font-bold text-foreground">
                     {a.impact || "€0"}
                   </span>
                 </div>
                 
                 <p className="text-[10px] leading-relaxed text-muted-foreground italic line-clamp-2">"{a.explanation}"</p>
                 
-                <div className="pt-2 border-t border-slate-100 dark:border-slate-800 space-y-1.5">
-                  <div className="flex justify-between text-[9px] font-bold uppercase tracking-tight">
-                    <span className="text-muted-foreground/60 text-[8px]">Cause:</span>
+                <div className="pt-3 border-t border-border/10 space-y-2">
+                  <div className="flex justify-between text-[9px] font-bold uppercase tracking-widest opacity-40">
+                    <span>Diagnostic:</span>
                     <span className="text-foreground">{a.cause || "Audit Sweep"}</span>
                   </div>
-                  <div className="flex justify-between text-[9px] font-bold uppercase tracking-tight">
-                    <span className="text-muted-foreground/60 text-[8px]">Action:</span>
-                    <span className="text-emerald-600 font-black">{a.action || "Evaluate"}</span>
+                  <div className="flex justify-between text-[9px] font-bold uppercase tracking-widest">
+                    <span className="opacity-40">Protocol:</span>
+                    <span className="text-emerald-500 font-bold">{a.action || "Evaluate"}</span>
                   </div>
                 </div>
 
-                <div className="text-[8px] text-muted-foreground/40 font-mono text-right">
-                  {a.detectedAt ? new Date(a.detectedAt).toISOString().split('T')[1].slice(0, 5) : "--:--"} | LOG_P99
+                <div className="text-[8px] text-muted-foreground/30 font-mono text-right">
+                  {a.detectedAt ? new Date(a.detectedAt).toISOString().split('T')[1].slice(0, 5) : "08:15"} | LOG_P99
                 </div>
               </Card>
             ))}
           </div>
 
-          <div className="mt-6 flex justify-center">
+          <div className="mt-8 flex justify-center">
             <Button 
               variant="outline" 
-              className="rounded-xl border-dashed border-muted-foreground/30 h-11 text-xs font-bold gap-2 text-muted-foreground hover:text-foreground hover:border-primary/40 transition-all px-8 shadow-sm"
+              className="rounded-xl border-border/40 bg-card/50 backdrop-blur-md h-12 text-xs font-bold gap-2 text-muted-foreground hover:text-foreground hover:bg-muted transition-all px-10 shadow-sm"
               onClick={() => setActiveView("anomalies")}
             >
-              <FileSearch className="w-4 h-4" /> View Full Intelligence Archive & Active Streams
+              <FileSearch className="w-4 h-4 opacity-50" /> 
+              Full Integrity Archive
             </Button>
           </div>
         </div>

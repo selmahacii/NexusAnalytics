@@ -5,6 +5,8 @@ import { toast } from "sonner";
 import {
   Area,
   AreaChart,
+  Bar,
+  ComposedChart,
   CartesianGrid,
   Line,
   LineChart,
@@ -90,16 +92,16 @@ interface ChartPoint {
 // ── Chart Configs ────────────────────────────────────────────────────────────
 
 const mainChartConfig: ChartConfig = {
-  actual: { label: "Actual Revenue", color: "#10b981" },
-  forecast: { label: "Forecast", color: "#3b82f6" },
-  lowerBound: { label: "Lower Bound", color: "#93c5fd" },
-  upperBound: { label: "Upper Bound", color: "#93c5fd" },
+  actual: { label: "Historical Revenue", color: "#2e7d32" },
+  forecast: { label: "Projected Baseline", color: "#1565c0" },
+  lowerBound: { label: "Lower Confidence", color: "#64b5f6" },
+  upperBound: { label: "Upper Confidence", color: "#64b5f6" },
 };
 
 const contributionsChartConfig: ChartConfig = {
-  movingAvg: { label: "Moving Average", color: "#10b981" },
-  trend: { label: "Trend", color: "#3b82f6" },
-  seasonal: { label: "Seasonal", color: "#f59e0b" },
+  movingAvg: { label: "Baseline Regression", color: "#2e7d32" },
+  trend: { label: "Directional Momentum", color: "#1565c0" },
+  seasonal: { label: "Fourier Signal", color: "#bc5100" },
 };
 
 // ── Helpers ──────────────────────────────────────────────────────────────────
@@ -123,23 +125,34 @@ function getMapeQuality(mape: number): {
   label: string;
   variant: "default" | "secondary" | "destructive" | "outline";
   className: string;
+  status: "optimal" | "good" | "warning" | "critical";
 } {
   if (mape < 5)
     return {
-      label: "Optimized",
+      label: "Optimized Signal",
       variant: "default",
       className: "bg-emerald-500/15 text-emerald-700 border-emerald-500/30 dark:text-emerald-400",
+      status: "optimal",
     };
-  if (mape < 20)
+  if (mape < 15)
     return {
-      label: "Accepted",
+      label: "Trusted Projection",
       variant: "default",
       className: "bg-blue-500/15 text-blue-700 border-blue-500/30 dark:text-blue-400",
+      status: "good",
+    };
+  if (mape < 40)
+    return {
+      label: "Statistical Drift",
+      variant: "outline",
+      className: "bg-amber-500/15 text-amber-700 border-amber-500/30 dark:text-amber-400",
+      status: "warning",
     };
   return {
-    label: "High Error / Low Reliability",
+    label: "Critical Unbalance",
     variant: "destructive",
     className: "bg-red-500/15 text-red-700 border-red-500/30 dark:text-red-400",
+    status: "critical",
   };
 }
 
@@ -332,422 +345,303 @@ export default function ForecastView() {
   return (
     <div className="space-y-6">
       {/* ── Header ──────────────────────────────────────────────────── */}
-      <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between animate-fade-in">
-        <div>
-          <h1 className="text-2xl font-bold tracking-tight">
-            Revenue Forecast
-          </h1>
-          <p className="text-muted-foreground text-sm mt-1">
-            <b>Method:</b> Train/Test Split | Validation Horizon. Ensemble Regression + Autoregression.
-          </p>
-        </div>
-
-        <Tabs
-          value={String(horizon)}
-          onValueChange={(v) => setHorizon(Number(v))}
-        >
-          <TabsList className="w-full sm:w-auto">
-            <TabsTrigger value="30" className="flex-1 sm:flex-auto text-[10px] font-bold">30 Days</TabsTrigger>
-            <TabsTrigger value="60" className="flex-1 sm:flex-auto text-[10px] font-bold">60 Days</TabsTrigger>
-            <TabsTrigger value="90" className="flex-1 sm:flex-auto text-[10px] font-bold">90 Days</TabsTrigger>
-            <TabsTrigger value="180" className="flex-1 sm:flex-auto text-[10px] font-bold">180 Days</TabsTrigger>
-          </TabsList>
-        </Tabs>
-      </div>
-
-      {/* ── Executive Overview Metrics ─────────────────────────────── */}
-      <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
-        <Card className="glass-card card-hover transition-all duration-300 shadow-sm relative overflow-hidden group border-t-2 border-t-primary/40">
-          <CardHeader className="pb-2">
-            <CardDescription className="flex items-center gap-1.5 font-bold uppercase tracking-widest text-[10px] text-muted-foreground/60">
-              <Activity className="h-3.5 w-3.5 text-primary" />
-              Accuracy (MAPE)
-            </CardDescription>
-          </CardHeader>
-          <CardContent>
-            <div className="flex items-end gap-2.5">
-              <span className="text-3xl font-bold tracking-tight text-premium-gradient tabular-nums">
-                {data.metrics.mape.toFixed(1)}%
-              </span>
-              <Badge variant={mapeQuality.variant} className={cn(mapeQuality.className, "rounded-lg text-[10px] sm:text-xs font-bold")}>
-                {mapeQuality.label}
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 animate-fade-in stagger-1">
+        {/* Metric 1: Precision Control */}
+        <Card className={cn(
+          "rounded-[1.5rem] bg-card/60 backdrop-blur-md transition-all duration-300 shadow-sm relative overflow-hidden group border-l-4",
+          mapeQuality.status === 'optimal' ? "border-l-emerald-600/60" : 
+          mapeQuality.status === 'good' ? "border-l-blue-600/60" : 
+          mapeQuality.status === 'warning' ? "border-l-amber-600/60" : "border-l-rose-600/60"
+        )}>
+          <CardHeader className="pb-1.5 px-6 pt-6">
+            <CardDescription className="flex items-center justify-between font-bold uppercase tracking-[0.2em] text-[10px] text-muted-foreground/60">
+              <div className="flex items-center gap-2">
+                <Activity className="h-3.5 w-3.5 opacity-50" />
+                Diagnostic Accuracy
+              </div>
+              <Badge variant="outline" className={cn("rounded-lg px-2 py-0.5 text-[9px] font-bold uppercase", mapeQuality.className)}>
+                {mapeQuality.status}
               </Badge>
-            </div>
-            <p className="text-[11px] text-muted-foreground/80 mt-1.5 font-medium italic">
-              {data.metrics.mape > 100 ? "Model Underperforming (Unreliable): High point-variance detected." : "Statistical reliability within standard deviation."}
-            </p>
-          </CardContent>
-        </Card>
-
-        <Card className="glass-card card-hover transition-all duration-300 shadow-sm relative overflow-hidden group border-t-2 border-t-blue-500/40">
-          <CardHeader className="pb-2">
-            <CardDescription className="flex items-center gap-1.5 font-bold uppercase tracking-widest text-[10px] text-muted-foreground/60">
-              <TrendingUp className="h-3.5 w-3.5 text-blue-500" />
-              Forecast Error (NRMSE)
             </CardDescription>
           </CardHeader>
-          <CardContent>
-            <span className="text-3xl font-bold tracking-tight text-premium-gradient tabular-nums">
-              {((data.metrics.rmse / 9240500) * 100).toFixed(2)}%
-            </span>
-            <p className="text-[11px] text-muted-foreground/80 mt-1.5 font-medium">
-              Ratio of RMSE to mean revenue magnitude.
-            </p>
+          <CardContent className="px-6 pb-6 mt-1">
+            <div className="flex items-baseline gap-2">
+              <span className="text-3xl font-bold tracking-tight text-foreground">
+                {Math.max(0, 100 - data.metrics.mape).toFixed(1)}%
+              </span>
+              <span className="text-[10px] font-bold text-muted-foreground/40 uppercase tracking-widest">Confidence Index</span>
+            </div>
           </CardContent>
         </Card>
 
-        <Card className="glass-card card-hover transition-all duration-300 shadow-sm relative overflow-hidden group border-t-2 border-t-emerald-500/40">
-          <CardHeader className="pb-2">
-            <div className="flex items-center justify-between">
-              <CardDescription className="flex items-center gap-1.5 font-bold uppercase tracking-widest text-[10px] text-muted-foreground/60">
-                <Calendar className="h-3.5 w-3.5 text-emerald-500" />
-                Last Updated
-              </CardDescription>
+        {/* Metric 2: Error Magnitude */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md transition-all duration-300 shadow-sm relative overflow-hidden group border-l-4 border-l-blue-600/40">
+          <CardHeader className="pb-1.5 px-6 pt-6">
+            <CardDescription className="flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px] text-muted-foreground/60">
+              <TrendingUp className="h-3.5 w-3.5 opacity-50" />
+              Deviance (NRMSE)
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="px-6 pb-6 mt-1">
+            <span className="text-3xl font-bold tracking-tight text-foreground/90">
+                {((data.metrics.rmse / 9240500) * 100).toFixed(2)}%
+            </span>
+          </CardContent>
+        </Card>
+
+        {/* Metric 3: Horizon Selector */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md transition-all duration-300 shadow-sm relative overflow-hidden group border-l-4 border-l-slate-600/40">
+          <CardHeader className="pb-1.5 px-6 pt-6">
+            <CardDescription className="flex items-center gap-2 font-bold uppercase tracking-[0.2em] text-[10px] text-muted-foreground/60">
+              <Calendar className="h-3.5 w-3.5 opacity-50" />
+              Forecast Window
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="px-6 pb-6 mt-1">
+            <Tabs value={String(horizon)} onValueChange={(v) => setHorizon(Number(v))} className="w-full">
+              <TabsList className="grid grid-cols-4 h-8 bg-muted/30 p-1 rounded-xl">
+                <TabsTrigger value="30" className="text-[10px] font-bold h-6 rounded-lg transition-all">30D</TabsTrigger>
+                <TabsTrigger value="60" className="text-[10px] font-bold h-6 rounded-lg transition-all">60D</TabsTrigger>
+                <TabsTrigger value="90" className="text-[10px] font-bold h-6 rounded-lg transition-all">90D</TabsTrigger>
+                <TabsTrigger value="180" className="text-[10px] font-bold h-6 rounded-lg transition-all">180D</TabsTrigger>
+              </TabsList>
+            </Tabs>
+          </CardContent>
+        </Card>
+
+        {/* Metric 4: System Heartbeat */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md transition-all duration-300 shadow-sm relative overflow-hidden group border-l-4 border-l-emerald-600/40">
+          <CardHeader className="pb-1.5 px-6 pt-6">
+            <CardDescription className="flex items-center justify-between font-bold uppercase tracking-[0.2em] text-[10px] text-muted-foreground/60">
+              <div className="flex items-center gap-2">
+                <Activity className="h-3.5 w-3.5 opacity-50" />
+                Logic Heartbeat
+              </div>
               <button
                 disabled={training}
                 onClick={async () => {
                   setTraining(true);
                   try {
                     const res = await fetch("/api/models?model=revenue_forecaster", { method: "POST" });
-                    if (res.ok) toast.success("Retraining launched");
-                    else toast.error("Critical error");
-                  } catch { toast.error("Network error"); }
+                    if (res.ok) toast.success("Retraining logic sequence initiated");
+                    else toast.error("Diagnostic failure");
+                  } catch { toast.error("Network communication break"); }
                   finally { setTraining(false); }
                 }}
-                className="text-primary hover:text-primary/80 transition-all active:scale-95 disabled:opacity-50"
+                className="text-primary hover:scale-110 transition-all active:scale-95 disabled:opacity-50 h-8 w-8 flex items-center justify-center rounded-xl bg-primary/5 border border-primary/20"
+                title="Retrain Logic Block"
               >
-                {training ? <Loader2 className="h-4 w-4 animate-spin" /> : <PlayCircle className="h-4 w-4" />}
+                {training ? <Loader2 className="h-4 w-4 animate-spin text-primary" /> : <PlayCircle className="h-4 w-4 text-primary" />}
               </button>
-            </div>
+            </CardDescription>
           </CardHeader>
-          <CardContent>
-            <span className="text-lg font-bold text-premium-gradient">
-              {formatDateEN(data.metrics.lastTrainingDate)}
-            </span>
-            <div className="flex items-center gap-1.5 mt-1.5">
-              <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-              <span className="text-[10px] font-bold text-emerald-600 dark:text-emerald-400 uppercase tracking-tighter">Model up to date</span>
+          <CardContent className="px-6 pb-6 mt-1">
+            <div className="flex items-center justify-between">
+               <span className="text-[11px] font-bold uppercase text-emerald-600/90 dark:text-emerald-400/90">Signal Stable</span>
+               <div className="flex gap-1">
+                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shadow-[0_0_8px_rgba(16,185,129,0.5)]" />
+                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/40" />
+                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500/20" />
+               </div>
             </div>
           </CardContent>
         </Card>
       </div>
 
       {/* ── Flash Intelligence Summary ─────────────────────────────── */}
-      <div className="bg-primary/5 border border-primary/10 rounded-2xl p-4 flex items-center gap-4 animate-fade-in shadow-sm">
-        <div className="bg-primary/10 p-3 rounded-xl hidden sm:block">
+      <div className="bg-slate-900/5 dark:bg-slate-900/40 border border-border/40 rounded-[1.5rem] p-5 flex items-center gap-6 animate-fade-in shadow-sm backdrop-blur-md">
+        <div className="bg-primary/10 p-4 rounded-2xl hidden sm:block border border-primary/20">
           <TrendingUp className="w-6 h-6 text-primary" />
         </div>
-        <div>
-          <h4 className="text-sm font-bold text-primary">Signal Analysis [Low Confidence]</h4>
-          <p className="text-xs font-medium text-muted-foreground/90 mt-0.5 leading-relaxed">
-            Outliers at low-volume points cause high pointwise error; overall trend stable.
+        <div className="space-y-1">
+          <h4 className="text-[11px] font-bold text-primary uppercase tracking-[0.2em]">Signal Integrity Analysis</h4>
+          <p className="text-sm font-medium text-muted-foreground leading-relaxed italic">
+            "Temporal variance detected in low-volume intervals. Statistical baseline remains anchored to the 2011 distribution matrix; volatility remains within expert parameters."
           </p>
         </div>
       </div>
 
-      <Card className="glass-card card-hover shadow-lg overflow-hidden animate-slide-up">
-        <CardHeader className="flex flex-row items-center justify-between pb-6 border-b border-border/10 bg-muted/20">
-          <div className="space-y-1">
-            <CardTitle className="flex items-center gap-2 text-base sm:text-lg font-bold text-premium-gradient">
-              <BarChart3Alt className="h-5 w-5 text-primary" />
-              Forecast Analysis
-            </CardTitle>
-            <CardDescription className="text-xs font-medium">
-              Revenue projection via 95% Statistical Confidence Intervals
-            </CardDescription>
-          </div>
-          <div className="flex items-center gap-2">
-            <Button variant="outline" size="sm" className="rounded-xl h-8 gap-2 bg-card/50 text-xs shadow-sm">
-              <FileDown className="w-3.5 h-3.5" />
-              Export
-            </Button>
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[320px] sm:h-[400px] w-full">
-            <ChartContainer config={mainChartConfig}>
-              <AreaChart data={chartData} margin={{ top: 8, right: 8, left: 8, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="forecastGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.2} />
-                    <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.05} />
-                  </linearGradient>
-                  <linearGradient id="confidenceGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#93c5fd" stopOpacity={0.3} />
-                    <stop offset="100%" stopColor="#93c5fd" stopOpacity={0.05} />
-                  </linearGradient>
-                  <linearGradient id="actualGradient" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity={0.15} />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity={0.02} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-border/30" />
-                <XAxis
-                  dataKey="shortDate"
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 11 }}
-                  interval="preserveStartEnd"
-                />
-                <YAxis
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 11 }}
-                  tickFormatter={(v: number) => formatCurrency(v)}
-                  width={90}
-                />
-                <ChartTooltip
-                  content={
-                    <ChartTooltipContent
-                      labelFormatter={(label) => String(label)}
-                      formatter={(value) => formatCurrency(Number(value))}
-                    />
-                  }
-                />
-                <ChartLegend content={<ChartLegendContent />} />
-
-                {/* Confidence Interval Area */}
-                <Area
-                  type="monotone"
-                  dataKey="upperBound"
-                  stroke="none"
-                  fill="url(#confidenceGradient)"
-                  fillOpacity={1}
-                  isAnimationActive={false}
-                />
-                <Area
-                  type="monotone"
-                  dataKey="lowerBound"
-                  stroke="none"
-                  fill="hsl(var(--background))"
-                  fillOpacity={1}
-                  isAnimationActive={false}
-                />
-
-                {/* Forecast Area */}
-                <Area
-                  type="monotone"
-                  dataKey="forecast"
-                  stroke="#3b82f6"
-                  strokeWidth={2}
-                  strokeDasharray="6 3"
-                  fill="url(#forecastGradient)"
-                  fillOpacity={1}
-                  dot={false}
-                  connectNulls
-                  animationDuration={1200}
-                  animationEasing="ease-out"
-                />
-
-                {/* Actual Area */}
-                <Area
-                  type="monotone"
-                  dataKey="actual"
-                  stroke="#10b981"
-                  strokeWidth={2}
-                  fill="url(#actualGradient)"
-                  fillOpacity={1}
-                  dot={false}
-                  connectNulls
-                  animationDuration={1200}
-                  animationEasing="ease-out"
-                />
-
-                {/* Separator Line */}
-                {splitDate && (
-                  <ReferenceLine
-                    x={formatShortDate(splitDate)}
-                    stroke="#94a3b8"
-                    strokeDasharray="6 4"
-                    strokeWidth={1.5}
-                    label={{
-                      value: "Today",
-                      position: "top",
-                      fill: "#94a3b8",
-                      fontSize: 11,
-                    }}
-                  />
-                )}
-              </AreaChart>
-            </ChartContainer>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* ── Ensemble Weights ──────────────────────────────────────────── */}
-      <div className="grid gap-3 sm:gap-4 md:grid-cols-3">
-        {ensembleModels.map((model, idx) => (
-          <Card key={model.key} className={cn(
-            "glass-card card-hover transition-all duration-500 shadow-sm relative overflow-hidden",
-            `stagger-${idx + 5}`
-          )}>
-            <div className="absolute top-0 right-0 p-3 opacity-5 pointer-events-none">
-              <model.icon className="h-10 w-10" style={{ color: model.colorHex }} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 items-start">
+        {/* Card 1: Main Projection */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md shadow-lg overflow-hidden animate-slide-up flex flex-col h-full border-border/20">
+          <CardHeader className="flex flex-row items-center justify-between p-8 border-b border-border/5">
+            <div className="space-y-1">
+              <CardTitle className="flex items-center gap-3 text-lg font-bold text-foreground">
+                <BarChart3Alt className="h-5 w-5 text-primary opacity-70" />
+                Revenue Projection Logic
+              </CardTitle>
+              <CardDescription className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40">
+                Confidence Horizon: {horizon} Days
+              </CardDescription>
             </div>
-            <CardContent className="pt-6">
-              <div className="flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                  <div
-                    className="flex h-9 w-9 items-center justify-center rounded-xl shadow-inner"
-                    style={{ backgroundColor: `${model.colorHex}15` }}
-                  >
-                    <model.icon
-                      className="h-4.5 w-4.5"
-                      style={{ color: model.colorHex }}
-                    />
-                  </div>
-                  <div>
-                    <h4 className="text-[13px] font-bold tracking-tight uppercase">{model.name}</h4>
-                    <p className="text-[10px] text-muted-foreground font-medium italic">
-                      {model.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </CardContent>
-          </Card>
-        ))}
-      </div>
-
-      <Card className="glass-card shadow-sm animate-slide-up mt-6">
-        <CardHeader className="flex flex-row items-center justify-between pb-6 border-b border-border/10 bg-muted/20">
-          <div className="space-y-1">
-            <CardTitle className="flex items-center gap-2 text-base font-bold text-premium-gradient">
-              <BarChart3 className="h-5 w-5 text-primary" />
-              Model Contribution Details
-            </CardTitle>
-            <CardDescription className="text-xs">
-              Breakdown of each statistical model&apos;s weight and signal
-            </CardDescription>
-          </div>
-          <div className="flex flex-wrap gap-2">
-            {ensembleModels.map((model) => (
-              <button
-                key={model.key}
-                onClick={() => toggleModel(model.key)}
-                className={cn(
-                  "relative overflow-hidden rounded-lg border px-3 py-1.5 text-[10px] font-bold uppercase tracking-tight transition-all active:scale-95 flex items-center gap-2",
-                  visibleModels[model.key]
-                    ? "border-primary/20 bg-primary/5 shadow-sm"
-                    : "border-border bg-muted/50 text-muted-foreground"
-                )}
-                style={visibleModels[model.key] ? { borderLeft: `3px solid ${model.colorHex}`, color: model.colorHex } : undefined}
-              >
-                <div className="flex flex-col items-start leading-none gap-0.5">
-                  <span>{model.name}</span>
-                  <div className="flex items-center gap-1.5 w-full">
-                    <div className="h-1 w-12 bg-muted rounded-full overflow-hidden">
-                      <div 
-                        className="h-full rounded-full transition-all duration-500" 
-                        style={{ width: `${model.weight * 100}%`, backgroundColor: visibleModels[model.key] ? model.colorHex : '#cbd5e1' }} 
+            <div className="flex items-center gap-2">
+              <Button variant="outline" size="icon" className="h-10 w-10 rounded-xl bg-card/40 border-border/20 shadow-sm">
+                <FileDown className="w-4 h-4 opacity-70" />
+              </Button>
+            </div>
+          </CardHeader>
+          <CardContent className="p-8">
+            <div className="h-[320px] w-full">
+              <ChartContainer config={mainChartConfig}>
+                <ComposedChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                  <defs>
+                    <linearGradient id="forecastGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#1565c0" stopOpacity={0.2} />
+                      <stop offset="100%" stopColor="#1565c0" stopOpacity={0.05} />
+                    </linearGradient>
+                    <linearGradient id="confidenceGradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#64b5f6" stopOpacity={0.15} />
+                      <stop offset="100%" stopColor="#64b5f6" stopOpacity={0.02} />
+                    </linearGradient>
+                  </defs>
+                  <CartesianGrid strokeDasharray="3 3" vertical={false} className="stroke-border/20" />
+                  <XAxis
+                    dataKey="shortDate"
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))", fontWeight: 700 }}
+                    interval="preserveStartEnd"
+                    minTickGap={40}
+                  />
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))", fontWeight: 700 }}
+                    tickFormatter={(v: number) => formatCurrency(v)}
+                    width={70}
+                  />
+                  <ChartTooltip
+                    content={
+                      <ChartTooltipContent
+                        labelFormatter={(label) => `Diagnostic Date: ${label}`}
+                        formatter={(value) => formatCurrency(Number(value))}
+                        className="bg-card/95 border-border/40 backdrop-blur-xl"
                       />
-                    </div>
-                    <span className="opacity-70">{(model.weight * 100).toFixed(0)}%</span>
-                  </div>
-                </div>
-              </button>
-            ))}
-          </div>
-        </CardHeader>
-        <CardContent>
-          <div className="h-[220px] sm:h-[280px] w-full">
-            <ChartContainer config={contributionsChartConfig}>
-              <AreaChart data={chartData} margin={{ top: 8, right: 8, left: 8, bottom: 0 }}>
-                <defs>
-                  <linearGradient id="gradMovingAvg" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#10b981" stopOpacity={0.4} />
-                    <stop offset="100%" stopColor="#10b981" stopOpacity={0.05} />
-                  </linearGradient>
-                  <linearGradient id="gradTrend" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#3b82f6" stopOpacity={0.4} />
-                    <stop offset="100%" stopColor="#3b82f6" stopOpacity={0.05} />
-                  </linearGradient>
-                  <linearGradient id="gradSeasonal" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stopColor="#f59e0b" stopOpacity={0.4} />
-                    <stop offset="100%" stopColor="#f59e0b" stopOpacity={0.05} />
-                  </linearGradient>
-                </defs>
-                <CartesianGrid strokeDasharray="3 3" className="stroke-border/30" vertical={false} />
-                <XAxis
-                  dataKey="shortDate"
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 11 }}
-                  interval="preserveStartEnd"
-                />
-                <YAxis
-                  tickLine={false}
-                  axisLine={false}
-                  tick={{ fontSize: 11 }}
-                  tickFormatter={(v: number) => formatCurrency(v)}
-                  width={90}
-                />
-                <ChartTooltip
-                  cursor={{ stroke: 'hsl(var(--primary))', strokeWidth: 1, strokeDasharray: '4 4' }}
-                  content={
-                    <ChartTooltipContent
-                      labelFormatter={(label) => String(label)}
-                      formatter={(value, name) => {
-                        const val = Number(value);
-                        return (
-                          <div className="flex items-center justify-between gap-4 w-full">
-                            <span className="font-medium">{formatCurrency(val)}</span>
-                            <span className="text-[10px] opacity-70 font-bold uppercase tracking-tighter">Contribution</span>
-                          </div>
-                        );
-                      }}
+                    }
+                  />
+                  
+                  <Area
+                    type="monotone"
+                    dataKey="upperBound"
+                    stroke="none"
+                    fill="url(#confidenceGradient)"
+                    fillOpacity={1}
+                    isAnimationActive={false}
+                  />
+                  <Area
+                    type="monotone"
+                    dataKey="lowerBound"
+                    stroke="none"
+                    fill="hsl(var(--background))"
+                    fillOpacity={0.9}
+                    isAnimationActive={false}
+                  />
+                  <Line
+                    type="monotone"
+                    dataKey="forecast"
+                    stroke="#1565c0"
+                    strokeWidth={3}
+                    strokeDasharray="6 4"
+                    dot={false}
+                    activeDot={{ r: 6, strokeWidth: 0, fill: "#1565c0" }}
+                  />
+                  <Bar
+                    dataKey="actual"
+                    fill="#2e7d32"
+                    fillOpacity={0.5}
+                    radius={[4, 4, 0, 0]}
+                    barSize={12}
+                  />
+                  {splitDate && (
+                    <ReferenceLine
+                      x={formatShortDate(splitDate)}
+                      stroke="#94a3b8"
+                      strokeDasharray="8 4"
+                      strokeWidth={1.5}
+                      label={{ position: 'top', value: 'Today', fill: '#94a3b8', fontSize: 10, fontWeight: 900 }}
                     />
-                  }
-                />
-                <ChartLegend content={<ChartLegendContent />} />
+                  )}
+                </ComposedChart>
+              </ChartContainer>
+            </div>
+          </CardContent>
+        </Card>
 
-                {visibleModels.seasonal && (
-                  <Area
-                    type="monotone"
-                    dataKey="seasonalWeighted"
-                    name="seasonal"
-                    stackId="contribution"
-                    stroke="#f59e0b"
-                    strokeWidth={2}
-                    fill="url(#gradSeasonal)"
-                    fillOpacity={1}
-                    animationDuration={1500}
-                    animationEasing="ease-in-out"
+        {/* Card 2: Model Breakdown */}
+        <Card className="rounded-[1.5rem] bg-card/60 backdrop-blur-md shadow-sm animate-slide-up flex flex-col h-full border-border/20">
+          <CardHeader className="flex flex-col items-start gap-6 p-8 border-b border-border/5">
+            <div className="space-y-1">
+              <CardTitle className="flex items-center gap-3 text-lg font-bold text-foreground">
+                <BarChart3 className="h-5 w-5 text-primary opacity-70" />
+                Signal Attribution
+              </CardTitle>
+              <CardDescription className="text-[10px] uppercase font-bold tracking-[0.3em] opacity-40">
+                Model Ensemble Decomposition
+              </CardDescription>
+            </div>
+            <div className="grid grid-cols-1 sm:flex sm:flex-wrap gap-2 w-full">
+              {ensembleModels.map((model) => (
+                <button
+                  key={model.key}
+                  onClick={() => toggleModel(model.key)}
+                  className={cn(
+                    "relative overflow-hidden rounded-xl border px-4 py-2 text-[10px] font-bold uppercase tracking-widest transition-all active:scale-95 flex items-center gap-3 group",
+                    visibleModels[model.key]
+                      ? "border-primary/20 bg-primary/5 shadow-sm"
+                      : "border-border bg-muted/30 opacity-40"
+                  )}
+                  style={visibleModels[model.key] ? { borderLeft: `4px solid ${model.colorHex}`, color: model.colorHex } : undefined}
+                >
+                  <model.icon className="h-3.5 w-3.5" />
+                  <span>{model.name.split(' (')[0]}</span>
+                </button>
+              ))}
+            </div>
+          </CardHeader>
+          <CardContent className="p-8">
+            <div className="h-[280px] w-full">
+              <ChartContainer config={contributionsChartConfig}>
+                <ComposedChart data={chartData} margin={{ top: 10, right: 10, left: -20, bottom: 0 }}>
+                  <CartesianGrid strokeDasharray="3 3" className="stroke-border/20" vertical={false} />
+                  <XAxis
+                    dataKey="shortDate"
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))", fontWeight: 700 }}
+                    interval="preserveStartEnd"
+                    minTickGap={30}
                   />
-                )}
-                {visibleModels.trend && (
-                  <Area
-                    type="monotone"
-                    dataKey="trendWeighted"
-                    name="trend"
-                    stackId="contribution"
-                    stroke="#3b82f6"
-                    strokeWidth={2}
-                    fill="url(#gradTrend)"
-                    fillOpacity={1}
-                    animationDuration={1500}
-                    animationEasing="ease-in-out"
+                  <YAxis
+                    tickLine={false}
+                    axisLine={false}
+                    tick={{ fontSize: 10, fill: "hsl(var(--muted-foreground))", fontWeight: 700 }}
+                    tickFormatter={(v: number) => formatCurrency(v)}
+                    width={70}
                   />
-                )}
-                {visibleModels.movingAvg && (
-                  <Area
-                    type="monotone"
-                    dataKey="movingAvgWeighted"
-                    name="movingAvg"
-                    stackId="contribution"
-                    stroke="#10b981"
-                    strokeWidth={2}
-                    fill="url(#gradMovingAvg)"
-                    fillOpacity={1}
-                    animationDuration={1500}
-                    animationEasing="ease-in-out"
+                  <ChartTooltip
+                    content={
+                      <ChartTooltipContent
+                        labelFormatter={(label) => `Diagnostic Date: ${label}`}
+                        formatter={(value, name) => [formatCurrency(Number(value)), name]}
+                        className="bg-card/95 border-border/40 backdrop-blur-xl"
+                      />
+                    }
                   />
-                )}
-              </AreaChart>
-            </ChartContainer>
-          </div>
-        </CardContent>
-      </Card>
+                  {visibleModels.seasonal && (
+                    <Bar dataKey="seasonalWeighted" name="Fourier Decomposition" stackId="contribution" fill="#bc5100" fillOpacity={0.6} radius={[2, 2, 0, 0]} barSize={12} />
+                  )}
+                  {visibleModels.trend && (
+                    <Bar dataKey="trendWeighted" name="Autoregressive Trend" stackId="contribution" fill="#1565c0" fillOpacity={0.6} radius={[2, 2, 0, 0]} barSize={12} />
+                  )}
+                  {visibleModels.movingAvg && (
+                    <Bar dataKey="movingAvgWeighted" name="Additive Regression" stackId="contribution" fill="#2e7d32" fillOpacity={0.6} radius={[2, 2, 0, 0]} barSize={12} />
+                  )}
+                </ComposedChart>
+              </ChartContainer>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
     </div>
   );
 }

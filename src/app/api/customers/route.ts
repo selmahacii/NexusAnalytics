@@ -7,7 +7,12 @@ export async function GET() {
       orderBy: { totalRevenue: "desc" },
     });
 
-    const now = new Date();
+    const latestTx = await db.saleTransaction.findFirst({
+      orderBy: { date: "desc" },
+      select: { date: true },
+    });
+
+    const now = latestTx?.date || new Date("2011-12-09T08:00:00Z");
     const currentYear = now.getFullYear();
     const currentMonth = now.getMonth();
     const currentMonthStart = new Date(currentYear, currentMonth, 1);

@@ -102,17 +102,17 @@ interface Report {
 
 const INITIAL_REPORTS: Report[] = [
   {
-    id: "REP-2026-Q1",
-    title: "Q1 Final Revenue & Segment Auditing",
+    id: "REP-2011-Q4",
+    title: "Q4 Final Revenue & Segment Auditing",
     type: "monthly",
-    generatedAt: "2026-04-01T09:00:00Z",
+    generatedAt: "2011-12-01T09:00:00Z",
     author: "System",
     size: "3.2 MB",
     status: "final",
     content: {
-      summary: "Q1 performance analysis confirms a strategic pivot into the Maghreb wholesale market. While Algiers remains the primary revenue driver, we detected a 18% margin variance in the 'Giftware' category due to regional logistical inflation. Recommended: 5% price recalibration on high-volume SKUs.",
+      summary: "Q4 performance analysis confirms a strategic pivot into the Maghreb wholesale market. While Algiers remains the primary revenue driver, we detected a 18% margin variance in the 'Giftware' category due to regional logistical inflation. Recommended: 5% price recalibration on high-volume SKUs.",
       kpis: [
-        { label: "Q1 Net Revenue", value: "€3.42M", trend: 12.8 },
+        { label: "Q4 Net Revenue", value: "€3.42M", trend: 12.8 },
         { label: "Wholesale Split", value: "62%", trend: 4.5 },
         { label: "Avg. Unit Profit", value: "€14.20", trend: -5.2 }
       ],
@@ -130,15 +130,15 @@ const INITIAL_REPORTS: Report[] = [
     }
   },
   {
-    id: "PRED-Q2-RESTOCK",
+    id: "PRED-Q4-RESTOCK",
     title: "Predictive Restocking & Demand Forecast",
     type: "prediction",
-    generatedAt: "2026-03-25T11:00:00Z",
+    generatedAt: "2011-11-25T11:00:00Z",
     author: "System",
     size: "5.4 MB",
     status: "final",
     content: {
-      summary: "Q2 projections indicate a +215% demand acceleration for 'Outdoor accessory' lines. Early mild weather patterns suggest a potential stock depletion for 'Retro Wall Clock' units by April 12th unless inventory is rebalanced across the Oran hub.",
+      summary: "Q4 projections indicate a +215% demand acceleration for 'Outdoor accessory' lines. Early mild weather patterns suggest a potential stock depletion for 'Retro Wall Clock' units by December 12th unless inventory is rebalanced across the Oran hub.",
       kpis: [
         { label: "Projected Sales", value: "€2.1M", trend: 22.0 },
         { label: "Inventory Health", value: "94.2%", trend: 0.5 }

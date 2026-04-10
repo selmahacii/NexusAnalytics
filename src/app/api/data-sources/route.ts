@@ -6,7 +6,7 @@ import { NextRequest, NextResponse } from "next/server";
  */
 export async function GET() {
   try {
-    const today = new Date();
+    const today = new Date("2011-12-08T22:00:00Z");
     
     const sources = [
       {

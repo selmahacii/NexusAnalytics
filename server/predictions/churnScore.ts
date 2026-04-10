@@ -30,7 +30,13 @@ export async function predictCustomerChurn(
 ): Promise<ChurnPredictResult> {
   const { db, limit = 50 } = params;
 
-  const now = new Date();
+  // ─── Find reference date (latest transaction) ───
+  const latestTx = await db.saleTransaction.findFirst({
+    orderBy: { date: "desc" },
+    select: { date: true },
+  });
+
+  const now = latestTx?.date || new Date("2011-12-09T00:00:00Z");
 
   // Fetch all customers with recent transactions
   const customers = await db.customer.findMany({
@@ -59,7 +65,7 @@ export async function predictCustomerChurn(
       highRiskCount: 0,
       mediumRiskCount: 0,
       lowRiskCount: 0,
-      generatedAt: new Date().toISOString(),
+      generatedAt: now.toISOString(),
     };
   }
 
@@ -252,6 +258,6 @@ export async function predictCustomerChurn(
     lowRiskCount: predictions.filter(
       (p) => p.computedRiskScore < 40,
     ).length,
-    generatedAt: new Date().toISOString(),
+    generatedAt: now.toISOString(),
   };
 }

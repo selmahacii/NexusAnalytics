@@ -59,7 +59,7 @@ interface NavItem {
 }
 
 const NAV_ANALYTICS: NavItem[] = [
-  { id: "dashboard", label: "Operational Telemetry", icon: LayoutDashboard },
+  { id: "dashboard", label: "Operational Sector Ledger", icon: LayoutDashboard },
   { id: "forecast", label: "Revenue Forecaster", icon: TrendingUp },
   { id: "predictions", label: "Demand Validation", icon: Target },
   { id: "supply-chain", label: "Supply Chain", icon: Factory },
@@ -74,8 +74,8 @@ const NAV_MANAGEMENT: NavItem[] = [
 ];
 
 const NAV_ENGINE: NavItem[] = [
-  { id: "ai-assistant", label: "Diagnostic Assistant", icon: Sparkles },
-  { id: "models", label: "Execution Controller", icon: Brain },
+  { id: "ai-assistant", label: "Diagnostic Support", icon: Sparkles },
+  { id: "models", label: "Operational Logic Manager", icon: Brain },
   { id: "data-sources", label: "Data Ingress", icon: Database },
 ];
 
@@ -202,8 +202,8 @@ function Sidebar() {
     >
       {/* Logo */}
       <div className="flex items-center gap-3 px-4 h-16 border-b flex-shrink-0">
-        <div className="w-9 h-9 rounded-xl bg-foreground flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm transition-transform duration-200 hover:scale-105 font-black text-background text-sm">
-          RDM
+        <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm transition-transform duration-200 hover:scale-105 bg-white">
+          <Image src="/rdm-logo.png" alt="RDM Logo" width={36} height={36} className="object-cover" />
         </div>
         {!sidebarCollapsed && (
           <div className="overflow-hidden">
@@ -216,21 +216,21 @@ function Sidebar() {
       {/* Nav Items */}
       <nav aria-label="Navigation principale" className="flex-1 py-4 px-2 space-y-6 overflow-y-auto overflow-x-hidden natural-scrollbar">
         <div className="space-y-1">
-          {!sidebarCollapsed && <p className="px-3 text-[10px] font-bold text-muted-foreground/60 tracking-widest uppercase mb-2">Analytics</p>}
+          {!sidebarCollapsed && <p className="px-3 text-[10px] font-bold text-muted-foreground/60 tracking-widest uppercase mb-2">Operational Oversight</p>}
           {NAV_ANALYTICS.map((item) => (
             <NavItemButton key={item.id} item={item} collapsed={sidebarCollapsed} />
           ))}
         </div>
 
         <div className="space-y-1">
-          {!sidebarCollapsed && <p className="px-3 text-[10px] font-bold text-muted-foreground/60 tracking-widest uppercase mb-2">Business</p>}
+          {!sidebarCollapsed && <p className="px-3 text-[10px] font-bold text-muted-foreground/60 tracking-widest uppercase mb-2">Commercial Ledger</p>}
           {NAV_MANAGEMENT.map((item) => (
             <NavItemButton key={item.id} item={item} collapsed={sidebarCollapsed} />
           ))}
         </div>
 
         <div className="space-y-1">
-          {!sidebarCollapsed && <p className="px-3 text-[10px] font-bold text-muted-foreground/60 tracking-widest uppercase mb-2">Engine</p>}
+          {!sidebarCollapsed && <p className="px-3 text-[10px] font-bold text-muted-foreground/60 tracking-widest uppercase mb-2">Diagnostic Support</p>}
           {NAV_ENGINE.map((item) => (
             <NavItemButton key={item.id} item={item} collapsed={sidebarCollapsed} />
           ))}
@@ -248,7 +248,7 @@ function Sidebar() {
             <div className="p-3.5 rounded-[1.25rem] bg-slate-50 dark:bg-slate-900 border border-slate-100 dark:border-slate-800 space-y-3">
               <div className="flex items-center gap-2 mb-1">
                 <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Operational Hub</span>
+                <span className="text-[10px] font-black uppercase tracking-widest text-slate-500">Operational Oversight</span>
               </div>
               
               <div className="space-y-2">
@@ -264,7 +264,7 @@ function Sidebar() {
                   <span className="text-[9px] font-bold text-muted-foreground uppercase tracking-tight">Compliance</span>
                   <span className="text-[9px] font-bold text-emerald-600 dark:text-emerald-400">PASSED</span>
                 </div>
-                <p className="text-[8px] text-muted-foreground/60 font-mono text-right mt-0.5">CYCLE: 42ms</p>
+                <p className="text-[8px] text-muted-foreground/60 font-mono text-right mt-0.5 uppercase">Audit Cycle: 42ms</p>
               </div>
             </div>
           </div>
@@ -298,8 +298,8 @@ function MobileSidebar({ onClose }: { onClose: () => void }) {
       {/* Header */}
       <div className="flex items-center justify-between px-4 h-16 border-b flex-shrink-0">
         <div className="flex items-center gap-3">
-          <div className="w-9 h-9 rounded-xl bg-foreground flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm font-black text-background text-sm">
-            RDM
+          <div className="w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0 overflow-hidden shadow-sm bg-white">
+            <Image src="/rdm-logo.png" alt="RDM Logo" width={36} height={36} className="object-cover" />
           </div>
           <div>
             <h1 className="text-sm font-bold tracking-tight">Distribution</h1>
@@ -367,7 +367,7 @@ function TopHeader({ onMenuClick }: { onMenuClick: () => void }) {
 
         {currentNav && (
           <div className="flex flex-col animate-fade-in -space-y-0.5">
-            <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-bold sm:block hidden">DISTRIBUTION TELEMETRY</span>
+            <span className="text-[10px] uppercase tracking-wider text-muted-foreground/60 font-bold sm:block hidden">REGIONAL OVERSIGHT LEDGER</span>
             <div className="flex items-center gap-2.5">
               <currentNav.icon className="w-4 h-4 text-primary sm:block hidden" />
               <h2 className="text-base font-bold tracking-tight">{currentNav.label}</h2>
@@ -413,11 +413,11 @@ function TopHeader({ onMenuClick }: { onMenuClick: () => void }) {
         {/* User Account Account Dropdown (Simplified for now) */}
         <div className="flex items-center gap-3 pl-1 group cursor-pointer">
           <div className="hidden sm:flex flex-col items-end -space-y-0.5">
-            <span className="text-[13px] font-bold tracking-tight">Director</span>
-            <span className="text-[10px] text-muted-foreground font-medium uppercase">Admin</span>
+            <span className="text-[13px] font-bold tracking-tight">Selma Haci</span>
+            <span className="text-[10px] text-muted-foreground font-medium uppercase">Admin Director</span>
           </div>
           <div className="w-9 h-9 rounded-xl bg-primary flex items-center justify-center text-primary-foreground text-xs font-bold transition-all duration-300 group-hover:shadow-[0_0_15px_rgba(var(--primary-rgb),0.3)] shadow-sm">
-            DZ
+            SH
           </div>
         </div>
       </div>
@@ -584,7 +584,7 @@ export default function NexusApp() {
         >
           <TopHeader onMenuClick={openMobile} />
 
-          <div className="flex-1 p-4 sm:p-6 overflow-x-hidden">
+          <div className="flex-1 p-4 sm:p-6 overflow-x-hidden overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none]">
             {mounted && (
               <AnimatedView>
                 <ErrorBoundary>
@@ -596,7 +596,7 @@ export default function NexusApp() {
 
           {/* Footer */}
           <footer className="border-t bg-card/80 backdrop-blur-sm px-4 sm:px-6 py-3 flex items-center justify-between text-xs text-muted-foreground mt-auto transition-all duration-300">
-            <span className="truncate">RDM Distribution Controller v4.2.0</span>
+            <span className="truncate">RDM Distribution Controller v2.5.2 (Stable)</span>
             <span className="flex items-center gap-1.5 shrink-0">
               <div className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="hidden sm:inline">System Integrated</span>
